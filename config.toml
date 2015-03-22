@@ -1,0 +1,6 @@
+baseurl = "http://anemone.dodgson.org/"
+languageCode = "en-us"
+title = "steps to phantasien"
+theme = "vienna"
+[permalinks]
+  post = "/:year/:month/:filename/"
