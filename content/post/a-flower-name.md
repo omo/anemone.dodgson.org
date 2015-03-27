@@ -15,3 +15,5 @@ Octopress に遅さに疲れていたら Hugo が良いと教わった。
 arbitrary であろうと A から順に花の名前をつけてみる。まずは
 [anemone.phantasien.org](http://anemone.phantsien.org/) から。
 フィードの URL が変わらなければいいよね。
+
+表紙画像も[前と同じ](https://www.flickr.com/photos/_belial/5929930548/)。
