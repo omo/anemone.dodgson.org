@@ -13,7 +13,7 @@ Octopress に遅さに疲れていたら Hugo が良いと教わった。
 プラグインなどの都合で Markdown を移すのは諦め、新しいサブドメインを
 使うことにした。[西暦を入れる 8-p.info 方式](http://2015.8-p.info/)よりも
 arbitrary であろうと A から順に花の名前をつけてみる。まずは
-[anemone.phantasien.org](http://anemone.phantsien.org/) から。
+[anemone.dodgson.org](http://anemone.dodgson.org/) から。
 フィードの URL が変わらなければいいよね。
 
 表紙画像も[前と同じ](https://www.flickr.com/photos/_belial/5929930548/)。
