@@ -1,6 +1,12 @@
 baseurl = "http://anemone.dodgson.org/"
 languageCode = "en-us"
 title = "steps to phantasien"
-theme = "vienna"
+theme = "anemone"
 [permalinks]
   post = "/:year/:month/:filename/"
+
+[params]
+  twitter = "omo2009"
+  github = "omo"
+  author = "Hajime Morrita"
+#  subtitle = "is a software developer, hardware hacker and a beer lover. He believes in the power of code."
