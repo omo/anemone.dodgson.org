@@ -1,11 +1,5 @@
+language: python
 before_install: git submodule update
 install: travis/install.sh
 script: travis/build.sh
-deploy:
-  provider: s3
-  access_key_id: AKIAIS2JSOEACUMNV3JQ
-  secret_access_key:
-    secure: a4Z2ICA1qo3TsG5OGiycwXG2gxBDzXLLmQDUfr1m+QMPsyd9s8zkNPNIbvaWj53azYOseYV9WT23HWMQU8iv4fv9eo7zrZbU5NsKHaGFxunQQ0kipXEkRWzJUC4RzKHZfdQPbpYh5/UOEAiswuERlX6vtqmNSWP0eaORaEVI2Qs=
-  bucket: anemone.dodgson.org
-  local-dir: public
-  acl: public_read
+after_success: travis/deploy.sh
