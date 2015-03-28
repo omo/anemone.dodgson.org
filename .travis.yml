@@ -1,0 +1,2 @@
+install: travis/install.sh
+script: travis/build.sh
