@@ -12,4 +12,4 @@ Travis いわく所用時間 11 秒. 体感は 30 秒くらい。
 Go で書かれた awscli 相当のツールがあるといいのだけれど。
 
 GitHub の Web から更新できるのは良い。これがしたかった。もうちょっと使いやすいエディタがほしい。
-[Dillinger](http://dillinger.io/) はいまいち。当面は Dropbox で下書きしたのをコピペしよう。
+[Dillinger](http://dillinger.io/) はいまいち。当面は Evernote で下書きしたのをコピペしよう。
