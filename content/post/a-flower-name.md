@@ -6,7 +6,7 @@ title = "花の名前"
 
 ![Anamone](https://farm3.staticflickr.com/2072/2267748078_207ed49515_b.jpg)
 
-Octopress に遅さに疲れていたら Hugo が良いと教わった。
+Octopress の遅さに疲れていたら Hugo が良いと教わった。
 たしかに速い。インストールが楽なのもいい。CSS プリプロセサがないのは残念。
 テーマは [Vienna](https://github.com/keichi/vienna) をいじって使おう。
 
