@@ -11,5 +11,5 @@ S3 に push するツール [awscli](http://aws.amazon.com/cli/) のインスト
 Travis いわく所用時間 11 秒. 体感は 30 秒くらい。
 Go で書かれた awscli 相当のツールがあるといいのだけれど。
 
-GitHub の Web から更新できるのは良い。これがしたかった。もうちょっと使いやすいエディタがあるとよいのだけれど。
+GitHub の Web から更新できるのは良い。これがしたかった。もうちょっと使いやすいエディタがほしい。
 [Dillinger](http://dillinger.io/) はいまいち。当面は Dropbox で下書きしたのをコピペしよう。
