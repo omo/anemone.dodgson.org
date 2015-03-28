@@ -1,2 +1,3 @@
+before_install: git submodule update
 install: travis/install.sh
 script: travis/build.sh
