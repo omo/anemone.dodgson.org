@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-04-02"
 title = "Funemployment"
-draft = true
+draft = false
 +++
 
 ["A beginner's guide to funemployment"](http://robertheaton.com/2014/06/02/a-beginners-guide-to-funemployment/)
