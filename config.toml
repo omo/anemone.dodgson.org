@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "steps to phantasien"
 theme = "anemone"
 [permalinks]
-  post = "/:year/:month/:filename/"
+  post = "/:year/:month/:day/:filename/"
 
 [params]
   twitter = "omo2009"
