@@ -21,7 +21,7 @@ http://www.sfweekly.com/sanfrancisco/funemployment-jobless-young-san-franciscans
 間違ってはいないが、言葉の示唆する悲壮感を逆手にとる感じの悪さが鼻についた。
 まあ完全に労働者の僻みなんだけど、彼らが funemployed を名乗っていたら手放しで羨ましがってあげられたかもしれない。
 私もときどき無職になりたいと呟いてしまうことがある。このとき求めているのは funemployment であって失業ではない。
-身勝手な願望に名前がついてよかった。Sabbatical と呼ぶ人もいる。でも funemployed の方がポップ。
+身勝手な願望に名前がついてよかった。Sabbatical と呼ぶ人もいる。でも funemployed の方がポップ。日本語だと "有閑無職 "が近そう。
 
 冒頭の記事も認めるとおり, funemployment はどこか特権的だ。
 最終的にはなんとかできる自負があるからこそ楽しさを見いだせる。
