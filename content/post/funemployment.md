@@ -32,4 +32,4 @@ http://www.sfweekly.com/sanfrancisco/funemployment-jobless-young-san-franciscans
 
 だから仕事のない優雅な日々を満喫されている諸兄は無職や NEET を気取らず胸を張って funemployed を名乗り、
 素直に身分を羨ましがらせてほしい。明日も仕事の会社員はそうおもう次第。
-おまえらが無職無職と連呼するのはほんとに、むかつく。
+おまえらが無印無職を連呼するのはほんとに、むかつく。
