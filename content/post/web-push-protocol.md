@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-04-08"
 title = "Web Push Protocol"
-draft = true
+draft = false
 +++
 
 "[Generic Event Delivery Using HTTP Push](https://tools.ietf.org/html/draft-thomson-webpush-http2-02)" なる RFC を知った。
