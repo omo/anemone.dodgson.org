@@ -5,7 +5,7 @@ title = "書き直さない時代の気分"
 draft = true
 +++
 
-なんとなく続き。
+なんとなく続き。([前回](http://anemone.dodgson.org/2015/04/09/probablistically-sacrificial/))
 
 Martin Fowler が蒸し返すまで、
 自分は書き直しについてことさら何か書く気が起きなかった。
