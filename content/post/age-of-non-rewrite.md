@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-04-13"
 title = "書き直さない時代の気分"
-draft = true
+draft = false
 +++
 
 なんとなく続き。([前回](http://anemone.dodgson.org/2015/04/09/probablistically-sacrificial/))
