@@ -20,7 +20,7 @@ Whitepaper としては不親切な内容。読者がこの手のスケジュー
  * ユーザ毎の資源はクオータで制限しており。クオータはシステムの外で決めている。そもそも他の方法があるのだろうかとおもったが、理論的にはなんかあるっぽい。
  * Compressible な資源 (CPU や IO 帯域など)と Non-compressible な資源(メモリやディスク)を区別している。たしかにそういう区別は必要そう。
  * Preemption によって優先度の低いタスクは殺されることがある。殺されると pending queue にはいってやりなおし。「夜に流して帰った Map Reduce が朝来たら死んでた…」みたいなぼやきをたまに聞いたのを思い出す。これだったか。ハードウェアの故障以前にスケジューラが殺しに来るんじゃ idempotent に作らないとどうにもならないね。むしろこの荒々しい世界で Map Reduce を使わずバッチの何かを書くのは大変そう。
- * 資源の割り当て設定を変えるとデプロイしなおし。資源をインクリメンタルに要求できる普通の OS とは違うね。Mesos はインクリメンタルに要求できた気がする。まあフレームワークという巨大な単位相手にリソースを割り振るからだろうけど。
+ * 資源の割り当て設定を変えるとデプロイしなおし。資源をインクリメンタルに要求できる普通の OS とは違う。Mesos はインクリメンタルに要求できた気がする。まあフレームワークという巨大な単位相手にリソースを割り振るからだろうけど。
  * Borg 対応バイナリには HTTP サーバが入ってる。便利そう。
  * 同じマシンで動かしたい job を指定するには Allocs という仕組みを使う。仮想 job みたいなもんか.
 
@@ -28,6 +28,6 @@ Related work のセクションでは色々な会社の似たようなシステ�
 
 数年前 Twitter 開催の tech talk で Mesos の話を聞いた時、講演者は Mesos のことを "Google の Borg みたいなもんです" と説明していた。元 Google 社員が蔓延するベイエリアのテック企業では Borg の存在は公然の秘密みたいになっており、でかい会社は結局どこも似たようなものを持っているのだなあと思ったのだった。
 
-そういえば Twitter で SRE(Ops) をやってる人が, Borg は動きが予測できなくて辛い。Mesosのほうがわかりやすくてよい、というようなことを以前[書いていた](http://www.goodmath.org/blog/2014/02/14/controlling-thousands-of-machines-aka-my-day-job/)。どうなんだろうね。最近 Twitter は Mysos という MySQL Mesos インテグレーションを [Mysos](https://blog.twitter.com/2015/another-look-at-mysql-at-twitter-and-incubating-mysos) という名前で発表している。ちゃんとつかってるぽい。
+Twitter といえば、かの社で SRE(Ops) をやってる人が Borg は動きが予測できなくて辛い。Mesosのほうがわかりやすくてよい、というようなことを以前[書いていた](http://www.goodmath.org/blog/2014/02/14/controlling-thousands-of-machines-aka-my-day-job/)。どうなんだろうね。最近 Twitter は Mysos という MySQL Mesos インテグレーションを [Mysos](https://blog.twitter.com/2015/another-look-at-mysql-at-twitter-and-incubating-mysos) という名前で発表している。ちゃんとつかってるぽい。
 
 オープンソース好きとしては Kubernetes, Mesos, Aurora を応援していきたい。といっても趣味ではまったく使い道がないので掛け声だけ。
