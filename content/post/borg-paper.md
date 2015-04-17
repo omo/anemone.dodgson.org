@@ -30,4 +30,6 @@ Related work のセクションでは色々な会社の似たようなシステ�
 
 Twitter といえば、かの社で SRE(Ops) をやってる人が Borg は動きが予測できなくて辛い。Mesosのほうがわかりやすくてよい、というようなことを以前[書いていた](http://www.goodmath.org/blog/2014/02/14/controlling-thousands-of-machines-aka-my-day-job/)。どうなんだろうね。最近 Twitter は Mysos という MySQL Mesos インテグレーションを [Mysos](https://blog.twitter.com/2015/another-look-at-mysql-at-twitter-and-incubating-mysos) という名前で発表している。ちゃんとつかってるぽい。
 
-オープンソース好きとしては Kubernetes, Mesos, Aurora を応援していきたい。といっても趣味ではまったく使い道がないので掛け声だけ。
+オープンソース好きとしては Kubernetes, Mesos, Aurora を応援していきたい。
+といっても一個人にはまったく使い道がない。
+掛け声だけ。
