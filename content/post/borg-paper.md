@@ -6,14 +6,14 @@ draft = false
 +++
 
 Kubernetes の元ネタになった [Borg というシステムの whitepaper](http://research.google.com/pubs/pub43438.html) が出ていた。読んでみる。自分の Borg 経験は hello world したくらい。
-全然知らない。そしてめんくさそうなので出来ることなら使わずに人生を終えたいと思っている。
+全然知らない。そしてめんどくさそうなので出来ることなら使わずに人生を終えたいと思っている。
 でも後学のために読んでも損はあるまい。 Google インフラシリーズでは親玉格のはず。
 
 Whitepaper としては不親切な内容。読者がこの手のスケジューラについてある程度知っている前提で書かれている。ただ Cell だの Borgmaster だの Borglet だの Preemption だの、サーバ側の人々の会話に出てくる用語は一通り解説されている。きっとポイントは押さえられているのだろう。
 
-・・・と思って読んだものの、やはりどうにもとりとめがない。細かい工夫の話が多く big picture がよく見えない。設定ファイルの例やプロセスのデプロイ方法といったエンドユーザ視点の説明が少なく、かつどうやってシステムを bootstrap するか、マシンを足す時はどうやるかなど運用の目線もなく、実装する人の観点だけで書かれているからだろう。それは正しい想定読者だと思うけど、もうちょっとファンサービスがあってもいいのではないか。そのうち tech talk のひとつもやってほしいもんです。
+・・・と思って読んだものの、やはりどうにもとりとめがない。細かい工夫の話が多く big picture がよく見えない。設定ファイルの例やプロセスのデプロイ方法といったエンドユーザ視点の説明が少なく、どうやってシステムを bootstrap するか、マシンを足す時はどうやるかなど運用の目線もなく、実装する人の観点だけで書かれているからだろう。それは正しい想定読者だと思うけど、もうちょっとファンサービスがあってもいいのではないか。そのうち tech talk のひとつもやってほしいもんです。
 
-後半の Lessons セクションを見ると, Borg のいまいちだったところは Kubernetes で直したと繰り返している。クラスタマネージャを勉強したくなったらむしろ Kubernetes について調べるほうがいいのかもしれない。まあ Borg みたいにチューニングされまくってはいないだろうけれど、コードやマニュアルが読めるぶんよい。良い気がする。ちなみに [Mesos paper](http://mesos.berkeley.edu/mesos_tech_report.pdf) はもうちょっとフレンドリーだった記憶。
+後半の Lessons セクションを見ると, Borg のいまいちだったところは Kubernetes で直したと繰り返している。クラスタマネージャを勉強したくなったらむしろ Kubernetes について調べるほうがいいのかもしれない。まあ Borg みたいにチューニングされまくってはいないだろうけれど、コードやマニュアルが読めるぶんよい。気がする。ちなみに [Mesos paper](http://mesos.berkeley.edu/mesos_tech_report.pdf) はもうちょっとフレンドリーだった記憶。
 
 以下ランダムに面白かったこと:
 
@@ -30,7 +30,7 @@ Related work のセクションでは色々な会社の似たようなシステ�
 
 数年前 Twitter 開催の tech talk で Mesos の話を聞いた時、講演者は Mesos のことを "Google の Borg みたいなもんです" と説明していた。元 Google 社員が蔓延するベイエリアのテック企業では Borg の存在は公然の秘密みたいになっており、でかい会社は結局どこも似たようなものを持っているのだなあと思ったのだった。
 
-Twitter といえば、かの社で SRE(Ops) をやってる人が Borg は動きが予測できなくて辛い、Mesos のほうがわかりやすくてよい、というようなことを以前[書いていた](http://www.goodmath.org/blog/2014/02/14/controlling-thousands-of-machines-aka-my-day-job/)。どうなんだろうね。最近 Twitter は Mysos という MySQL Mesos インテグレーションを [Mysos](https://blog.twitter.com/2015/another-look-at-mysql-at-twitter-and-incubating-mysos) という名前で発表している。ちゃんとつかってるぽい。
+Twitter といえば、かの社で SRE(Ops) をやってる人が Borg は動きが予測できなくて辛い、Mesos のほうがわかりやすくてよい、というようなことを以前[書いていた](http://www.goodmath.org/blog/2014/02/14/controlling-thousands-of-machines-aka-my-day-job/)。どうなんだろうね。最近 Twitter は MySQL-Mesos インテグレーションを [Mysos](https://blog.twitter.com/2015/another-look-at-mysql-at-twitter-and-incubating-mysos) という名前で発表している。ちゃんとつかってるぽい。
 
 オープンソース好きとしては Kubernetes と Mesos を応援していきたい。
 といっても一個人にはまったく使い道がない。掛け声だけ。
