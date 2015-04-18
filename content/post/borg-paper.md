@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-04-17"
 title = "Borg Paper 感想"
-draft = true
+draft = false
 +++
 
 Kubernetes の元ネタになった [Borg というシステムの whitepaper](http://research.google.com/pubs/pub43438.html) が出ていた。読んでみる。自分の Borg 経験は hello world したくらい。
