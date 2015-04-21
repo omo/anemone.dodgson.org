@@ -4,6 +4,7 @@ date = "2015-04-22"
 title = "Rust の Lifetimes"
 draft = true
 +++
+
 もうすぐ 1.0 というのでひさしぶりに Rust の[チュートリアル](http://doc.rust-lang.org/nightly/book/)を読む。以前見た時は不可解な機能が多く、そのうち難しくなりすぎて死にそうだなこれ・・・と思っていた。今見るとずいぶんすっきりしている。単純さに舵を切れたのはえらい。
 
 チュートリアルに登場したうちわからなかった機能は 2 つ, Lifetimes と Macros。Macros はさておき Lifetimes は理解してよさそう。詳しい情報を求めて[リファレンス](http://doc.rust-lang.org/nightly/reference.html
