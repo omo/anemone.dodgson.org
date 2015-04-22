@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-04-22"
 title = "Rust の Lifetimes"
-draft = true
+draft = false
 +++
 
 [もうすぐ 1.0](http://blog.rust-lang.org/2015/02/13/Final-1.0-timeline.html) という Rust。
