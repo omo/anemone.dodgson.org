@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-04-28"
 title = "Custom Views の気楽さ具合"
-draft = true
+draft = false
 +++
 
 唐突に Android 入門日記。
