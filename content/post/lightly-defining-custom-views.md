@@ -1,7 +1,7 @@
 +++
 Tags = []
 date = "2015-04-28"
-title = "Custom Views の気楽さ具合"
+title = "Custom Views の気楽さ加減"
 draft = false
 +++
 
