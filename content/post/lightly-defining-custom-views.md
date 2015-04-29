@@ -11,7 +11,7 @@ draft = true
 
 Custom Elements や React Componentsと同じノリで沢山の Custom View を定義しているのがまずいのだろうか。状態を持たせるためだけに `View` のサブクラスをつくっている。各 custom view はコンストラクタで `inflate()` してサブツリーを作り、それを表示する。`View#onDraw()` は override しない。今のところ必要がない。
 
-このやり方で custom view のレイアウトを与えると、自分自身とは別にルートとなる View (大抵はなんらかの Layout クラス) が必要になる。ルートになれる View は一つだけ。この制限がなければ custom view 自身がその Layout クラスを継承すれば済むのに、XML の構文だけが理由で単一ルートというこの制限を受ける。Custom view -> LinearLayout -> 本来の sub view ... と一段 View 階層が深くなってしまう。やや理不尽。
+このやり方で custom view のレイアウトを与えると、ルートとなる View (大抵はなんらかの Layout クラス) が自分自身とは別に必要。ルートになれる View は一つだけ。この制限がなければ custom view 自身がその Layout クラスを継承すれば済むのに、XML の構文だけが理由で単一ルートというこの制限を受ける。Custom view -> LinearLayout -> 本来の sub view ... と一段 View 階層が深くなってしまう。やや理不尽。
 
 ## Activity, Fragment
 
@@ -19,7 +19,7 @@ Custom Elements や React Componentsと同じノリで沢山の Custom View を�
 
 Custom view を使わないなら、どのように View をグループ化するのか。
 
-ある程度の規模があるまとまりには Fragments を使っている。Responsive にしない画面では Activity にベタな layout を流し込んで終わり。自分が Custom View を作りたくなる典型的なケース、`RecyclerView` の個々のアイテムにも Custom View は作らない。適当な layout を inflate し、そのサブツリーに必要な状態やイベントリスナをくっつけておわり。たしかにこれなら余計な階層はできない。でもオブジェクト指向の敗北みたいでなんとなく悲しい。Adapter の `getView()` が巨大になるし・・・
+ある程度の規模があるまとまりには Fragments を使っている。Responsive にしない画面では Activity にベタな layout を流し込んで終わり。自分が custom view を作りたくなる典型的なケース、`RecyclerView` の個々のアイテムにも custom view は作らない。適当な layout を inflate し、そのサブツリーに必要な状態やイベントリスナをくっつけておわり。たしかにこれなら余計な階層はできない。でもオブジェクト指向の敗北みたいでなんとなく悲しい。Adapter の `getView()` が巨大になるし・・・
 
 ## ViewHolder
 
@@ -54,7 +54,7 @@ Adapter に inflate させると本来は View が隠すべき詳細たるレイ
 
 ## 大げさ加減
 
-Custom view は大げさで、わざわざ定義したくなるくらい複雑な View が欲しくことは少ないという声もあった。抽象の厚さには好みもあるので一概には言えないけれど、たしかに inflate して OnClickListener つけておわりくらいなら Custom View はいらなそう。どうせクラスがないなら functional な感じにかけるとかっこいいんだけどなー・・・
+Custom view は大げさで、わざわざそれが欲しくなるほどの複雑さは多くないとも聞いた。抽象の厚さには好みもあるので一概には言えないけれど、たしかに inflate して OnClickListener つけておわりくらいなら custom view はいらなそう。どうせクラスがないなら functional な感じにかけるとかっこいいんだけどなー・・・
 
  * まとまりをつくるのに新しいクラスが必要とは限らない
 
