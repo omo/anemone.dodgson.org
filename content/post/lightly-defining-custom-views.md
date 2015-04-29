@@ -60,4 +60,4 @@ Custom view は大げさで、わざわざそれが欲しくなるほどの複�
 
 ----
  
- ドラフトにコメントをくれた [@karino2012](https://twitter.com/karino2012/with_replies) ありがとう。
+ ドラフトにコメントをくれた [@karino2012](https://twitter.com/karino2012) ありがとう。
