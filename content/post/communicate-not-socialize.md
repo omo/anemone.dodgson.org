@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-05-02"
 title = "Communicate, not Socialize"
-draft = true
+draft = false
 +++
 
 あるとき「エンジニアの仕事は設計をしたりコードを書いたり communicate をすることだ」と何かの資料に書かれているのを読み、胃が痛くなりかけた。そのあと「socialize は求められてない」と続くのを見て気を取り直す。仕事の外の付き合いは Communication じゃなくて Socializing か。なお "Socialization" は違う意味。
