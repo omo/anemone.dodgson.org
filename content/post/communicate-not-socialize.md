@@ -1,7 +1,7 @@
 +++
 Tags = []
 date = "2015-05-02"
-title = "Communicate, not Socialize"
+title = "Communicate, Not Socialize"
 draft = false
 +++
 
