@@ -5,7 +5,7 @@ title = "Communicate, not Socialize"
 draft = true
 +++
 
-あるとき「エンジニアの仕事は設計をしたりコードを書いたり communicate をすることだ」と何かの資料に書かれているのを読み、胃が痛くなりかけた。そのあと「socialize は求められてない」と続くのを読み気を取り直す。仕事に関係ない付き合いは Communication じゃなくて Socializing か。なお "Socialization" は違う意味。
+あるとき「エンジニアの仕事は設計をしたりコードを書いたり communicate をすることだ」と何かの資料に書かれているのを読み、胃が痛くなりかけた。そのあと「socialize は求められてない」と続くのを見て気を取り直す。仕事の外の付き合いは Communication じゃなくて Socializing か。なお "Socialization" は違う意味。
 
 自分は言語障壁および性格のせいでチームでの振る舞いが socially awkward 側に倒れている。でも最低限の communication はこなしているせいか、大きく問題視されたことはない。めでた・・・くはないが、最悪の事態は免れた。「コミュ障」じゃなくて「ソシャ障」ってとこか。あるいは「非コミュ」じゃなくて「非ソシャ」。まあ自分に communication の問題がまったくないとは言わないけれど。
 
