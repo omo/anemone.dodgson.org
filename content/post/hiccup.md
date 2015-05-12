@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-05-11"
 title = "Hiccup, An Audio Player"
-draft = true
+draft = false
 +++
 
 ちまちまつくっていたアプリを公開してみる。[Hiccup](https://play.google.com/store/apps/details?id=es.flakiness.hiccup) と命名。ローカルおよび Google Drive (Storage Access Framework に対応したサービス) から音声ファイルを選んで再生する。語学学習用で、再生中は画面全体が再生/一時停止/巻き戻し/早送りボタンになって細かい一時停止や巻き戻したりがラク、という意図。シャドーイングや日本語->英語が交互に使ってる教材を消化するのに自分ではぼちぼち使っている。
