@@ -9,10 +9,10 @@ draft = true
 
 モバイルに詳しくなろうと余暇にちまちまコードを書いてみたもののまったく捗らない。いっそ仕事にしてみようという次第。座席の引越しから数日、よろよろしながらもやっと初コミットできた。めでたい。
 
-Work Rules という本がある。Googleの人事(People Ops)のボスによる Google の本で、人事制度を中心に企業文化やシステムを紹介している。いまいち時代背景が不透明な How Google Works と違い、大企業としての Google をうまく描いており興味深く読んだ。
-
-http://www.amazon.co.jp/dp/1455534846/
-http://www.amazon.co.jp/dp/4532319552/
+[Work Rules](http://www.amazon.co.jp/dp/1455534846/?tag=stepstophanta-22) という本がある。
+Googleの人事(People Ops)のボスによる Google  の本で、人事制度を中心に企業文化やシステムを紹介している。
+いまいち時代背景が不透明な [How Google Works](http://www.amazon.co.jp/dp/4532319552/?tag=stepstophanta-22) 
+と違い大企業としての Google をうまく描いている。興味深く読んだ。
 
 中でも三つの論点が印象に残った。透明性、自由、そして管理職の権威を削ぐこと。異動の支度をしながら読むと説得力がある。一例として様子を書いてみたい。
 
