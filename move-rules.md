@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-05-14"
 title = "異動ルールズ"
-draft = true
+draft = false
 +++
 
 異動してみた。Chrome と関係ない Android アプリのチームへ。
