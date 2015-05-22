@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-05-20"
 title = "続・にわか Podcast ファン"
-draft = true
+draft = false
 +++
 
 およそ[1年半前](http://steps.dodgson.org/b/2013/09/21/an-overnight-podcast-listener/)から聞き始めたにわか podcast listening は継続中。
