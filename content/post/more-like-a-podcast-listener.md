@@ -23,7 +23,7 @@ draft = false
 そういう意味で *[Software Engineering Radio](http://www.se-radio.net/2015/05/se-radio-episode-226-eric-evans-on-domain-driven-design-at-10-years/)* は面白い: 最近人気急上昇中の [Brendan Gregg](http://www.brendangregg.com/) なんかが登場する一方、このところ陰の薄い [Eric Evans](http://www.se-radio.net/2015/04/se-radio-episode-225-brendan-gregg-on-systems-performance/)が最新回。この振れ幅たるや。昔からやっている番組なので、面白そうなバックナンバーを探す楽しみもある。Paxos の作者 [Leslie Lamport](http://www.se-radio.net/2014/04/episode-203-leslie-lamport-on-distributed-systems/) の回は痺れたし、チューリング賞をとったデータベースマフィア [Michael Stonebraker](http://www.se-radio.net/2013/12/episode-199-michael-stonebraker/) の回なんかも普通に勉強になる。
 
 その出自ゆえ iOS を話題にした podcast はたくさんある一方、 Android の番組は少ない。それでも二つ聞いてる。
-Android の中の人がやっている *[Android Developers Backstage](http://androidbackstage.blogspot.com/)* (略して ADB) と、コミュニティ発の *[Fragmented](http://fragmentedpodcast.com/)*。ADB はもうちょっと録音をなんとかして欲しいけれど当事者だけあって趣深い内容。Fragmented はホストのパーソナリティが辛いと思っていたら回を追うごとだんだん良くなってきた。要素技術を扱うよりゲストを呼ぶエピソードがいい。頑張っている Android アプリ開発者の話を聞くのは励まされる。
+Android の中の人がやっている *[Android Developers Backstage](http://androidbackstage.blogspot.com/)* (略して ADB) と、コミュニティ発の *[Fragmented](http://fragmentedpodcast.com/)* 。ADB はもうちょっと録音をなんとかして欲しいけれど当事者だけあって趣深い内容。Fragmented はホストのパーソナリティが辛いと思っていたら回を追うごとだんだん良くなってきた。要素技術を扱うよりゲストを呼ぶエピソードがいい。頑張っている Android アプリ開発者の話を聞くのは励まされる。
 iOS 系も一個くらい聞きたい気がする。なんかないかな。
 
 たまに聞いている *[DevOps Cafe](http://devopscafe.org/)*: 要素技術の話は全然せず、もっぱらおっさんが世間話をしている。
