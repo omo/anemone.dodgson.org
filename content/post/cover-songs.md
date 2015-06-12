@@ -76,4 +76,4 @@ Finagle をめぐる俺たちの RPC (仮題)には続きがある。少し前�
 
 ----
 
-草稿にコメントをくれた [@karino2012](twitter.com/karino2012), [@jmuk](twitter.com/jmuk) ありがとう。
+草稿にコメントをくれた [@karino2012](https://twitter.com/karino2012), [@jmuk](https://twitter.com/jmuk) ありがとう。
