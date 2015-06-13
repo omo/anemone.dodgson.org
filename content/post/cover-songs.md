@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-06-11"
 title = "転校生の本歌取"
-draft = true
+draft = false
 +++
 
 ふと思い出し書き直しの話 ([1](http://anemone.dodgson.org/2015/04/13/age-of-non-rewrite/), [2](http://anemone.dodgson.org/2015/04/09/probablistically-sacrificial/)) の続き。
