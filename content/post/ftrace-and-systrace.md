@@ -5,7 +5,9 @@ title = "FTrace と Systrace"
 draft = true
 +++
 
-FTrace は Linux カーネルのプロファイル(トレーシング)機構。Ftrace にはざっと三つの構成要素がある:
+[Systrace](http://developer.android.com/tools/help/systrace.html) を使いたいとおもい調べた記録。
+
+[FTrace](https://www.kernel.org/doc/Documentation/trace/ftrace.txt) は Linux カーネルのプロファイル(トレーシング)機構。Ftrace にはざっと三つの構成要素がある:
 1. Linux の debugfs を介して操作するトレース情報のバッファリング機構、
 2. 2. カーネル標準で用意されているいくつかの標準probe(トレーシング情報)、
 3. 3. コンパイラのプロファイリングオプションを介して全てのカーネル内関数に注入されるフック。
