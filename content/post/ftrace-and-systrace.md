@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-06-15"
 title = "FTrace と Systrace"
-draft = true
+draft = false
 +++
 
 [Systrace](http://developer.android.com/tools/help/systrace.html) を使いたいとおもい調べた記録。
