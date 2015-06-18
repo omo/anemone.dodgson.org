@@ -1,7 +1,7 @@
 +++
 Tags = []
 date = "2015-06-15"
-title = "FTrace と Systrace"
+title = "Ftrace と Systrace"
 draft = false
 +++
 
