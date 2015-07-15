@@ -2,7 +2,7 @@
 Tags = []
 date = "2015-07-13"
 title = "A Million Hello Worlds"
-draft = true
+draft = false
 +++
 
 テクノロジの流行をファッションに例えて揶揄することがある。新しいテクノロジを追いかけてばかりいるプログラマを非難し、勉強会もいいけど問題解決に頭を使えという。
