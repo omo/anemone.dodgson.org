@@ -1,3 +1,3 @@
 
-This is the source of [anemone.dodgosn.org](http://anemone.dodgson.org).
+This is the source of [anemone.dodgson.org](http://anemone.dodgson.org).
 Read me in the pretty form.
