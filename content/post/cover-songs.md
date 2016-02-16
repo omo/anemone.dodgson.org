@@ -26,7 +26,7 @@ Facebook は [Buck](http://buckbuild.com/) という Android と Java 用のビ�
 
 Twitter には [Pants](https://pantsbuild.github.io/) と呼ばれるビルドシステムがある。これも Bazel の仲間。文法もよく似ている。Pants は Scala や Python など複数のプログラミング言語および Thrift コンパイラのようなコード生成ツールを標準でサポートする。Twitter の Polyglot な性格をよくあらわしている。そして Bazel や Buck 同様大きなコードベースを扱うのが得意。Twitter の Scala エコシステムに集う企業を中心に使われてはいるものの、やはり普及の兆しは弱い。
 
-Google 自身も Blaze の亜種を持っている。Chrome は [GN](https://chromium.googlesource.com/chromium/src/+/master/tools/gn/README.md) というビルドシステムへの移行を進めている。GN は高速低機能な make 代替品 [Ninja](https://martine.github.io/ninja/) の設定ファイルを出力するメタビルドシステム。だから Buck や Pants とは少しちがう。それでも Blaze からいくつかのデザインを引き継いでいる。GN は前身の [GYP](https://chromium.googlesource.com/external/gyp/+/master/README.md) より高速で文法も簡潔なのがウリ。でも現状の Chrome ビルドが複雑すぎてまだ移行が終わっていない。Chrome 以外で使う話も聞かない。
+Google 自身も Bazel の亜種を持っている。Chrome は [GN](https://chromium.googlesource.com/chromium/src/+/master/tools/gn/README.md) というビルドシステムへの移行を進めている。GN は高速低機能な make 代替品 [Ninja](https://martine.github.io/ninja/) の設定ファイルを出力するメタビルドシステム。だから Buck や Pants とは少しちがう。それでも Bazel からいくつかのデザインを引き継いでいる。GN は前身の [GYP](https://chromium.googlesource.com/external/gyp/+/master/README.md) より高速で文法も簡潔なのがウリ。でも現状の Chrome ビルドが複雑すぎてまだ移行が終わっていない。Chrome 以外で使う話も聞かない。
 
 みな Bazel を使えばいいじゃん、といえるほど簡単な話でもなかろう。表舞台に現れるのが遅かった上にまだオープンソース化がおわっていない。今となっては Buck や Pants の得意分野で同じだけの力を発揮できるのかすら怪しい。贔屓目に言っても膝に矢を受けている。
 
