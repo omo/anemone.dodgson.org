@@ -2,6 +2,7 @@
 import sys
 import os
 import os.path
+import re
 import xml.etree.ElementTree
 from collections import namedtuple
 from bs4 import BeautifulSoup
@@ -47,10 +48,10 @@ def extract_posts(file):
     return [make_post_from(i) for i in items]
 
 def format_body(text):
-    # XXX: Get rid of the gallery link
+    text = re.sub("""\[gallery.*\]""", "", text)
     text = text.replace(image_url_prefix(), '/images/')
     text = text.replace(site_url(), '/')
-    text = "".join(["<p>" + p + "</p>" for p in text.split("\n\n")])
+    text = "".join(["<p>" + p + "</p>" for p in text.split("\n\n") if p ])
     return text
 
 def write_post(post):
