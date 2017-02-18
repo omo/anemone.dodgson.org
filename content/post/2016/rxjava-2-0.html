@@ -1,0 +1,6 @@
++++
+tags  = []
+title = "RxJava 2.0"
+date  = "2016-09-05 16:52:57"
++++
+<p>そんなのを<a href="https://github.com/ReactiveX/RxJava/tree/2.x">作っているらしい</a>。そして<a href="https://github.com/ReactiveX/RxJava/wiki/What's-different-in-2.0">後方互換製はないらしい</a>。まじで? RxJava 1.x ですらしばらく見ないうちにだいぶ変わっているというのに、ついてけないな。機能的に大きな違いは Java 9 に入る Reactive ぽい API と互換性をもたせることだというが、一方で Java 8 以前を切り捨てるわけでもないというし、いまいち立ち位置のはっきりしない買い直しであることよ。</p><p>ところで Java 9 に Reactive ぽいものを入れてきた Java は偉い。入れてきたといっても実際はインターフェイスを４つ足すだけらしく、そのインターフェイスも <a href="http://www.reactive-streams.org/">reactive-streams.org</a> なる草の根標準化運動の成果らしい。reactive-stream と同じ signature を Java 9 で提供し、reactive-stream 側が Java 9 向けバイナリで<a href="http://gee.cs.oswego.edu/dl/jsr166/dist/docs/java/util/concurrent/Flow.html"> java.util.concurrent.Flow</a> に定義されたインターフェイスを実装すれば色々ハッピー、というかんじなのだろうか。まあ Java の標準に入ってると便利なこともあるのでしょう。コレクションや Stream が Reactive のオブジェクトと interop できるとかね。</p><p>C++ にしても Java にしてもそろそろ終わるかなと思わせておきながら地味に改善を続けているのが偉い。個人的に C++ は unlearn して Java はメンテナンスモードくらいの気持ちでいたけれど、仕事でつかうにはそれなりについて行かないといけない。C++ と Java の会社に勤めている限りはこれらから抜け出すことはないのだろうなあ。</p>

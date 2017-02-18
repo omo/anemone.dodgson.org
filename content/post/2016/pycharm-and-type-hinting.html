@@ -1,0 +1,6 @@
++++
+tags  = []
+title = "PyCharm and Type Hinting"
+date  = "2016-10-08 16:35:59"
++++
+<p>静的型の国からくると Python のように型を書かない duck typing は落ち着かず、せめてドキュメント的に型をつけておきたいと感じる。そういえば Python はいつからか型注釈をサポートしたと何かで読んだ記憶がある。調べたところ、<a href="http://stackoverflow.com/questions/32557920/what-are-type-hints-in-python-3-5">3.5 から type hinting という名前で実装されている</a>らしい。適当に真似をして type hint をつけてみる。</p><p>すると <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> のコード補完が突然まともな候補を表示しはじめた。<a href="https://blog.jetbrains.com/pycharm/2015/11/python-3-5-type-hinting-in-pycharm-5/">Type Hinting をつかったコード補完</a>をサポートしているらしい。これはもうぜんぶ型つけちゃいますよ。Python3 のキラー機能と言ってよいのではないか。<a href="https://www.jetbrains.com/help/pycharm/2016.1/type-hinting-in-pycharm.html#legacy">Docstring に埋め込む書式もサポートしてるという</a>けれど、そういうのは仕事の <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a> だけでおなかいっぱいです。</p><p>またひとつ JetBrains への faith を高めてしまった。なお Python の標準ライブラリをみると特に型注釈はついていない。つけておくれ。</p><p><h3>追記</h3></p><p>Type hinting をベースとする <a href="https://github.com/python/mypy">Mypy</a> なる type checker があることを<a href="http://blog.zulip.org/2016/10/13/static-types-in-python-oh-mypy/">知った</a>。大掛かりで失敗しそうに見えるけれど、<a href="https://github.com/python/mypy/graphs/contributors">Guido van Rossum が手伝っている</a>というのでもしかしたらいい子なのかもしれない。しかし自分のレベルだとまずは linter の <a href="https://github.com/PyCQA/pyflakes">Pyflake</a> からかな。</p>

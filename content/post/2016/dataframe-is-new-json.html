@@ -1,0 +1,6 @@
++++
+tags  = []
+title = "DataFrame is new JSON"
+date  = "2016-12-04 15:00:20"
++++
+<p>これは言い過ぎだが、Data Science 的な文脈で DataFrame が JSON に近い位置にいるのはたしか。JSON と同じく特に難しいものではない。一方で知ってないと色々損をする。</p><p>JSON と同じく、DataFrame はなにかが「ちょうどいい」抽象でもある。</p><p>データ交換フォーマットや PRC の wire protocol として XML が大げさすぎたように、データ分析をするのにORM や ResultSet みたいな行指向の抽象はいまいちだし、一方で完全に型が uniform な matrix や tensor みたいのはプリミティブすぎる。DataFrame は複雑さのバランスでうまいところを突いた。</p><p>そしていちど DataFrame という抽象が定まると、その上に色々なエコシステムができる。分析、可視化、I/O などなど・・・。Pandnas の上で動くライブラリは色々あるし、R に至っては言語自体が DataFrame のためのプラットホームみたいなもんじゃん。</p><p>DataFrame と顔見知りになれただけでも R や Pandas をさわってみた甲斐があったなと思う。</p>
