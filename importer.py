@@ -27,10 +27,10 @@ def site_url():
 def is_visible(elm: xml.etree.ElementTree):
     """"""
     post = elm.find('wp:post_type', ns).text == 'post'
-    draft = elm.find('wp:status', ns).text == 'draft'
+    valid = elm.find('wp:status', ns).text not in ['draft', 'private', 'trash']
     categs = [e.get('nicename') for e in elm.findall('category')]
     do_not_publish = any([c for c in categs if c in ['toyql', 'dontpublish']])
-    return post and (not draft) and (not do_not_publish)
+    return post and valid and (not do_not_publish)
 
 def make_post_from(elm):
     title = elm.find('title').text
@@ -54,8 +54,13 @@ def format_body(text):
     text = "".join(["<p>" + p + "</p>" for p in text.split("\n\n") if p ])
     return text
 
+def to_path(post):
+    m = re.match(r"(\d+)-(\d+)", post.date)
+    yyyy, mm = m.group(1), m.group(2)
+    return os.path.join("content/post/%s/%s" % (yyyy, mm), post.slug + ".html")
+
 def write_post(post):
-    path = os.path.join("content/post/2016", post.slug + ".html")
+    path = to_path(post)
     tempalte = """+++
 tags  = {}
 title = "{}"
@@ -68,7 +73,8 @@ date  = "{}"
     dir_path = os.path.dirname(path)
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
-    open(path, "w").write(text)
+    #open(path, "w").write(text)
+    print(path)
 
 
 def extract_links(file):
