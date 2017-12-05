@@ -1,0 +1,6 @@
++++
+tags  = ["mld"]
+title = "MLD: Tensorboard and gradients"
+date  = "2017-08-06 15:38:16"
++++
+<p>Tensorboard, サンプルはみな重みを観測するばかりだけれど、<a href="/2017/07/26/link-yes-you-should-understand-backprop/">Backprop 理解しろ記事</a>を読んで以来 gradient を監視したほうが良いのではと思っていた。でも gradients って TF の外側から観測できるものなのだろうか。</p><p>とおもって調べたら <a href="https://href.li/?https://www.tensorflow.org/api_docs/python/tf/gradients">tf.gradients</a> という API を使えばいいらしい。これが TF autograd の入り口なのだね。そしてこの周辺の API を使えば Python だけで optimizer も書けそう（書かないけど）。TF, 案外 extensible につくられていた。見くびっていて悪かった。</p><p><a href="https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/4_Utils/tensorboard_advanced.py">Tensorboard で graidient を観測するサンプル</a>もあった。</p>

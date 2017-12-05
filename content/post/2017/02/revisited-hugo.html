@@ -1,0 +1,6 @@
++++
+tags  = []
+title = "Revisited Hugo"
+date  = "2017-02-18 23:33:43"
++++
+<p>Blog に記事をインポートするため Hugo を手元で動かしたら色々壊れている。細々修正。ドメインをわけて新しい hugo instance を作ろうかと一瞬思ったけれどガッツがわかなかった。CI をセットアップしたりテーマをカスタマイズしたり、面倒でやる気が起きない。</p><p>などといいつつ Hugo の<a href="https://gohugo.io/tools/">ドキュメント</a>を眺めていたら、いくつか Hugo がらみで使える SaaS が紹介されていた。まず CMS の <a href="https://appernetic.io/">Appernetic</a>. これは要するに Git(hub) をバックエンドにできる CMS ということらしい。悪くなさそう、だけど、一方で Github のサイトでもよくね？という気はする。</p><p>もうひとつは <a href="https://www.netlify.com/">Netlify</a>. Static site generator 専用 CI みたいなものらしい。CDN もついてて生成されたサイトを公開できるっぽい。今じぶんは Hugo バイナリをダウンロードしてサイトを生成し結果を S3 に push するという雑なスクリプトを書いて TravisCI を使っているのだけれど、それをやってくれるということだよな。よいのではないか。気力が湧いて新しい Hugo インスタンスを作る日が来たら試したい。</p><p>Hugo 自体は自分が anemone.dodgson.org を作った頃とくらべ格段に<a href="http://themes.gohugo.io/">テーマ</a>が増えていて感動。こんなオシャレってぃーなサイトを作る人たちが使うようになったとは、流行ってるなあ。なお自分は若者 <a href="https://twitter.com/deeeet">@deeet</a> 氏が使ってるのを見て真似しただけ。特に先見の明があったわけではい。そしてカッコいいテーマたちを選ぶガッツがなく雑な CSS を書いて終了。</p>

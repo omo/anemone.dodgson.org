@@ -1,0 +1,13 @@
++++
+tags  = ["mld"]
+title = "MLD: \"Learning TensorFlow\" Dictation"
+date  = "2017-07-18 12:33:11"
++++
+<p><a href="http://shop.oreilly.com/product/0636920063698.do">Learning Tensorflow</a> の写経を始めた。色々あそんでみるにあたり TF スキルが bottleneck に思えてきたため。頭が元気な朝の時間を写経のような低負荷な行いに使ってしまっていいのか不安だったけれどやってみると TF コード書きはまあまあ mind melding で悪くなかった。後半の分散化とか high-level API  とかは写経に値するか微妙というかたぶんいらないので、途中までやって切り上げる予定。</p><p><hr /></p><p>以下 TF コード素人感想。というか不満点。こうした不満が大局的に的を射ているとは思っていないけれど、まあ入門時の気分を書き留めておくとあとから見て面白いかもな、ということで。</p><p>よいところ:</p><p><ul>
+    <li>Computation graph をつくって評価するというアプローチ自体はまともだなと思う。というか他のデザインがすぐには思いつかない。 Torch とかは違うというけれど。</li>
+    <li>グラフ構築の API にきちんと operator overload をつかい、かつ numpy 互換ぽくしたのは偉かった気がする。</li>
+</ul></p><p>不満:</p><p><ul>
+    <li>計算グラフの変数 (tf.Tensor) と評価後の値の変数 (numpy array) がまざりがちで辛い。この2つはある種の鏡像なのだから、その対称性や、逆に生きている世界が別である事実はデザインの上で強調されるべきだったと思う。</li>
+    <li>Python の with が過剰。 Device とか引数にわたせばよくね？同じことは Graph にも言える。特に辛いのが Session の closer に with をつかっているところ。Session を使ったコードブロックは膨らみがちなため、インデントされたコードの範囲がどんどんでかくなっていく。これが Jupyter だと辛い。まあ Jupyter では InteractiveSession を使えということなのかもしれないが。あと with に頼らざるをえないのは Python に無名関数やブロック記法がないせいなので TF のせいじゃなくて Python のせい、とも言える。ここでブロックが使えたら Tensor と Numpy がまざる問題もだいぶ軽減されたのにね...</li>
+    <li>Session.run() の feed_dict が global() でひっこぬく前提の作りになっている。変数名と Tensor の 名前が混じり合って辛い。これも Python 側での名前と Tensor name を一致させる努力をしてほしかった。Graph の __setattr__/__getattr__ を使うとかさ。やりようはあるじゃん？</li>
+</ul></p><p>TF は割と lower-layer な抽象のはずなのに中途半端に API usability をがんばっているのが違和感なのかもしれない。最終的には何らかの higher-level API を使いましょう、という話なのだろうけれど、たとえば Keras みたいにガッチリ下のレイヤを隠してしまうのが常に良いのかはわからない。むしろ best practice を encourage するような薄い層をかぶせるくらいでいい気もする。</p><p>あとどこまで Jupyter Lab(Notebook) で書いてどこから  .py を書くべきなのかもわからない。training を Jupyter Lab から実行するのはなんとなく脆弱でイマイチにおもえる。が、一方でモデルをつくったりデータを除いたりするのは対話的環境の方が嬉しい気もする。データ整形と可視化だけで機械学習のない Data science ならまあまあ全部 Notebook でも良いと思うんだけど。このへん世間の人がどうしているのか知りたい。</p>

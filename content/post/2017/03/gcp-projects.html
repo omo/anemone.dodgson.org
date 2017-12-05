@@ -1,0 +1,6 @@
++++
+tags  = []
+title = "GCP Projects"
+date  = "2017-03-30 16:11:30"
++++
+<p>Google Cloud には AWS にない <a href="https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#projects">Projects</a> という概念がある。これがいまいちよくわからない。</p><p>課金などはこの project 単位で計算される。だから予算管理とかに使えるのはわかる。Project をまるごと消すこともできるので、いわゆるプロジェクトに紐付けることもできる。けれど個人だとどういう単位で作るのが良いのか、best practice がわからない。</p><p>ドキュメントは "Use Project as a boundary for policies" と言っているが、個人用途だとこれといった policy はない。Firebase で project をつくると GCP にも同じ名前の project ができる。むかしは App Engine のアプリをつくっても project ができた。なにかアプリやサービスをつくる、みたいなときには新しい Project を作るのが自然そう。</p><p>ではたとえば TensorFlow 用に一時的に上げたり下げたりする速い VM が欲しいとか、Chromebook からログインして使う常時上げとく端末が欲しいとか、GCP の機能を実験したいとか、そういうアドホックな用途にはどういうプロジェクトを持つのが良いのか。</p><p>今は sandbox という名前の project があり、これを使いまわそうとしている。実験と生活に使うVMのprojectを混ぜるのはやや気持ちがわるい。一方で実害はない気もするし、細かく分けると <a href="https://cloud.google.com/sdk/downloads">gcloud</a> コマンドが不便になる。やはり当面は sandbox 一本で行こうかな。</p><p><hr /></p><p>AWS にない概念があると迷うのは AWS がよくできているからなのか自分が GCP native でないからなのか。特に GCP native になりたいわけではないけれど、どうせ使うなら正しい使い方が知りたいもんです。</p>

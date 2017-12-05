@@ -1,0 +1,6 @@
++++
+tags  = ["mld"]
+title = "MLD: Batch Normalization"
+date  = "2017-05-16 21:26:32"
++++
+<p><a href="https://arxiv.org/abs/1502.03167">元ネタ</a>を読む。少しはわかった。なぜこれがすごく効くのか数学的に理解できたかというとまったくそんなことはないけれど、少なくともなにをしているかはわかったはず。大局的になんかするわけではなく、 BN のレイヤを挟むだけの局所的なものだとわかったのはよかった。単に normalize するだけでなく、その normalization を cancel するような謎のパラメタを学習させるところがすごいというか、ちょっと狂ってるなと思う。</p><p>それにしても実験結果が豪華。Dropout を過去のものにする(こともある)と主張するのもそれなりに説得力がある。ただ CNN の場合はこうしろだの色々実用上は繊細なところがある様子も伺える。使うとなったら真面目に読み直さないとダメそう。というかまあ、サンプルをコピペするんだろうな。</p><p>チートがてら <a href="https://github.com/tensorflow/tensorflow/blob/HEAD/tensorflow/python/layers/normalization.py">TensorFlow の実装</a>をみてみたら辛い感じ・・・。TF 固有の読みづらさは差し引くとして、まず <a href="https://arxiv.org/abs/1702.03275">Batch Renormalization</a> という最新の成果が雑に突っ込まれ可読性を損ねている。そして mean と variance を moving average として更新している。え、そんな話だったっけ・・・？と思って論文を読みなおすとサラっとかいてあった・・・いや<a href="https://stats.stackexchange.com/questions/219808/how-and-why-does-batch-normalization-use-moving-averages-to-track-the-accuracy-o">別の話</a>か・・・いずれにせよコードみないとわからんだろこれ・・・。しかし moving average で内部状態が変化するような layer の微分可能性とかどうなってるんだろうか。まったくなぞ。</p><p><a href="https://github.com/tensorflow/tensorflow/blob/cd2789e5e771fd01fa4bc3f00ae93f089ed30b65/tensorflow/python/ops/nn_impl.py">コアの実装</a>はシンプルだけど、いずれにせよ自分のにわか TF 力では歯が立たず。まあそのうち出直します。</p>

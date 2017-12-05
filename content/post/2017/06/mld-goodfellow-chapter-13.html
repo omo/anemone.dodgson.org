@@ -1,0 +1,6 @@
++++
+tags  = ["mld"]
+title = "MLD: Goodfellow, Chapter 13"
+date  = "2017-06-09 08:23:41"
++++
+<p><a href="http://www.deeplearningbook.org/contents/linear_factors.html">Linear Factor Models</a>.</p><p>突然難しくなった...</p><p>PCA みたいに feature extraction をするモデルのうち linear なものたちとして Independent Component Analysis, Slow Feature Analysis, Sparse Coding を紹介する。わからん。ICA は <a href="https://arxiv.org/abs/1404.2986">[1404.2986] A Tutorial on Independent Component Analysis</a> でそもそもどういう話なのかを学び、ML 的文脈での解釈は <a href="http://cs229.stanford.edu/notes/cs229-notes11.pdf">Ng 師匠の notes</a> で理解(師事してません)。 Sparse Coding は全然わからんけれど、あまり流行ってないといことなのでサボって無視。</p><p><hr /></p><p>こういう unsupervised な feature extraction はある種の generative model と解釈することができる。なぜなら extract した feature を model が想定する probability distribution から draw した sample で重み付けして足し合わせれば data を generate できるから。</p><p>こうした素朴(=Linear)な generative モデルから話を始めつつ、だんだんと洗練された手法へと話を進め、最終的には GAN にたどり着ける！はずだ！と信じて、わからないなりに読み進めてる。しかし先行きだいぶ不安。</p><p>なお ICA は <a href="http://scikit-learn.org/stable/auto_examples/decomposition/plot_ica_blind_source_separation.html">sk-learn に実装が入っており</a>、普通に便利げ。</p>

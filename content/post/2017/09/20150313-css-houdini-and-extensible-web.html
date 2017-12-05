@@ -1,0 +1,11 @@
++++
+tags  = ["salvation"]
+title = "2015/03/13: CSS Houdini \u3068 Extensible Web"
+date  = "2017-09-11 13:16:27"
++++
+<p>WebKit contributors meeting の Wiki を見ていたら "<a href="http://trac.webkit.org/wiki/March%202015%20Meeting">CSS Houdini</a>" という単語が出てきて、なんだそりゃと思ってちょっと調べてみる。</p><p>と CSS とレイアウトやレンダリングに imperative な API をつけようというウェブ標準話らしい。こんなのやってんだな。WebKit で話がでるくらいだから Google だけでなく MS, Mozilla, Apple も巻き込めており、出だしは順調げ。まあ問題が超絶手強いので先は長そうだけど、がんばってほしいもんです。</p><p><ul>
+    <li><a href="http://dev.w3.org/houdini/">http://dev.w3.org/houdini/</a></li>
+    <li><a href="https://wiki.css-houdini.org/">https://wiki.css-houdini.org/</a></li>
+    <li><a href="http://trac.webkit.org/wiki/March%202015%20Meeting">http://trac.webkit.org/wiki/March%202015%20Meeting</a></li>
+    <li><a href="http://dev.w3.org/houdini/box-tree-api/">http://dev.w3.org/houdini/box-tree-api/</a></li>
+</ul></p><p>こうやって話が進むのを見ると、Extensible Web Manifest は結構良い宣言だったのではと思う。Alex Russel の一味はいい仕事をした。Web Components の仕事は色々辛かったけれど、こういう発展の萌芽となったと思えばまあ、報われないでもない。</p><p>Alex Russel が Web Components (当時はコードネームで呼ばれており、この名前がついたのはちょっとあと)とか言い出したのは 2011 年。ある朝ミーティングに呼び出されて VC 越しで話を聞き、入社して日が浅かった自分は「次はこれをやれってことなんだな」と理解して何となく Shadow DOM まわりの実装を手伝い始めた。今思えばあれは単なる売り込みであって、別に手伝わなくても良かったのだが。(基本的にそういうトップダウンの任命はない。実際、同席した同僚はスルーしていた。）</p><p>Web Components は当初それほど extensibility を強調してはおらず、むしろ「俺はこうやって JS ライブラリを書きたいのにかけないのはおかしい」というやや中二っぽいフラストレーションに導かれていた（ように見えた）。クールに書きたいその気持ちを突き詰めた結果、APIのレイヤリングが狂ってるのがおかしいからそれをなんとかすべきという主張に辿り着き、Extensible Web のアイデアが生まれたのだろう。そして、高レベルな APIから作ると失敗した場合にダメージがでかい（ウェブ標準は引き返せない）ことだし低レベルなAPIから揃えていきましょうという合意が生まれ、Service Workers が生まれ、Web Animations のドラフトからは当初含まれていた SMIL みたいなマークアップ定義が消えた。CSS Houdini も「実装を晒しすぎない程度に低レベルな API を定義しよう」というメガネでみると自然に見えると思う。</p><p>こうした学びの代償として Web Components には「クールに書きたい」の残滓があり、それらはチームを苦しめた/苦しめている。Shadow DOM の特別なセレクタ、宣言的な “Distribution” のコンセプト、あとは HTML Imports まるごと。こいつらは強力な機能なのだが、特にブラウザの低レベルな API を公開してはいない。だから仕様の議論も終わらない(好みが入り込みやすいから)し、実装も複雑になったりする。最初から Extensible Web のアイデアがはっきりしていたのなら、また違ったものができたに違いない。とはいえ the sail has shipped なのだった。</p><p>Extensible Web の視点に経つと Polymer の役割にも功罪ある。API の実用性をドッグフードして弱点を暴き出すのを手伝った一方、API の使い勝手に重心を動かしもした。先送るはずだった「クールさ」を再びプロジェクトに持ち込んだ。結果としてチームは API からクールさを殺すことが出来なかった。</p><p>もっともこれは Polymer が悪いというより、ユーザの要求をプラットホームの視点で解釈しなおすことができなかった開発者（自分とか）の責任という方が筋が通っている。そこはごめんなさいというしかない。ごめんなさいね。ほんとに。僕は疲れ果てて撤退しちゃったけど、まだやってる人たちは後始末のために色々考えてると思います。</p>

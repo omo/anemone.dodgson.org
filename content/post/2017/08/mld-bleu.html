@@ -1,0 +1,6 @@
++++
+tags  = ["mld"]
+title = "MLD: BLEU"
+date  = "2017-08-10 14:02:17"
++++
+<p><a href="https://en.wikipedia.org/wiki/BLEU">Wikipedia</a>, <a href="http://www.aclweb.org/anthology/P02-1040.pdf">Paper</a>.</p><p>機械翻訳のスコア付け方法。スコアは 0 から 1 の間になるといっているけれど、 NMT の論文たちはもっと謎の数字 (30 とか) になっている。なんなの... よくベンチマークにでてくる <a href="http://www.statmt.org/wmt17/translation-task.html">WMT のサイト</a>をみると <a href="ftp://jaguar.ncsl.nist.gov/mt/resources/mteval-v13.pl">NIST BLEU Scorer</a> を使えとかいてある。これが謎の数字の source of truth なのだろうか。そして一部の翻訳データは Yandex など企業が提供しているのだね。日本の景気のいい会社も J-E のデータを提供して researcher が日本語でテストできるようにしてほしいもんです. French だの German だの今時どうでもいいじゃん。Japanese もどうでもいいっちゃいいけど自分的には重要。</p><p>BLEU 自体は ngram を使うなどよく考えられた指標だなと思いました。</p>

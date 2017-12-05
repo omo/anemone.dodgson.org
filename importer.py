@@ -3,6 +3,7 @@ import sys
 import os
 import os.path
 import re
+import json
 import xml.etree.ElementTree
 from collections import namedtuple
 from bs4 import BeautifulSoup
@@ -63,18 +64,18 @@ def write_post(post):
     path = to_path(post)
     tempalte = """+++
 tags  = {}
-title = "{}"
+title = {}
 date  = "{}"
 +++
 {}
 """
     tags = "[" + ",".join(['"' + t + '"' for t in post.tags]) + "]"
-    text = tempalte.format(tags, post.title, post.date, format_body(post.body))
+    text = tempalte.format(tags, json.dumps(post.title), post.date, format_body(post.body))
     dir_path = os.path.dirname(path)
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
-    #open(path, "w").write(text)
-    print(path)
+    open(path, "w").write(text)
+    #print(path)
 
 
 def extract_links(file):

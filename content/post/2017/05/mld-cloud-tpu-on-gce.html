@@ -1,0 +1,6 @@
++++
+tags  = []
+title = "MLD: Cloud TPU on GCE"
+date  = "2017-05-21 19:02:30"
++++
+<p>I/O の talk より: <a href="https://www.youtube.com/watch?v=OzAdKMPgUt4">TensorFlow Frontiers</a></p><p>TensorFlow がらみの新しい話。中でも <a href="https://cloud.google.com/tpu/">Cloud TPU</a> を GCE で使うデモがあった。I/O では Cloud TPU を大々的に売り込んでいたけれど、どうやってエンドユーザに公開するのか疑問だった。ハードウェアの仕様も非公開だしドライバのバイナリみたいのもなさそう。どう使うの？</p><p>デモによると、ユーザはまず専用のイメージの指定などしかるべきオプションで GCE のインスタンスをつくる。するとそのインタンスでは分散 TensorFlow のサーバみたいのが動く。なのでコードは GRPC を使った TensorFlow 標準の分散 API を使ってそのサーバにアクセスすればよい。という感じらしい。なるほど。</p><p>分散 TF をよくわかってないのでトレーニングデータを誰が読むのか想像がつかないけれど、もし remote node が直接 GCS/S3 あたりからデータを読めるなら Jupyter や Tensorboard は手元の laptop で動かし計算資源だけ GCE とかができるようになるかもしれない。期待。</p><p>更に高望みをするなら、将来的には fully managed なサービスとしてエンドポイントに接続したら適当に TensorFlow の計算資源が割り当てられるようになってほしいなあ。TensorFlow は Hadoop みたいな奴らと違い分散先では任意コードを実行できない。その点では BigQuery などの MPP に近いで multi-tenancy にやさしい。やる気になればできるような気もする。まあ計算資源の量を細かくコントロールしたいぶん MPP よりは大変そうだけれど。</p><p>そんな日に備えて TensorFlow のチュートリアルを再開しないとなあ・・・。</p>

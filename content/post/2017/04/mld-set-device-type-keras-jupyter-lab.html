@@ -1,0 +1,12 @@
++++
+tags  = ["mld"]
+title = "MLD: Set-Device-Type, Keras, Jupyter Lab"
+date  = "2017-04-02 21:22:08"
++++
+<p>ML 入門 Diary 略して MLD. 実際は ML というか NN だけど。</p><p>ここ数日で GCE で Jupyter とかをする用のインスタンスの provisioning 自動化をした。</p><p><ul>
+    <li>前回 AWS でやっていた時は Vagrant をつかっていたけれど、今回は GCE の <a href="https://cloud.google.com/compute/docs/startupscript">Startup Script</a> と若干の手動作業に移行した。Vagrant は大げさ過ぎることに気がついたため。サーバの deploy と違って Jupyter 環境にはどのみち SSH でログインして色々作業するので、完全に自動化しなくてもまあいいかな、と思うに至った。</li>
+    <li>Python は pyenv のみで virtualenv はナシ。環境を作り直したい時は VM ごと作りなおせば良いと割り切る。virtualenv って activate とかが面倒だし。</li>
+    <li>GPU の有無は、いちおう GPU を使えることは確認しつつ最初は CPU だけにしておく。お金をけちるため。</li>
+    <li>GCE はインスタンス構築後に <a href="https://cloud.google.com/sdk/gcloud/reference/beta/compute/instances/set-machine-type">device type (CPU 数とか) を変えられる</a>ことに気づいた。各種準備などをしている時はCPU数を減らし、トレーニングを回す段になったら CPU を増やす、とかができる。残念ながら GPU の付け外しはできない。そのうちできるようになると期待。データは独立した permanent disk に置きインスタンスを作りなおすでも理論上はいいんだけど、コマンド一行で変更できるならその方がラク。</li>
+    <li>Jupyter notebook でなく <a href="https://github.com/jupyterlab/jupyterlab">Jupyter Lab</a> を試している。荒削りながら Koding をしょぼく軽くしたような感じで、けっこう良い。Notebook 機能だけでなくテキストエディタとターミナルがブラウザからさわれるようになる。上で SSH すると書いたけれど、実は Jupyter Lab の起動までを全部自動化した方がいいかもしれない。オープンソース JS プログラマは Atom とかほっといて Jupyter Lab の開発を手伝って欲しいもんです。</li>
+</ul></p><p>作った環境の使用を兼ねて Keras をさわってみる。といってもサンプルをコピペして動かしただけ。TF を直に触るよりはだいぶラク。自分で shape を計算する手間がだいぶ減るし、単純にコード量も少ない。自分がクールな ML アルゴリズムを発明する日は来ないだろうという現実を踏まえると、このレイヤからプログラミングを始めても良い気がする。アルゴリズムへの理解は深まらないかもしれないけれど、実際に動かすまでの距離は短い方がやる気を出しやすいからね。</p><p>一方で、自分は Keras が面倒を見てくれないレイヤにも苦手なものが多いと気付く。ML な基本的な作業、たとえばデータの前処理、精度の評価、hyperparameter の探索など。前ちらっと Kaggle 入門を試した時の理解によるとそのへんは <a href="http://scikit-learn.org/stable/">sklearn</a> が面倒を見てくれるっぽい。そのうち入門しないといけなそう。</p>

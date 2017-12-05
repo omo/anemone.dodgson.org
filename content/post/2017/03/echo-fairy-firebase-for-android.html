@@ -1,0 +1,6 @@
++++
+tags  = ["ef"]
+title = "Echo Fairy: Firebase for Android"
+date  = "2017-03-18 21:29:48"
++++
+<p>Crash reporting と簡単な analytics のために入れてみる。いれるだけなら<a href="https://firebase.google.com/docs/android/setup">すごい簡単</a>で感心。</p><p>特に API key の扱いがよくできている。コンソールから google-services.json というファイルをダウンロードしてきて、それをアプリコードのディレクトリに置く。そして build.gradle で Firebase の plugin を有効にする。するとあら不思議、自分のコードには API キーだのなんだのを入れなくてもなんとなくgoogle-services.json の値が使われる。なのでこの JSON ファイルを .gitignore しておけばうっかりキーを git の履歴などにいれてしまう心配がない。</p><p>プラグインはどうやってこのなんとなくを実現しているのか。build/ 以下の生成物を覗くと app/build/generated/res/google-services/debug/values/values.xml というファイルがあり、API キーが埋め込まれていた。つまりリソースを生成していた。妥当。</p><p><hr /></p><p>Firebase 概ねいいやつなんだけど、データベースの値段が高いよなあ。リアルタイムじゃなくていいから Datastore  くらいの価格付けにしてほしい・・・と <a href="https://firebase.google.com/pricing">pricing のページ</a>をみていて気づいた: 無料枠では Analytics データへの BigQuery は使えない！それがキラー機能なのに。残念・・・まあ query が必要なほど使われる気はしないけれど。</p><p>&nbsp;</p>

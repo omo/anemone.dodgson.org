@@ -1,0 +1,6 @@
++++
+tags  = ["mld"]
+title = "MLD: Goodfellow, Chapter 16"
+date  = "2017-06-21 13:39:16"
++++
+<p><a href="http://www.deeplearningbook.org/contents/graphical_models.html">Structured Probabilistic Models for Deep Learning</a>.</p><p>いよいよサーベイみたいなかんじでささっと済ましてくるなあ。抽象的かつ概要的な話が多く雲をつかむような気分・・・。</p><p>Variational inference, D-separation, structure learning などなど新しくて難しい概念をバンバンつっこんでくるが全然 connecting dots されない。この先の章で使うらしいけれど、使われると死ぬ気がする。</p><p>最後にでてきた RBM は NN4ML でやったおかげでなんとなくわかった。</p><p>そろそろわからなくなりそうという不安を抱え続け、しかし概要的な話ばかりで決定的にわからない瞬間に出会わないまま 16 章も終了。いまいち張り合いがない。</p><p><hr /></p><p>RBM, 世の中ではほんとにつかってんのかなとライブラリを探したら <a href="http://scikit-learn.org/stable/auto_examples/neural_networks/plot_rbm_logistic_classification.html">sklearn</a> に入っていた。がしかし、こういう切り口では使わないではなかろうか。もうちょっと stack とかしたいんじゃないの？全然 modularity ないよねこれ。</p><p>ちょっとぐぐると TF で RBM したよ、みたいなサンプルがちょこちょこある。そっちが正しいアプローチなきがする。自分で書いて、Optimization だけ TF に任せる的な。</p>

@@ -1,0 +1,6 @@
++++
+tags  = ["android"]
+title = "AutoFactory"
+date  = "2017-08-22 11:25:35"
++++
+<p><a href="https://github.com/google/auto/tree/master/factory">AutoFactory</a> という factory コードを自動生成するライブラリがあり、仕事で使っている。</p><p>AutoFactory は Dagger や Guice などとセットで使う。DI したいけれど Dagger のコンテクストが必要な依存オブジェクトをすべて揃えられないとき、手元にあるオブジェクトだけを inject した factory をつくっておく。そして後から残りの引数を factory に渡し、最終的に欲しいインスタンスを create() する。</p><p>要するに関数としての constructor というか new に partially applied な関数としての factory のコードを生成するのが AutoFactory の役割。コードベースが Dagger heavy になるにつれこういうものが欲しくなるのはわかるしまあ便利なのだが Java のダメさを象徴してもいる。</p><p>Java はむかしよく FactoryFactoryFactory と馬鹿にされた。Functional POV だと FactoryFactoryFactory は単なる高階関数である。高階関数にある程度の認知的負荷があるのは仕方ない。FactoryFactoryFactoryを笑うものは関数型の奴らも笑えるのか。</p><p>と以前はおもっていたけれど FactoryFactoryFactory のダメさはまさに関数でない点だなあ。関数でないがゆえに、というか Java が関数的な道具立てを欠くがゆえに、コンストラクタに引数を partial application して Factory をつくったり、そこから更に FactoryFactory を作ったりすることが出来ない。逆に FactoryFactoryFactory を uncurry して必要な引数をまとめて渡す、とかもできない。だから仕方なくコード生成に頼る。この functional composability の欠落が Java の残念さだと今はわかる。</p><p>一方で今 Java を書くのは 15 年前に C を書くようなもので、そういう残念さは所与のものとしてつきあっていかないと精神衛生を保てない。だから AutoFactory も <a href="/2017/05/18/kotlin-and-conceptual-backporting/">conceptual backporting</a> だと思って付き合えば良い。</p>

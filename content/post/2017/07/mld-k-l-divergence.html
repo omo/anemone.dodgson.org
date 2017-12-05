@@ -1,0 +1,8 @@
++++
+tags  = ["mld"]
+title = "MLD: K-L Divergence"
+date  = "2017-07-12 20:15:58"
++++
+<p><a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback–Leibler divergence</a>. これがさっぱりわからず喉につかえていたため、 Amazon でみつくろった易しい情報理論の本を読んでいた: <a href="https://www.amazon.com/Information-Theory-Introduction-James-Stone/dp/0956372856/">Information Theory: A Tutorial Introduction</a>. 200 ページの薄い本。150 ページあたりでようやく K-L Divergence 登場。</p><p>K-L Divergence はこんなかたち...といってもこのブログは数式をつかえないため latex-like にかくと...</p><p><pre>D_{KL}(P(X), Q(X)) = \int_{x} p(x) log \frac{p(x)}{q(x)} dx</pre></p><p>これ以前みたときはさっぱりわからんかったけど、entropy を復習してからみるとなんとなく親しみのある形をしている。(そしてむかしむかし卒業論文とか書いてた頃はこの表記を脳内でレンダリングできたはずだが、今みるとぜんぜん読めませぬ。これは <a href="http://quicklatex.com/">quicklatex.com</a> で確認しつつ書いてます。)</p><p>これをちょっと変形すると腑に落ちやすくなる。</p><p><pre>D_{KL}(P(X), Q(X)) =
+   \int_{x} p(x) log \frac{1}{q(x)} dx
+ - \int_{x} p(x) log \frac{1}{p(x)} dx</pre></p><p>ひとつ目の項が P と Q の <a href="https://en.wikipedia.org/wiki/Cross_entropy">cross entropy,</a> ２つめの項が P の entropy になる。 つまり cross entropy が単一の entropy よりどれだけ大きいかの指標が K-L Divergence.</p><p><pre>D_{KL}(P(X), Q(X)) = H(P, Q) - H(P)</pre></p><p>なぜ cross entropy がこの形なのか(とくになぜ非対称なのか)は釈然としていないけれど、一方で Q = P のとき最小になる点を鑑みると有用性はわかる。そして NN とかの loss function だと P は training data で固定だから K-L Divergence を最小化するには cross entropy を最小化すればいい、というのもわかる。</p><p>というかんじで、完全に腑に落ちていないとはいえもともとは cross entropy の式の根拠がさっぱりわかっていなかったのに比べると表面的にせよ理解は進んだ。そして大した話ではないこともわかった。一方で entropy はけっこう機械学習っぽいこともわかった。150 ページを費やして得られる知識としては満足。せっかくなので残り 50 ページくらいもいちおう読む予定。</p>

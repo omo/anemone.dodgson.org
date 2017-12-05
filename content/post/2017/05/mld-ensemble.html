@@ -1,0 +1,6 @@
++++
+tags  = ["mld"]
+title = "MLD: Ensemble"
+date  = "2017-05-07 11:51:13"
++++
+<p><a href="http://www.deeplearningbook.org/contents/regularization.html">Goodfellow 7.11</a> の (7.35) がなぜ ensemble が機能するかを説明している。要するにエラーの式の中に covariance が出てきてそれが (良い ensemble model では) 小さくなるから、という話をする。(e0+e1+e2)^2 を図に書いてみると、斜線でない部分の値が covariance の力で本来の面積より小さくなる。</p><p><img class="alignnone size-full wp-image-5397" src="/images/2017/05/img_20170505_070146884.jpg" alt="IMG_20170505_070146884" width="3264" height="1836" /></p><p>いまいち納得がいかなかったけれど、考えているうち個々の e が確率変数だから単純な実数のようには振る舞わない事実に段々と納得してきた。確率勉強しないとな・・・。</p>

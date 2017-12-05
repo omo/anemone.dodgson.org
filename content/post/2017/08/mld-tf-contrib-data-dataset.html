@@ -1,0 +1,6 @@
++++
+tags  = ["mld"]
+title = "MLD: tf.contrib.data.Dataset"
+date  = "2017-08-10 21:17:17"
++++
+<p><a href="http://shop.oreilly.com/product/0636920063698.do">Learning TensorFlow</a>, データパイプラインの章は「このへんの API は変わりそうだけど一応紹介しとくね」と書いてあり、案の定 1.2 から新たに <a href="http://shop.oreilly.com/product/0636920063698.do">Dataset</a> がはいった。これが新しい標準になるということらしいので、 Learning TF のデータ IO の章は飛ばし Dataset API を軽く試してみる。まあまあ良さそう。</p><p>どちらかというといまいちなのは推薦ファイルフォーマットとされている <a href="https://www.tensorflow.org/versions/r1.3/api_guides/python/python_io">TFRecord</a> および <a href="https://github.com/tensorflow/tensorflow/blob/r1.2/tensorflow/core/example/example.proto">tf.train.Example</a>. まあ TFRecord はいい。しかしこの Example, ひどくね？ Proto むきだしで、これを Tensor と相互変換する方法がロクにない。書き込みが多少面倒なのは我慢するけれども、読む方はもっとスカっと読ませてくれよ・・・・。</p><p>こうした推薦フォーマット/API にのっとるとマルチスレッディングの恩恵が受けられるというけれど Proto のパースと整形のために <a href="https://www.tensorflow.org/api_docs/python/tf/py_func">tf.py_func</a> を挟まざるを得ず、これほんとに off-loading されるのかね。理論上はたとえばグラフの評価は完全に C++ だからそのあいだ GIL を手放していれば別スレッドで Python コードが動けるわけだけれども、ちゃんとそのへんがんばってるの？なぞ。</p><p>適当な Proto  じゃなくふつうに HDF5 とかをサポートして、ファイルから Tensor へ直行できるようにしてほしいなあ。</p>

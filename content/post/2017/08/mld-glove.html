@@ -1,0 +1,6 @@
++++
+tags  = ["mld"]
+title = "MLD: GloVe"
+date  = "2017-08-29 08:51:26"
++++
+<p>via <a href="https://nlp.stanford.edu/projects/glove/">GloVe: Global Vectors for Word Representation</a>, <a href="https://nlp.stanford.edu/pubs/glove.pdf">paper</a>.</p><p>授業にでてきたがよくわからなかったので復習。最終的な式変形の根拠は相変わらずわからないが、モデル自体はわかった。occurrence matrix を計算してから regression を解く。たしかにこの方が効率良さげ。</p><p>TensorFlow の実装ないかなーと眺めていたら <a href="https://twitter.com/stanfordnlp/status/731420444184743936?lang=en">@stanfordnlp の tweet</a> が参照している <a href="https://github.com/GradySimon/tensorflow-glove">github repo</a> があった。コードも単純げ。まあモデルが単純だからね。TF  も自社発の word2vec だけじゃなく glove もサンプルに入れといてほしいもんです。Innovation happens elsewhere の精神が足らなくて心配。</p><p>&nbsp;</p>

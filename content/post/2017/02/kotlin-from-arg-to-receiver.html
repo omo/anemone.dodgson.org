@@ -1,0 +1,10 @@
++++
+tags  = []
+title = "Kotlin: From Arg To Receiver"
+date  = "2017-02-22 20:34:27"
++++
+<p>Kotlin 小技。メソッド呼び出しで receiver が null かどうかのチェックは safe call で簡単に書けるけれど、引数をチェックして null なら呼ばないという記法はない。そこで引数を receiver にするラッパを書けば良い。</p><p><pre>fun String.addToList(list: MutableList&lt;String&gt;) = list.add(this)</p><p>val list = ArrayList&lt;String&gt;()
+val hello = if (0 &lt; args.size) "Hello" else null</p><p>// Instead of
+// if (hello != null)
+//   list.add(hello)
+hello?.addToList(list)</pre></p><p>メソッドチェインぽいのを書きやすくなって良い。なお extension method の receiver を nullable にするという狂った機能もあるのだけれど、呼び出し側で足りることが多そう。</p>

@@ -1,0 +1,16 @@
++++
+tags  = ["mld"]
+title = "MLD: Model class"
+date  = "2017-08-09 20:59:55"
++++
+<p>モデル定義 DSL と評価結果が混ざる問題は、今のところモデル定義を適当なクラスに押し込んでお茶を濁している。</p><p><pre>class Model(object):
+    def __init__(self):
+        self.graph = tf.Graph()
+        with self.graph.as_default():
+            self.x = tf.placeholder(tf.float32, [None, 784], name='x')
+            self.W = tf.Variable(tf.zeros([784, 10]), name='W')
+            self.y_true = tf.placeholder(tf.float32, [None, 10])
+            self.y_pred = tf.matmul(self.x, self.W)
+            self.loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=self.y_pred, labels=self.y_true))
+            self.train = tf.train.GradientDescentOptimizer(tf.constant(dtype=tf.float32, value=0.5, name='weight')).minimize(self.loss)
+            self.accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(self.y_true, 1), tf.argmax(self.y_pred, 1)), tf.float32))</pre></p><p>フラットに置いておくよりはマシなのでこうしているけど、もうちょっとマシな方法ないのかなーと思ってしまう。クラスでなく関数にすると self がきえてすっきりする一方、公開したい tensor に名前をつけるのがめんどくさくなる。</p><p>今あまり追求しても overkill な気がするし独自の流儀を開発するのもやだから、誰かなんとかしておくれ。それなりにまとまった規模のある TF プロジェクトを覗いてみるべきなのかもなあ。</p><p>&nbsp;</p><p>&nbsp;</p>

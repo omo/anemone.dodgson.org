@@ -1,0 +1,11 @@
++++
+tags  = ["mld"]
+title = "MLD: Goodfellow, Chapter 10"
+date  = "2017-05-28 16:01:50"
++++
+<p><a href="http://www.deeplearningbook.org/contents/rnn.html">Sequence Modeling: Recurrentand Recursive Nets</a>.</p><p>それなりに面白かった。Sequence-to-Sequence とかもでてきて、おおコレが話にきいていたアレか、と思うなど。</p><p>CNN も RNN もなんとかして parameter sharing をしつつ構造に関する prior knowledge をネットワークに埋め込もうとしているという点が腑に落ちたのはこの本を読んで良かったところだと思う。系統だった理解というやつ。のはず。</p><p>RNN, 前にやった時は結局どうやってデータを食わすのかよくわからず frustration が溜まったけれど、その後 Keras や TF のサンプルを眺めてデータは適当にぶったぎって固定長（未満）にそろえてつっこむ、ということを理解して以来 demythify された。そういう practical matter は理論的な本でも一応説明してほしいよなあ。</p><p>そのほか:</p><p><ul>
+    <li>Attention mechanism については 12 章までお預けだそう。</li>
+    <li>なぜ RNN は ReLU でなく tanh なのかなぞ。（<a href="https://www.quora.com/Why-do-many-recurrent-NNs-use-tanh">Quoraに同じ質疑応答あり</a>)</li>
+    <li>LTSM, Leaky Unit とかいって NN の非線形性を捨て線形な成分を混ぜて記憶とか言い張っているが、なんでそれでうまくいくのかなぞ。</li>
+    <li>最後の方にでてきた Neural Turing Machine の話はさっぱりわからず。要復習。<a href="https://arxiv.org/pdf/1410.5401.pdf">Arxiv</a>, <a href="https://www.technologyreview.com/s/532156/googles-secretive-deepmind-startup-unveils-a-neural-turing-machine/">解説</a>, <a href="https://blog.acolyer.org/2016/03/09/neural-turing-machines/">解説</a>.</li>
+</ul></p>

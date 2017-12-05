@@ -1,0 +1,6 @@
++++
+tags  = []
+title = "ONNX"
+date  = "2017-09-08 08:32:11"
++++
+<p>via <a href="https://research.fb.com/facebook-and-microsoft-introduce-new-open-ecosystem-for-interchangeable-ai-frameworks/">Facebook and Microsoft introduce new open ecosystem for interchangeable AI frameworks – Facebook Research</a></p><p>NN のモデル交換用フォーマットを FB と MS が共同で策定した(する)という話。お互いにモデルのパース合戦をするのに疲れたのか。こういうのが出て来るまでにはもう 1-2 年かかるとおもってたけど、案外早かった。MS はともかく FB がついてるのは期待できる。彼らも PyTorch と Caffe の相互運用をラクにしたいだろうからね。</p><p><a href="https://github.com/onnx/onnx">コード</a>を覗くとほとんどからっぽで、いまのところ実態と言えるのは <a href="https://github.com/onnx/onnx/blob/master/onnx/onnx.proto">onyx.proto</a> ファイルのみ。かなり見切り発車な感じ。まあ早い段階から他のベンダー (TF, MXNet, etc.) を巻き込んでいきたいということなのでしょう。どうなるかねえ。自分の勤務先も無駄な arrogance を発揮せずちゃんとのっていってほしい。</p><p>しかしきみたち proto なのか。いいのかそれで。しかも proto2 かよ。微妙なバージョンの Proto に依存しているベンダーが多いから保守的に倒しとくわ、というようなコメントが書いてある。おそらく Hadoop のやつらのせいであろう。どうせならあまり手垢のついてないフォーマット使えばいいのになあ・・・。</p>

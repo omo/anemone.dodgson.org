@@ -1,0 +1,6 @@
++++
+tags  = ["mld"]
+title = "MLD: TF Learning Dictation / RNN"
+date  = "2017-08-06 15:31:30"
++++
+<p>写経つづき。</p><p>RNN/LSTM のサンプルを動かす・・・と、CPU が振りきらない。最大 400% のところ 250% とか。CNN では振り切っていた。いくら toy program で dimention が小さいとはいえ、Laptop の CPU も振りきれないとはだいじょうぶなのか RNN. seq2seq も LSTM を stack してレイヤごとに GPU を割り振る。無理やり並列度を上げてる感じ。GEMM とかはある程度並列化できるのだろうけれど。カーネル単位でじゃんじゃん並列化できる CNN と比べると辛い。</p><p>もっとも逆に言うと <a href="https://github.com/higepon/tensorflow_seq2seq_chatbot">higepon_bot</a> みたいのをトレーニングするのに速い計算機を借りる必要がない(借りても無駄)ということだから、趣味プログラマ的には良いジャンルなのかもしれないなあ。</p><p>&nbsp;</p>

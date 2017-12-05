@@ -1,0 +1,6 @@
++++
+tags  = ["mld"]
+title = "MLD: Goodfellow, Chapter 8"
+date  = "2017-05-15 15:49:32"
++++
+<p><a href="http://www.deeplearningbook.org/contents/optimization.html">Optimization for Training Deep Models</a>.</p><p>数学がきついかと思いきや、わりと大丈夫だった。なぜなら難しい話題は適当にはぐらかされているから・・・。そして前章につづき期待していたより面白かった。</p><p>まず deep network training の難しさは local minima <em>ではない</em>という主張が面白い。Local minima かどうかを調べる方法 (gradient の norm を求める) や、local minima が相対的には大した問題ではない話など。数学的に厳密的な議論ではないけれど、なるほどなーと思う。</p><p>各種アルゴリズムについては Coursera の授業ではさっぱりわけわからなかった RMSProp がすんなりわかってよかった。やはり cover-to-cover で順番に読んでいくの重要。つまみ食いだとわからない話もわかる。しかし learning rate  の調整をこんなにがんばらないといけないのは大変だよな。</p><p>BFGS のような二回微分を使う方法たち。自分はこの手の方法は Tensorflow などの Ops が二回微分を定義しないと使えないからダメじゃんと思っていたがそれは誤解で、実際は近似的な手法だと知った。</p><p>一方でこの手の強力な optimization algorithms を使うより train しやすいモデルが重要だ、という警告は面白い。別の言い方をすると、NN を blackbox として捉える旧来の optimization より NN の構造を exploit する pre-training や skip layer connection の方が強力という話。当たり前といえば当たり前だけれど、abstraction の壁を破ってチューニングすると大きな成果がでる展開は好き。もっとやれと思う。そういう意味で後半にちらっとでてきたもののさっぱりわからなかった <a href="https://arxiv.org/abs/1502.03167">Batch normalization</a> は要復習。</p><p>前章とあわせ、関数の形に関する議論や、ネットワークの中を gradient が propagate していく(そして vanish/explode しないよう工夫する)みたいな概念にちょっと慣れてきた気がする。</p>

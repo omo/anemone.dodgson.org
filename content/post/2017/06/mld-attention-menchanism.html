@@ -1,0 +1,11 @@
++++
+tags  = ["mld"]
+title = "MLD: Attention Menchanism"
+date  = "2017-06-11 11:18:58"
++++
+<p><a href="http://www.deeplearningbook.org/contents/applications.html">Goodfellow Chapter 12</a> の復習。</p><p>まず [1] を読む。けっこうよくかけていたけれど、Encoder-Decoder の理解が怪しい気がしたため続けて [2] を読んだ。すると理解が怪しかったのは Neural Machine Translation や Statistical Machine Translation それ自体だったことに気づく。Phrase based SMT framework とかいわれてもわからん。しかし深入りするとキリがなさそうなので今は撤退。Encoder-Decoder に attention の context をつかうモデルについてはわかったのでよしとする。</p><p>ついでに Encoder-Decoder の同義語ぽくつかわれる Sequence-to-Sequence もチラ見しておこうと [3] を読んだ・・・が不親切すぎ！Deep LSTM ですかそうですか・・・というかんじだった。その点 [1] は Appendix にモデルが書き下してあってすばらしい。やはり企業の研究者よりアカデミアの方が論文さぼらなくてよいな。Bengio 先生はテックカンパニーとかに浮気せず世界のために丁寧な論文を書き続けて欲しいもんです。教科書も。</p><p>関連のある冷やかしでながめた Distill の [4] は attention の可視化がよかった。あと画像にも attention を使う話があると知った。</p><p><ul>
+    <li>[1] <a href="https://arxiv.org/abs/1409.0473">[1409.0473] Neural Machine Translation by Jointly Learning to Align and Translate</a></li>
+    <li>[2] <a href="https://arxiv.org/abs/1406.1078">[1406.1078] Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation</a></li>
+    <li>[3] <a href="https://arxiv.org/abs/1409.3215">[1409.3215] Sequence to Sequence Learning with Neural Networks</a></li>
+    <li>[4] <a href="http://distill.pub/2016/augmented-rnns/">Attention and Augmented Recurrent Neural Networks</a></li>
+</ul></p><p><hr /></p><p>Attention という仕組みの素人感想。</p><p>Encoder-Decoder の自然な拡張に見える。というかもともと Encoder-Decoder が variable length の text を fixed dimension の vector に畳み込むという無茶をしていたわけで、無茶すぎたのをちょっと反省したらこうなったみたいなかんじ。ただ attention の割り振りを学習できるという発見はよい。この「パラメタは何でも学習しちゃおうぜ」という態度をネイティブに理解したいもんです。</p><p>&nbsp;</p>
