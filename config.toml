@@ -1,4 +1,4 @@
-baseurl = "http://anemone.dodgson.org/"
+baseurl = "https://anemone.dodgson.org/"
 languageCode = "en-us"
 title = "steps to phantasien"
 theme = "anemone"
