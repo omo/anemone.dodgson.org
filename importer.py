@@ -5,6 +5,7 @@ import os.path
 import re
 import json
 import xml.etree.ElementTree
+import zipfile
 from collections import namedtuple
 from bs4 import BeautifulSoup
 import requests
@@ -30,8 +31,8 @@ def is_visible(elm: xml.etree.ElementTree):
     post = elm.find('wp:post_type', ns).text == 'post'
     valid = elm.find('wp:status', ns).text not in ['draft', 'private', 'trash']
     categs = [e.get('nicename') for e in elm.findall('category')]
-    do_not_publish = any([c for c in categs if c in ['toyql', 'dontpublish']])
-    return post and valid and (not do_not_publish)
+    to_publish = any([c for c in categs if c in ['letters', 'fragments']])
+    return post and valid and to_publish
 
 def make_post_from(elm):
     title = elm.find('title').text
@@ -60,7 +61,7 @@ def to_path(post):
     yyyy, mm = m.group(1), m.group(2)
     return os.path.join("content/post/%s/%s" % (yyyy, mm), post.slug + ".html")
 
-def write_post(post):
+def write_post(post, dry):
     path = to_path(post)
     tempalte = """+++
 tags  = {}
@@ -71,11 +72,13 @@ date  = "{}"
 """
     tags = "[" + ",".join(['"' + t + '"' for t in post.tags]) + "]"
     text = tempalte.format(tags, json.dumps(post.title), post.date, format_body(post.body))
-    dir_path = os.path.dirname(path)
-    if not os.path.exists(dir_path):
-        os.makedirs(dir_path)
-    open(path, "w").write(text)
-    #print(path)
+    if dry:
+        print("To Write: %s" % path)
+    else:
+        dir_path = os.path.dirname(path)
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
+        open(path, "w").write(text)
 
 
 def extract_links(file):
@@ -99,21 +102,27 @@ def fetch_image_link(url):
     open(file_path, "wb").write(r.content)
 
 
+def list_xml(zip: zipfile.ZipFile):
+    return [ zip.open(n) for n in zip.namelist() if n.endswith(".xml") ]
+
 parser = OptionParser()
 parser.add_option("-w", "--wp", dest="wp_domain",  metavar="DOMAIN")
 parser.add_option("-f", "--file", dest="file",  metavar="FILE")
 parser.add_option("-c", "--command", dest="command",  metavar="COMMAND")
+parser.add_option("-D", "--dry", dest="dry",  action="store_true")
 (options, args) = parser.parse_args()
 
 wp_domain = options.wp_domain
 
 if "convert" in options.command:
-    posts = extract_posts(options.file)
-    for p in posts:
-        write_post(p)
-elif "fetch" in sys.argv:
-    links = extract_links(options.file)
-    for l in links:
-        fetch_image_link(l)
+    z = zipfile.ZipFile(options.file)
+    for f in list_xml(z):
+        for p in extract_posts(f):
+            write_post(p, options.dry)
+elif "fetch" in options.command:
+    z = zipfile.ZipFile(options.file)
+    for f in list_xml(z):
+        for l in extract_links(z.open(f)):
+            fetch_image_link(l)
 else:
-    print("specify command")
+    print("specify command with --command")
