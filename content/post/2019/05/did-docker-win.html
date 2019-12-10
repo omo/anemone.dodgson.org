@@ -1,0 +1,10 @@
++++
+tags  = ["letters"]
+title = "Did Docker Win?"
+date  = "2019-05-06 13:23:24"
++++
+<p><a href="https://cloud.google.com/cloud-build/">Cloud Build</a> は随分と Docker 中心の製品である。 まずデフォルトのビルド成果物は Docker イメージという前提がある。そしてビルドに使うツールも Docker イメージとして提供されており、ユーザも自分のイメージを使ってビルドステップを足すことができる。</p><p>Cloud Functions は特に Docker は出てこないが <a href="https://cloud.google.com/run/">Cloud Run</a> や App Engine Flex は Docker である。そして言うまでもなく K8S/GKE は Docker イメージを動かす環境である。</p><p>など、GCP はなにかと Docker を要求してくる。GCP はコンテナ推しクラウドなのでややバイアスはあるが、とはいえ自分がボンヤリしている間に世の中の Docker 必須な雰囲気はずいぶん広まっていた。</p><p>4-5 年前, Docker の浸透度はここまでではなかった気がする。細々と競合っぽいやつが現れたり現れなかったり、どうなるのかと思っていた記憶がある。しかし気がつけば世の中のコンテナは Docker 一色。企業としての Docker のもうだめっぽい雰囲気との対照がすごい。</p><p>雑に調べた自分の理解によれば・・・</p><p><ul>
+    <li>あるとき Docker が <a href="https://www.opencontainers.org/">OCI</a> という標準化団体をつくって container image のフォーマットを標準化するといいだし、そこに競合および同業者を巻き込むことに成功した。結果としてコンテナ業界にあった Docker ロックインへの不安が和らぎ adoption が進んだ。これは K8S が CNCF を作ったのと似たようなものである。</li>
+    <li>ついでに主要な競合であった CoreOS は RedHat に買収され, RedHat は IBM に買収され、現在の IBM はデファクトスタンダードに楯突いたりしない会社なので、結果として Docker やっつけるぞみたいなギラギラした人々がいなくなった。</li>
+    <li>クラスタ管理分野での K8S の勝利も Docker 普及の助けとなった。</li>
+</ul></p><p>というかんじで現代に至ったらしい。あってる？</p><p>しかし K8S が Docker に依存するとか俄には信じがたい・・・と思って調べると、彼らは Docker と自分の間に <a href="https://github.com/cri-o/cri-o">cri-o</a> / <a href="https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md">CRI</a> というレイヤを挟んでコンテナのバリエーションを吸収している。そして GKE は<a href="https://cloud.google.com/kubernetes-engine/docs/concepts/using-containerd">実際に Docker でないランタイムを使うオプションがある</a>。しかし開発者はふつうに Docker でイメージを作って push できる。なぜなら GKE のランタイムは Docker がつくったイメージ、おそらくだいたい OCI 準拠、を実行できるから、ということらしい。あってる？</p><p>自分はそんなに Docker 好きじゃないし特に使いみちもなかったのでいつもコピペと SO だのみでだましだまし使ってきた。でもイメージフォーマットは定着したようだし開発者が手元で使うツールとしての docker コマンドも特に良い代替品が出て来る見込みは薄い。もうちょっと流暢に使えるよう労を割いてよさそう。</p><p>Docker 社が Microsoft か IBM あたりに買収されればもっと心穏やかになれるのだが。</p><p><hr /></p><p><h3>追記</h3></p><p>などと書いた矢先に社長が変わった: <a href="https://techcrunch.com/2019/05/08/steve-singh-stepping-down-as-docker-ceo/">Steve Singh stepping down as Docker CEO | TechCrunch</a></p>

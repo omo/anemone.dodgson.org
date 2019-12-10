@@ -1,0 +1,6 @@
++++
+tags  = ["letters"]
+title = "Python Async/Await \u306e\u3044\u307e\u3044\u3061\u3055"
+date  = "2019-05-05 05:39:43"
++++
+<p>Python の async/await について調べもの。</p><p>主な興味として generator を async / await ベースで書けるか知りたい。本文に yield のある関数が自動的に generator になる辛い仕様のない世界は（書き手が気をつければ）実現できるのか。</p><p><a href="https://www.python.org/dev/peps/pep-0492/">PEP 492 -- Coroutines with async and await syntax</a> と <a href="https://www.python.org/dev/peps/pep-0525/">PEP 525 -- Asynchronous Generators</a> を眺めた結論としては、できなそう。むしろ "async generator" というものが登場してより複雑になった感がある。PEP 492 は冒頭で自分の不満を async/await の動機のひとつとして上げているにもかかわらずそれを解決していない。ひどくね？</p><p>翻って <a href="https://github.com/Kotlin/KEEP/blob/master/proposals/coroutines.md#generators">Kotlin を見るに</a>, async/await と yield はどちらも suspending function である、というかどちらも coroutine 言語機能の上に書かれたライブラリ関数である。型チェックの助けもあり、Python にあった複雑さは存在しない。Python ももうちょっとレイヤリングをがんばって async/await を generator の延長に実装し、その上で yield の紛らわしさを解消する構文を足してほしかった・・・</p><p>以前 Flask の一味 Armin Ronacher が <a href="http://lucumr.pocoo.org/2016/10/30/i-dont-understand-asyncio/">Python の coroutine わからんという記事</a>を書いていた。彼の不満はランタイム API の話が中心だったけど、その複雑さは文法にも染み出している。つらい。</p><p>Python の async/await が自分に必要となる場面はそれほど想像できないので、なかったものとしておくのが良いかもしれない。</p>

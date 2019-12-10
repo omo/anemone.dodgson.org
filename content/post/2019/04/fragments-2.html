@@ -1,0 +1,101 @@
++++
+tags  = ["fragments"]
+title = "Fragments #2"
+date  = "2019-04-22 07:03:53"
++++
+<p><h3>日曜日</h3></p><p><ul>
+    <li>06:03. 家事などをしていたらこの時間. #MN.
+<ul>
+    <li>珍しく奥様早起きされてるので本日の予定などを議論。</li>
+    <li>なんとなくドラフトが表示されるところまで到着。今日はここまで。明日はテンプレートをあてる。</li>
+</ul>
+</li>
+    <li>Santa Cruz Mountain にある preschool 主催の May Fair (初夏を祝うイベント) へ。そんな preschool 生徒の家族向け内輪イベントに乗り込んで疎外されてもやだな・・・と渋っていたが完全に杞憂。外出における自分の「なんかやだな・・・」はだいたい当たらないので、渋りつつも奥様の意向を汲むようにしている。</li>
+</ul></p><p><h3>土曜日</h3></p><p><ul>
+    <li>05:37 at Starbucks. 考え事および書きものの日です。#MN</li>
+</ul></p><p><h3>金曜日</h3></p><p><ul>
+    <li>6:00 起床。機能は風呂に入る気力もなく、今朝は起きられず。疲労が溜まっていた模様。そして家事がたまっておりますのでコードはなし #MN.
+<ul>
+    <li>...と思ったら乾燥機をまわす気力すらなかったようなので家事発生せず。コード書くか。</li>
+    <li>そして数日前に諸事情から目覚ましのアラームを無効化したままだと気づく。あとでもどす。</li>
+    <li>GAE だな。ブログのドラフトページをつくります。</li>
+</ul>
+</li>
+    <li><a href="https://pragprog.com/news/coming-soon-the-pragmatic-programmer-20th-anniversary-edition-in-beta">Coming Soon: The Pragmatic Programmer, 20th Anniversary Edition, in beta | The Pragmatic Bookshelf</a>
+へえ。5/8 ね。</li>
+    <li><a href="https://www.axios.com/microsoft-is-winning-the-techlash-4d16b1ba-2da5-4f9b-8fd2-d591b0a3b2ea.html">Microsoft is winning the techlash - Axios</a>
+Nadella 氏, Antitrust 時代からいるのか。それは頼もしいなあ。</li>
+    <li>SQL 詳しくなりたい。データ分析専用の SQL の教科書が欲しい。もっといえば BigQuery 特化のやつがほしい・・・。
+<ul>
+    <li>"Correrated Cross Join" という技(?)が必須なのだが、検索しても BigQuery しか出てこないじゃんか・・・。</li>
+</ul>
+</li>
+</ul></p><p><h3>木曜日</h3></p><p><ul>
+    <li>05:57 起床。早く寝ると言ったその日に事務処理と夫婦の会話が長引き夜ふかししてしまう。そういうものです。#MN
+<ul>
+    <li>GAE... とおもったがなんとなく generator 書き換えためしてみるかな。</li>
+    <li>Python generator notes:
+<ul>
+    <li>send: generator を使う側から generator の中に値を返す仕組み</li>
+    <li>return value: "yield from" で帰ってくる値 / raise StopIteration(x) の syntax sugar みたいなもん.</li>
+</ul>
+</li>
+    <li>動いた。コードの簡潔さは増したが実行時に取得と登録のフェーズが interleave するようになった結果ログの print がやりにくくなったな。諦めて最後に stats を print するだけに変更。</li>
+    <li>ところで Cloud Functions, timeout が 60 秒らしいがそれは足りるのだろうか。<a href="https://cloud.google.com/functions/docs/concepts/exec#timeout">変更できるっぽい</a>ので雑に 3 分くらいにしておく。</li>
+    <li>時間ないがちょっとだけ GAE しよう。とりあえず Firestore の API が動くことを確認するべく hello 的なのを push してみる。-&gt; 動いた。よしよし。</li>
+</ul>
+</li>
+    <li><a href="https://arstechnica.com/gadgets/2019/04/galaxy-s10-review-for-1000-samsung-needs-to-offer-a-more-complete-package/">Galaxy S10+ review: Too many compromises for the sky-high price | Ars Technica</a>
+<ul>
+    <li>Snapdragon 855 は超速いコア 1, 速いコア 3, 遅いコア 4 らしい.  UI スレッドを超速いコアに割り振りたいんだろうけど、そううまく行くかね。</li>
+</ul>
+</li>
+    <li><a href="https://www.iza.org/publications/dp/12282/bullshitters-who-are-they-and-what-do-we-know-about-their-lives">Bullshitters. Who Are They and What Do We Know about Their Lives? | IZA - Institute of Labor Economics</a>
+<ul>
+    <li>BS 自体の理解が曖昧だったのが深まってよかった（無駄だが。）</li>
+</ul>
+</li>
+</ul></p><p><h3>水曜日</h3></p><p><ul>
+    <li>05:51 起床。夜ふかしの結果朝が犠牲になってるな。今日から早く寝ます。#MN
+<ul>
+    <li>しかし夜ふかしの結果 WordPress インポートのバッチはローカルで動いたのだった。これを Cloud Functions に push するぞ！の前に requirements.txt を取り直さねばね...</li>
+    <li>デプロイ出来た気がする。これ壊れてもまったく気付けないので最低限のモニタリングは必要だな。あと CD というか push したら勝手に deploy しなおしてほしい。などと Issues に入れておく。</li>
+    <li>Cloud Functions インスタンスメモリ 256MB とは少ないね。現状実害ないけどバッチでデータ取ってるところは generator に書き直してみるかな。</li>
+    <li>Cloud Pub/Sub が何をしているのかまったくわからないのでそのうちドキュメント読む。</li>
+    <li>しかしそういう面倒な話はおいといて GAE で serve する側を作ります。</li>
+</ul>
+</li>
+</ul></p><p><h3>火曜日</h3></p><p><ul>
+    <li>05:05 起床。#MN
+<ul>
+    <li>機能の続き。WP API を叩くコードも Firestore を叩くコードもあるので、いざインポート。とりあえず何も考えず insert する。そのあと modified-since チェックと upsert 的挙動になおす。</li>
+    <li>Upsert 的挙動については WP API が返してきた ID を document ID にすればよさそうだが・・・。外から降ってくる ID を主キーにしちゃダメとかいうけど。</li>
+    <li>なんとなく動いてそうな雰囲気（ローカルで）・・・と思いきやインクリメンタルアップデートができてないなー・・・。<a href="https://stackoverflow.com/questions/47053462/how-to-filter-posts-modified-after-specific-date-in-wordpress-api-v2">更新日時でフィルタできない</a>のか・・・。</li>
+    <li>おとなしく pagination を実装のうえ全投稿取得、手元でフィルタという方針に変更。やれやれ。（やけに細かく進捗を書いているのはテストのためです。）</li>
+</ul>
+</li>
+    <li>通勤バスに遭遇したので誘惑に負け乗ってしまうが反省して会社到着のち軽く筋トレ。筋トレ足りてないのを痛感。</li>
+    <li>世間の人は Slack に苦しんでいて大変そう。勤務先は禁制 Chat の出来が悪いのと歴史的敬意のおかげでチャットそんなに流行ってなくて気楽。</li>
+    <li>おまえらのコードは遅いからトレースを足せ！そっちじゃなくてこっち！みたいなコードレビューを他所のチーム相手にしており我ながらかんじ悪い。時間あったら直してあげたいんだけどごめんね・・・。締め切りは人の心を貧しくしてよくない。</li>
+    <li>人事考課帰ってきた。前期はがんばったんでさすがに予定通り (3/5) であった。細部をみると上司はさておき peer review がもう一声ほしいかんじ（自分の頑張り側で。）あとでちゃんと読む。上司の信頼より同僚の信頼を勝ち取る方が人として正しい。
+<ul>
+    <li>ガッツリ働いてる若者が出世してよしよしと思う。えらくなっとくれ。</li>
+</ul>
+</li>
+    <li>同僚の一人が地元に帰るという。そして彼の地元にはチームのオフィスがあるのである！羨ましいなー。東京にチームできるから帰る？と言われても困るけどさ。</li>
+    <li>若干喉痛。奥様も咳してて不穏なり。</li>
+</ul></p><p><h3>月曜日</h3></p><p><ul>
+    <li>05:37 起床。疲れる週末だった上に気温の変化にやられ若干喉痛。 #MN
+<ul>
+    <li>Colab を使っていると手元に Python 環境を作るのが限りなく億劫になるが重い腰を上げて Letters 配信自動化準備をしなければ。</li>
+    <li>Firestore/Datastore, 昔はローカル用の実装は必要だと思っていたが、今となっては別にクラウド叩けばいいのでは感。仕事だと staging や sandbox がないのは辛そうだが、個人なら同じデータベースで collection 分けるくらいでいいね。</li>
+    <li>Colab なしで Python 書くのかったるすぎじゃね？なぜわざわざ毎回コード全体を実行しなければいけないのか ... 手元の環境に Jupyter 入れればいいですね。解決。仕事で耐え忍べているのが我ながら謎だが、仕事のオーバーヘッドというのは諦めがつきやすいのかもしらぬ。</li>
+    <li>Jupyter 向けにコードを整理しなおして時間切れ。</li>
+</ul>
+</li>
+    <li>Jupyter と相性の良いコードについて理解が進んできた。そのうち書く。</li>
+    <li><a href="https://code.fb.com/developer-tools/isinputpending-api/">isInputPending: Facebook's first browser API contribution - Facebook Code</a> input queue が詰まってるかどうかをチェックできるのか。アイドル状態に呼ぶコールバックを登録する方向もあったろうけれど。</li>
+    <li><a href="https://blog.acolyer.org/2019/04/22/end-of-term-5/">End of term | the morning paper</a> Morning Paper, 二週間しかシーズンオフ無いの。ストイックだね。</li>
+    <li>Java の非同期テスト、さすがに JUnit5 にはあるのでは、などと昼時に話す。しかし<a href="https://github.com/junit-team/junit5/issues/444">なさげ</a>。ださい。Vert.x は自分で<a href="https://developers.redhat.com/blog/2018/01/23/vertx-junit5-async-testing/">つないでいるらしい</a>。(<a href="https://github.com/vert-x3/vertx-junit5/blob/master/src/main/java/io/vertx/junit5/VertxTestContext.java">実装</a>)</li>
+    <li>クレジットカード不正利用の連絡. Sigh. しかし検出したのは偉い.</li>
+</ul></p>

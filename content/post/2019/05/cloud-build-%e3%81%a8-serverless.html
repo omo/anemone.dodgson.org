@@ -1,0 +1,6 @@
++++
+tags  = ["letters"]
+title = "Cloud Build \u3068 Serverless"
+date  = "2019-05-11 15:11:09"
++++
+<p><a href="https://cloud.google.com/cloud-build/">GCP Cloud Build</a> は <a href="https://aws.amazon.com/codepipeline/">AWS CodePipeline</a> にくらべるとだいぶしょぼいが、意外な良さもある。</p><p>Cloud Build は stateless である。動かしたい Docker Image の URL と引数のリストを API に投げると、どこかでコンテナが実行されてログがどこかに保存される。必要な情報はぜんぶ API に渡す。コマンドラインだと YAML に書く。なので、割と汎用的になんでも動かせる。ビルドである必要はないし、レポジトリに紐付ける必要もない。（逆にいうと git clone もユーザが明示的にやらねばならず。CI としては面倒。)</p><p>これ、自分が前からほしかった「任意のコードを一回だけ実行できる serverless のサービス」そのものじゃん。たとえば Jupyter Notebook を評価して、結果をどこかに置くとかもできる。これを Cloud Function 経由で定期実行すれば Jupyter のダッシュボードが作れる。など夢が広がる。</p><p>ただ現状単なるビルド環境なので計算機資源の量とかは選べない。それも指定できるようになると非分散ジョブ実行系として使えるものになりそう。</p>

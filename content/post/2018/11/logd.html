@@ -1,0 +1,6 @@
++++
+tags  = ["android","letters"]
+title = "logd"
+date  = "2018-11-05 10:07:56"
++++
+<p>Android の logging suppression ("chatty" とマークされるやつ),  M だか N だかくらいで入った <a href="https://android.googlesource.com/platform/system/core/+/master/logd/">logd</a> という daemon に実装されているらしい。それまではカーネルのバッファに直行していたのが logd を経由するようになった。</p><p>しかしひどいコードだなー特に驚くことではないとはいえ・・・。しかも std::list とかマジかよ。もうちょっとがんばってメモリアロケーションとか控えめにしてくれよ。それに色々コピーしすぎだよ・・・バッファに直に read してくれよ・・・。あなたけっこう CPU 使ってらっしゃいますのよ？</p><p>そして普通にコードきたないというかなんというか、泣ける。Pruning のロジックは <a href="https://android.googlesource.com/platform/system/core/+/master/logd/LogBuffer.cpp">LogBuffer::log</a> あたりだけどもう興味なくなったのでどうでもいいです・・・。</p><p>コードを読むとき、自分はコードにこめられた人類の叡智のようなものを期待しているのだなあと思う。Android は読んでも大概疲弊するだけでつらい。</p>

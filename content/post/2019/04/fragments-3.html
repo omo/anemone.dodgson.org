@@ -1,0 +1,149 @@
++++
+tags  = ["fragments"]
+title = "Fragments #3"
+date  = "2019-04-29 08:47:32"
++++
+<p><h3>日曜日</h3></p><p><ul>
+    <li>04:59. Python の async/await を復習したのち webhook 実装します。
+<ul>
+    <li>自分の理解のために書いておく: <a href="/2019/05/05/python-async-await-disappointment/">Python Async/Await のいまいちさ</a></li>
+    <li>Webhook. Cloud Function HTTP, 引数に flask.Request が降ってくるって雑すぎじゃね？</li>
+    <li>テストを書いているはいいが、いつも fake している実装の中にバグがあるのだった。他の部分のバグをキャッチしてるおかげだから文句いっても仕方ないんだけど、型が合わないエラーが辛い。<a href="http://mypy-lang.org/">Mypy</a> つかうべき？</li>
+    <li>WebHooks 動いた。もう理論上バッチはいらないはずだが、一日一回に頻度を落として残しておく。といったところで時間切れ。</li>
+    <li>FaaS, WebHooks を受ける口としては完璧以上のハマりぶり。</li>
+</ul>
+</li>
+    <li>招待された baby shower の potluck が豪勢で、つい大量の sugar を摂取してしまう。
+<ul>
+    <li>その後食べすぎで気持ち悪くなる。すごい久しぶりの体験・・・。</li>
+</ul>
+</li>
+    <li><a href="http://hotos19.sigops.org/program.html">HotOS - XVII</a>
+<ul>
+    <li>軽薄な paper が多いが、それがよいとも言える。</li>
+</ul>
+</li>
+    <li><a href="https://cloud.google.com/cloud-build/">Cloud Build - Automated builds for continuous integration </a>
+<ul>
+    <li>眺めている。GCP の Managed CI. CI サービスってなにげに serverless だよな。</li>
+</ul>
+</li>
+</ul></p><p><h3>土曜日</h3></p><p><ul>
+    <li>05:22 at Starbucks. 店員に "Hello Jim!" と言われて反応が数秒遅れる。週一来店の客の名前(しかもスタバネーム)を覚えているとは。
+<ul>
+    <li>店員、陽気なのはいいが喋り過ぎでうるさいで・・・。</li>
+    <li>昨日書きかけだったコードを直して、そのあと書きものなど。</li>
+    <li>テストがあるとリファクタリングできる！（あたりまえ）</li>
+    <li>ロジックを直して Firestore へのアクセスを減らした。課金が心配だったため。</li>
+    <li>去年書いたもののトリアージ, 9 月。早起きしないと時間ないなーとかいってやや欝気味。(この数カ月後に早起きを受け入れている。)</li>
+</ul>
+</li>
+    <li><a href="http://manifold.systems/docs.html">Manifold - Re-energize your Java project with powerful features like Type-safe Metaprogramming, Structural Typing, and Extension Methods</a>
+<ul>
+    <li>メタプログラミングしやすくした Java...ってそれ事実上別言語なのではとおもったら、Javac には Java8 から<a href="https://docs.oracle.com/javase/8/docs/jdk/api/javac/tree/com/sun/source/util/Plugin.html">コンパイラプラグイン</a>の仕組みが追加されており、普通に考えたらコンパイルできないコードをコンパイルできるようになったらしい。</li>
+</ul>
+</li>
+    <li><a href="https://eng.uber.com/research/">Research | Uber Engineering Blog</a> Uber に論文リストページができた。めでたい。</li>
+    <li><a href="https://www.nytimes.com/2019/05/03/technology/uber-ipo-ceo-dara-khosrowshahi-travis-kalanick.html">With Uber’s I.P.O., Dara Khosrowshahi Is Taking Travis Kalanick’s Company Public</a> テクニカルな興味深さとは裏腹に会社としてのダメさは象徴的なレベル。この状態で創業者を完全追放できないのは資本主義の敗北としか思えん。</li>
+    <li><a href="https://cloud.google.com/ml-engine/docs/notebooks/overview">AI Platform Notebooks overview  |  AI Platform  |  Google Cloud</a>
+<ul>
+    <li>いつの間にか GCP に managed jupyter ができたらしい。最大のライバルは  Colab な気がするが・・・。</li>
+</ul>
+</li>
+</ul></p><p><h3>金曜日</h3></p><p><ul>
+    <li>05:24. 目覚ましつけ忘れ.
+<ul>
+    <li>テスト書きつづき. 昨日は Web 側のテストを書いたので今日は importer 側を書く.</li>
+    <li>テストで database に副作用があるのはさすがにいまいちなため適当に functional なかんじに書き直したのち副作用を fake する。この手のバッチなコードはフレームワークとかないのでやりやすい。一方で Flask 側グローバル変数にべったりなので若干だるい。しかしそれをベタに testable にすると Flask の簡潔さが失われいまいち。たぶん上手にフックする方法があるんだろうけど。そのうち調べます。</li>
+</ul>
+</li>
+    <li>この最適化いれてくれ、と自分が前にファイルしたバグのリンクが送られてくる。カンで優先度きめるのやめてくれ他に速くなりそうなネタやってるんやで・・・と押し返すのもかったるいので先に片付けることにする。Sigh.</li>
+    <li>スマホは<a href="https://www.theatlantic.com/technology/archive/2017/08/a-sitting-phone-gathers-brain-dross/535476/">視界に入っているだけで気が散る</a>というが視野内のデバイスが 5 台を超えたあたりからどうでもよくなる。</li>
+    <li>最近仕事中はおおむね YT Music <a href="https://www.youtube.com/channel/UC2gMECGMn5TVbRN5S5tKb8Q">Christina Perri</a> を聴き続けている。購読数をみるとメジャーな人っぽいが、なぜ聴きはじめたのか覚えていない。それでも発見されてしまうのがメジャーというものなのかもしれない。飽きる前に同系統で適当にメジャーなアーティストを労せず開拓したいのものの良い方法がわからない。YT Music の Radio を聞けば良いのだろうか・・・。</li>
+    <li>加齢のため 16 時にして out of 気力.</li>
+</ul></p><p><h3>木曜日</h3></p><p><ul>
+    <li>05:01.
+<ul>
+    <li>バグがあったのを直して OAuth つけたらとりあえずは完成かな。Draft でない状態の公開は年末にでもやりましょう。CI/CD とかはやりたい。</li>
+    <li>動いた。よしよし。自分のコード規模だと手間は IAP 導入と大差なし。</li>
+    <li>CI にむけちょっとテストでも書こうかなと思うが CI 前提だと現状まったくテスト不可能であると気づく。なぜなら CI 環境に Firestore アクセスのための credential が無いから。しかしこの理屈だと CD もできないので、なんとかして crednetial を渡すのが正しい。逆にテストは Firestore に依存してよい。</li>
+    <li>テスト書き途中だが時間切れ。</li>
+</ul>
+</li>
+    <li><a href="https://www.nytimes.com/2019/05/02/business/economy/good-jobs-no-college-degrees.html">Where the Good Jobs Are - The New York Times</a>
+<ul>
+    <li>高卒、短大卒だと地方都市の方が食ってける仕事あるよという話。</li>
+</ul>
+</li>
+    <li><a href="https://en.support.wordpress.com/webhooks/">Webhooks — Support — WordPress.com</a>
+<ul>
+    <li>WordPress, Webhooks あるじゃん! Cron いらなくね？ためしに Cron の頻度を下げて webhook を足すべし。</li>
+</ul>
+</li>
+    <li>Jupyter/Colab/IPython は関数の中とかで唐突に output = !adb shell ... とか書けるのが狂っているが、まったく便利。Ruby にも backquote があることだし Python に backport してほしい。</li>
+    <li><a href="https://www.microsoft.com/en-us/build">Build が 5/6-8</a>, <a href="https://events.google.com/io/schedule/">I/O は 5/7-9</a><a href="https://events.google.com/io/">.</a> <a href="https://developer.apple.com/wwdc19/">WWDC 6/3-/7</a>. WWDC 行ってみたい。</li>
+    <li>Desktop Chrome で久しぶりに標準の NTP に戻してみたら検索ボックスが鎮座している。しかしフォーカスは omnibar にある。意味あるのかこれ・・・。NTP に何がほしいか考えてみる: 履歴、ブックマークなどがほしい。</li>
+    <li>自分よりだいぶ rating のよい社内知り合いが出世に失敗したと嘆いており、5% くらい残っていた出世したい欲が 0.5% くらいまで低下。出世、金を（すごく）稼げるのはいいがそれ以外マジでいいことなさそう。会社の景気がいいうちに全てを犠牲にして稼ぐだけ稼ぐ、というのはそれなりに合理的な戦略だと思うもののそんなガッツはなし。</li>
+    <li>ふと思うに、これが世に言う「出世競争に破れた」なのではないか。自分、破れてたか。納得。</li>
+</ul></p><p><h3>水曜日</h3></p><p><ul>
+    <li>05:17. 猫を撫でながらダラダラしてたらこんな時間。
+<ul>
+    <li>管理画面サービスつくるべし.</li>
+    <li><a href="https://cloud.google.com/appengine/docs/standard/nodejs/configuration-files">サービス追加</a>、すごい簡単。これ色々便利なのでは・・・。しかし手順どおりにディレクトリわけるサービス間のコード共有がかったるい。同一ディレクトリに複数のサービスを突っ込む方がラクそう。</li>
+    <li>一般論として monorepo 的にプロジェクトのコードを管理するとき Python のコード共有をどうすればいいのかよくわかんない。<a href="https://pip.pypa.io/en/stable/reference/pip_install/#requirements-file-format">Requirements file 仕様</a> によれば git repo のサブディレクトリとかもインポートできるっぽいので自分自身の git repo から pip install すればいいのかもしれないが、そもそも monorepo という方針が世間に逆行している感。おとなしくレポジトリいっぱい作れということか。というか Microservices なんだから API 公開すべき？まあねえ・・・。</li>
+    <li>サービス増えたら手動デプロイいよいよかったるくなってきた。CI/CD 必要。あとそろそろ若干テストも欲しい・・・。</li>
+    <li>がー IAP は<a href="https://stackoverflow.com/questions/48527316/identity-aware-proxy-and-app-engine-services-one-per-service">サービス単位では適用できない</a>！ダメじゃん！がっかり・・・。OAuth 実装するしかない。面倒・・・。</li>
+    <li><a href="https://github.com/singingwolfboy/flask-dance">singingwolfboy/flask-dance: Doing the OAuth dance with style using Flask, requests, and oauthlib.</a> 明日これつかう。やれやれ。</li>
+</ul>
+</li>
+    <li>F8 Keynote Day2
+<ul>
+    <li>ぜんぶ AI. なかなかよい。検索会社が ethics どうするかでゴタゴタしてるあいだに俺たちはまさに ethical な問題を解決するために production で SOTA なモデルを使ってるぜと主張。Fake news を fairness という視点で AI の問題に帰結しようとするストーリー、どう読まれるか。</li>
+    <li>Also: <a href="https://www.nytimes.com/2019/04/17/business/youtube-ceo-susan-wojcicki.html">The Most Measured Person in Tech Is Running the Most Chaotic Place on the Internet - The New York Times</a></li>
+</ul>
+</li>
+    <li><a href="https://www.tillerhq.com/">Tiller Money - Automated Personal Finance Spreadsheets</a>
+<ul>
+    <li>Spreadsheet  に収支履歴をインポートしてくれるサービス。Spreadsheet 上にサービス構築しちゃうとは大胆な。</li>
+</ul>
+</li>
+    <li>クレジットカード新しいのが届いたので各種支払い設定を更新。11 箇所あった。</li>
+    <li>子供向けの日本語の月刊誌（こどものともなど）を届けてくれるサービス。400 円の本に 800 円の送料を払う。それが二冊、三日のあいだに届く。まとめて送ってくれ・・・。こAmazon が参入してこういう不自由な業者を撲滅してくれればいいのに。</li>
+    <li><a href="https://evilmartians.com/chronicles/rails-6-b-sides-and-rarities">Rails 6: B-Sides and Rarities — Martian Chronicles, Evil Martians’ team blog</a> ときどき Rails 勉強しなおしたい欲が湧くが、色々 Python が事足りすぎるためもはや Ruby を書く気が起きない。</li>
+</ul></p><p><h3>火曜日</h3></p><p><ul>
+    <li>05:00. 細かい修正をして、あとは適当に newsletter service でも試してみるかな。
+<ul>
+    <li>細かい修正終了。あとは実際に draft ではないものを publish する仕組みが必要だが、当面はいらないので保留。</li>
+    <li>そのほかやりたいのは CI/CD と Stackdriver の instrumentation. 前者は gcloud SDK のコマンド覚えるのかったるいためで、後者は単なる好奇心。だがまあ明日以降。</li>
+    <li>CI, GitHub Actions を使おうとしたが Limited Beta なので諦めて <a href="https://circleci.com/docs/2.0/">CircleCI のドキュメントを</a>眺める。が、手を動かすのはまた今度。</li>
+    <li>Newsletter, <a href="https://tinyletter.com/">Tinyletter</a> は<a href="https://www.theverge.com/2018/1/5/16855304/mailchimp-tinyletter-integration-platform-changes">死にかけ疑惑</a>らしいので <a href="https://mailchimp.com/">Mailchimp</a> か <a href="https://www.getrevue.co/">Revue</a> の二択。</li>
+    <li>Revue, 編集画面で日本語 IME が全然ダメ。そして WISYWIG なのに箇条書きができない。アホか・・・。</li>
+    <li>Mailchimp はどうかというと・・・これは基本的に広告的なのを送る仕組みなので大げさすぎ。</li>
+    <li>いちおう Tinyletter も試すと、これが一番近い。ただ Newsletter をプライベートにする仕組みがない。</li>
+    <li>そのほか <a href="https://substack.com/">substack</a> というのもあるらしいが・・・おとなしく Gmail から送りつけるのよい気がしてきた。そうします。新しいものを使ってみたかったが自分がやりたいのは本質的にメールを送ることなのだった・・・。</li>
+</ul>
+</li>
+</ul></p><p><h3>月曜日</h3></p><p><ul>
+    <li>04:52. 久しぶりに 5 時前。やはり 9 時半前には寝ないと無理だな。 #MN
+<ul>
+    <li>とりあえずテンプレートをつけるべし。</li>
+    <li>だいたい動いた気がする。まだ細々問題あるけど newsletter 送りつけられるくらいにはなった。</li>
+</ul>
+</li>
+    <li><a href="https://www.nytimes.com/2019/04/27/opinion/sunday/socialism.html">Opinion | Can We Please Relax About ‘Socialism’? - The New York Times</a>
+<ul>
+    <li>アメリカ人は社会主義を毛嫌いしすぎ、という話。自分はアメリカ的価値観では完全にコミュニストだ気づいて以来コミュニストを（心の中で）自称するようになった。個人の自由、そんなに重視してない。</li>
+</ul>
+</li>
+    <li>そろそろ Snippet Train (aka 週報)に復帰したい機運。来週からかな。</li>
+    <li>I/O の時期は道が混むからよろな、というメールが・・・てか来週 I/O なの？時の流れは早いね。<del>そのせいでゴミのような bureaucracy bug が回ってきたのか・・・。</del>なお徒歩通勤者なので道が混むのは影響なし。
+<ul>
+    <li>I/O 来るひと茶でもしましょう、とかどっかに書きたいが当てがないな。とりあえず Twitter に書いてみたが・・・。</li>
+</ul>
+</li>
+    <li>Letters のドラフト URL リストスクリプトを手元の Jupyter から Colab に移行。
+<ul>
+    <li>物事をコード共有ではなくコピペで済むくらい仕様を単純にするのが重要。その点 SQL のようなコピペ言語に育てられたエコシステムは強い（気がする）。</li>
+</ul>
+</li>
+</ul></p>

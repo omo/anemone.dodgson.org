@@ -1,0 +1,22 @@
++++
+tags  = ["android","letters"]
+title = "Gralloc, Treble and ION"
+date  = "2018-07-22 10:48:52"
++++
+<p>カメラの画像など Surface を介しプロセスをまたいで流れていくメモリ (buffer) は Gralloc というアロケータで確保される。Gralloc は HAL である。</p><p><ul>
+    <li><a href="https://source.android.com/devices/graphics/arch-bq-gralloc">BufferQueue and gralloc | Android Open Source Project</a></li>
+    <li><a href="https://source.android.com/devices/graphics/">Graphics | Android Open Source Project</a></li>
+</ul></p><p>ところで Android は O ではじまった Project Treble によって多くの HAL が独立したプロセスに追い出された。Binderization という。昔の Windows の COM-fication および Mozilla でおきた反動の De-com-ificaton を思い出すがまあそれはいい。</p><p>これが意味するところは Gralloc も binderized で別プロセスに追い出されたということである。マジで？とおもったけど Systrace を睨むとそれっぽいプロセスがいるのだよな実際。無駄にかっこいいなおい・・・。Image の確保開放、微妙に遅いと思っていたがこのせいという面は否めない。</p><p><ul>
+    <li><a href="https://source.android.com/reference/hidl/android/hardware/graphics/allocator/2.0/IAllocator">IAllocator | HIDL reference | Android Open Source Project</a></li>
+</ul></p><p><hr /></p><p>Treble, 資料を眺めると色々思わぬことが書いてある。たとえば above HAL の binder とは別の "binder context" を使って congestion を回避しているという。そしてそのためにカーネルもちょっとかわっている。Systrace で "HwBinder" というトレースがところどころにあるのはなんだろうとおもっていたけれど、それが別コンテクストで動く HAL 用の binder なのだろう。</p><p>更に HAL の Binder は binder といいつつ IDL は AIDL variant の HIDL というフォーマットで、AIDL と違い C++ もサポートしている、というか C++ がメインらしい。君たちは IDL コンパイラ二種類サポートしてくのか。それより AIDL 直してくれや・・・。</p><p><hr /></p><p>ところで Gralloc の話にもどると、このひと HAL とはいえ結局中では何をしているのだろう。というと、多くの場合は ION に落ちるらしい。例:</p><p><ul>
+    <li><a href="https://android.googlesource.com/platform/hardware/samsung_slsi/exynos5/+/d881a0ce901d839282ba2d4d724b9ae25c9d4e89/gralloc/gralloc.cpp">gralloc/gralloc.cpp - platform/hardware/samsung_slsi/exynos5 - Git at Google</a></li>
+</ul></p><p>ION は Android がドライバ実装のため Linux に入れた shared memory の仕組み。アプリのレイヤで使う ashmen とは違い、たとえば物理メモリ上で連続した領域を確保したい、みたいなことができるという。LWN にいくつか解説がある。</p><p><ul>
+    <li><a href="https://lwn.net/Articles/480055/">The Android ION memory allocator [LWN.net]</a></li>
+    <li><a href="https://lwn.net/Articles/565469/">Integrating the ION memory allocator [LWN.net]</a></li>
+    <li><a href="https://github.com/torvalds/linux/tree/master/drivers/staging/android/ion">linux/drivers/staging/android/ion at master · torvalds/linux</a> コード、は割と小さい。</li>
+</ul></p><p>ION があるならもう Gralloc は HAL じゃなくて AOSP 側で持ち、そのレイヤから直に ION に行けばいいのでは・・・という気もするけれど、Gralloc は最初の頃からあるのに対し ION は GB あたりで入ったらしいので歴史的経緯なのかもしれない。あと上でリンクした Exynos のコードをみると実装固有のフラグを Gralloc のレイヤから ION の下のデバイス固有コードに渡すようなことをしているので、Gralloc のレイヤにフックがあるのに意味はある・・・ような気もするが、基本的には Gralloc の usecase を伝えているだけなのでそれが ION に入ってればよくね？とも思う。どうせ Android 用なわけだから。あとだしの感想ですが。</p><p><hr /></p><p>ION は複数種類のヒープをサポートしている(<a href="https://github.com/torvalds/linux/blob/master/drivers/staging/android/uapi/ion.h">ion.h</a>). Linux のカーネルが普通に管理している (物理的には page にわかれている) メモリからアロケートする SYSTEM ヒープ、カーネルの起動時に reserve しておく CARVEOUT ヒープ (物理メモリは自動的に continuous になる)、そして DMA ヒープがある。</p><p>CARVEOUT はお前は昔のゲーム機か、というかんじでゲンナリするけどまあそういうの必要なこともあるでしょう。 (共存している co-processor を動かす別の OS と連携するとか。) 感心したのは DMA ヒープで、こいつは Continuous Memory Allocator 略して CMA からメモリを確保する。</p><p><ul>
+    <li><a href="https://lwn.net/Articles/486301/">A deep dive into CMA [LWN.net]</a></li>
+    <li><a href="https://lwn.net/Articles/636234/">Fixing the contiguous memory allocator [LWN.net]</a></li>
+    <li><a href="https://lwn.net/Articles/447405/">A reworked contiguous memory allocator [LWN.net]</a></li>
+    <li><a href="https://lwn.net/Articles/396657/">The Contiguous Memory Allocator [LWN.net]</a> &lt;- これはパッチへのリンクで、説明が地番丁寧</li>
+</ul></p><p>CMA は名前の通り continuous な物理メモリを確保できるのだが、CARVEOUT のような雑なことはせずカーネルがもっているメモリから必要に応じてアロケートできる。正しい。しかし誰得なのだろうなと思ったら、パッチを書いていたのは Samsung の人だった。エライ。Samsung, 伊達に Android 界の頂点に立ってないなと見直した。</p><p>そしてこういうヘンなやつらもちゃんと仮想メモリにマップしないといけない Linux の VMM は大変だね。</p><p><hr /></p><p>ところで Gralloc がメモリを ION から確保するということは、そいつらは userland から普通に map できるということである。つまり GPU に渡すメモリを CPU から触れるのでは? SGI unified memory architecture なのでは? とおもったら O から NDK に <a href="https://developer.android.com/ndk/guides/stable_apis#a26">AHarewareBuffer という API がたされており</a>、これがまさにそういうクラスっぽい。（<a href="https://stackoverflow.com/questions/41252199/what-replaces-graphicbuffer-on-android-7-0">そして古いバージョンでもplatform の中のコードを無理やり触っている人たちがいたらしい</a>) べんり! まあ CPU 遅いのでできることそんなになさそうだけど。</p><p><hr /></p><p>なお ION は雑すぎて脆弱だよと主張する <a href="http://www.cs.ucr.edu/~zhiyunq/pub/ccs16_ion.pdf">ION Hazard</a> という論文がある。Android PoV から ION を理解するのにはこの中の説明が一番わかりやすくてよかった。</p>

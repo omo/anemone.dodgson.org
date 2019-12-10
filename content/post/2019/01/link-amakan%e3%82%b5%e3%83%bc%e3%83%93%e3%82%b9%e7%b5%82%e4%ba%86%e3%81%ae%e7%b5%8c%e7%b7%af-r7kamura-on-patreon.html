@@ -1,0 +1,6 @@
++++
+tags  = ["letters","post-format-quote"]
+title = "Link: amakan\u30b5\u30fc\u30d3\u30b9\u7d42\u4e86\u306e\u7d4c\u7def | r7kamura on Patreon"
+date  = "2019-01-02 09:32:49"
++++
+<p>via <a href="https://www.patreon.com/posts/23653291">amakanサービス終了の経緯 | r7kamura on Patreon</a></p><p><blockquote>シリーズ情報は誰かが提供してくれるものではないため、書籍の名前、カテゴリ（漫画、ライトノベル、雑誌など）や作者を amakan 側で解析し、良い感じに分類するということをやっていました。</blockquote></p><p>前のチームにいたとき、漫画のタイトル（など）からシリーズを検出してまとめるコードの日本語対応をしてちょと頼まれ、適当に正規表現を書いた記憶がある。リンク先にも書いてある通り、書誌情報にはシリーズ番号が入っていることもあるが、入ってないこともあるのだった。</p><p>元のコードに正規表現やその他の細かいコードを足せば大体動いたが、それなりに奇妙なケースもあって (1上、1下... 3上、3下 みたいなのとか)、そういうのをちゃんと動くようにしたかは覚えていない。最後に計算量を変えるような微妙なコードを書いたがレビューされなかった、やんわりとした悲しみが残っている。</p><p>そのバッチは Cloud Dataflow の前身 <a href="https://ai.google/research/pubs/pub35650">FlumeJava</a> で書かれており、自分が書いた唯一の production big data コードとなった。まあ正規表現なんだけど。</p><p>Flume みたいな並列のコードからガバっと叩いてバッチでデータ処理してもびくともしない <a href="https://ai.google/research/pubs/pub36971">Megastore</a> だか Spanner  だかはすごいな、という感想を持った。</p>

@@ -1,0 +1,6 @@
++++
+tags  = ["android","letters"]
+title = "Memory Allocation onDraw()"
+date  = "2019-02-18 07:05:29"
++++
+<p>Android の昔からある高速化 tips というか性能アンチパターンとして onDraw() でのメモリアロケーションが挙げられているがホンマかいなと思う・・・</p><p>・・・と書こうとして証言を探したが、公式ドキュメントは割とまともだった (<a href="https://developer.android.com/topic/performance/memory#churn">1</a>, <a href="https://developer.android.com/topic/performance/vitals/render">2</a>). 特に後者は "Object allocation and garbage collection (GC) have become significantly less of an issue since ART was introduced ... Note that significant amounts of allocation can mean more CPU resources spent on GC" とページを締めくくっており、これがまさに自分の言いたかったことなのだよね。ついでにいうと onDraw() は別に毎フレーム呼ばれねーよ、というのがある。</p><p>なぜこの話を書こうとおもったのか忘れたけれど、古い知識で性能しったかぶりするのはよくないから実際に測ってからなんか言おうね、といういつもの話でした。まあ GC の影響は測るのが難しいから公式ドキュメントが cargo cult busting してくれてるのは良いことである。Android の公式資料, たまにちゃんと書かれてるね。</p>

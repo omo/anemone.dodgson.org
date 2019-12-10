@@ -1,0 +1,6 @@
++++
+tags  = ["android","letters","post-format-quote"]
+title = "google/mobly: E2E test framework for tests with complex environment requirements."
+date  = "2019-02-18 06:39:23"
++++
+<p>via <a href="https://github.com/google/mobly">google/mobly: E2E test framework for tests with complex environment requirements.</a></p><p>最近性能テストの自動化にこれを使っている。まあまあ良い。良さの一部は lab の実機で CI するインフラを誰かが用意してくれているから、というツール自体とは無関係なものだけれど、テストコードが host 側で動き、しかもそれが Python だというのも良い。</p><p>原則としてこうした E2E のテストは保守性の点で望ましくないことが多く最小限にすべきなのだが、性能のベンチマークばかりは実機でやりたいし、環境をいじる必要もあるのでホスト側の adb で色々やりたい。そして自分の関心は特定のコードの挙動でなくシステムとしての遅さなのだった。</p><p>Mobly をランダムな他人に進めるかというと・・・どうだろうね。ちょっと大げさすぎる気はする。しばらくは plain python でがんばってみて、辛くなったら調べてみるくらいでいいのではないかな。ホスト側でテストを動かすというコアのアイデアが重要だと思う。</p><p><hr /></p><p>それはさておき仕事で python を書くのは新しく学ぶことが多くて楽しい。文法とかは今更特に学ぶところはないが、社内インフラをはじめ色々なライブラリを使い、他人のコードレビューを通せる程度にはゴミでないコードを書くと、余暇プロジェクトや書き捨てのスクリプトとは違う仕事の手触りがある。</p><p>&nbsp;</p>

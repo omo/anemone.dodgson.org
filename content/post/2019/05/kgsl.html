@@ -1,0 +1,12 @@
++++
+tags  = ["android","braindump","letters"]
+title = "KGSL"
+date  = "2019-05-25 06:24:43"
++++
+<p>On device trace には KGSL どうこういうアノテーションがある。しかしコマンドライン systrace のカテゴリにはそれらしいものが見当たらない。</p><p>調べてみると debugfs に echo する必要があるらしい (なぜカテゴリにしてくれない...):</p><p><ul>
+    <li><a href="https://source.android.com/devices/tech/debug/ftrace">Using ftrace  |  Android Open Source Project</a></li>
+</ul></p><p>KGSL は Kernel Graphics Support Library の略。要は HAL のことだと説明されている。このメールの説明は親切でよいが、8年前に upstream したいとかいいつつ今のところ一行も入ってないあたりに qcom らしさがある:</p><p><ul>
+    <li><a href="https://lwn.net/Articles/394665/">Qualcomm 2D/3D graphics driver [LWN.net]</a></li>
+</ul></p><p>AOSP のツリーをみると Pixel1 まではコードがある。新しいデバイスのコードは見当たらない. Branch policy が違うのだろうか:</p><p><ul>
+    <li><a href="https://android.googlesource.com/kernel/msm/+/891f2c29fe4bfc06747c0eb58fcf35a7fa05a588/drivers/gpu/msm/">drivers/gpu/msm - kernel/msm - Git at Google</a></li>
+</ul></p><p>ユーザランドのコードは秘匿されているはずなのでコードを読んだところで何もわからないだろうが、<a href="https://android.googlesource.com/kernel/msm/+/891f2c29fe4bfc06747c0eb58fcf35a7fa05a588/drivers/gpu/msm/kgsl.c">kgsl.c</a> の下の方に定義されている ioctl の関数群を見るに割と直接 GL ... というか OpenCL に近い雰囲気... がカーネルに降ってくるとわかる。</p><p><hr /></p><p>ちらっとコードを眺め、自分は GPU のメンタルモデルが皆無と思い知る。</p><p>これらのシステムコールというか ioctl は誰が呼ぶ？というとアプリが呼ぶはずである。アプリは何をするのか ？GPU を使って graphics buffer に絵を描く。そしてその buffer を Window Manager なり Surface Flinger に送る・・・というかんじだよね？</p><p>これらをまったく理解していない昔に作られたおかしなメンタルモデルのせいで、自分は描画というものは一つの GL context が最終的なスクリーンに直接描画する、そして GPU は何らかのシステムサービスが専有+仲介するものだと暗に想定しがち。このメンタルモデルは Chrome のせいで作られてしまったが、あれは Blink が sandboxed で GL を使えないからそうなってるんだよねたぶん。</p><p>Android ... に限らず OS の文脈だとこれはまったく間違っていて、実際は個々のアプリ(プロセス)が GPU で自分の画面を書いた buffer をつくり、それを WM/SF に送り、彼らがそれを compositor なり GL なりで合成する(はず)。つまりアプリとシステムはそれぞれ別々に GPU を使っている。WM/SF が仲介するのは graphics buffer の composition と、その composition の入力となる buffer の allocation くらいである。CUDA みたいのを想像するとこれはまったく自然。CUDA に中央集権的サービスとかいない。</p><p>GPU を仲介するのはカーネルドライバの仕事である。そういう意味でデバイスドライバは自分の誤ったメンタルモデルが想定していた central coordinator だが、このひとに composition みたいな概念はない。カーネルおよび GPU 資源割当の窓口になるだけ。</p><p>OS はドライバに何を提供するのか。呼び出し側プロセスのキー（というかプロセス構造体）、ファイルシステム、メモリマネージャ、CPU コードの実行環境（カーネルスレッド）。とかで、GPU コードのスケジューリングはドライバなり GPU 側の firmware なりがやるのだろう。</p><p>アプリと Window Manager だけが GPU を使っていた平和な時代は終わり、HAL はメディア処理に GPU を使うし背後で動いているサービスやアプリの ML も NNAPI などを介して GPU を使う(可能性がある)しアプリも RenderThread のみならず画像処理などに GPU を使うしで、最近の GPU は混み合いがち。なので GPU の挙動は Systrace などを介してもうちょっとプログラマから見えてほしいし、プログラマとしてもどういうモデルで GPU が動いているのかはもうちょっと詳しく理解したい。</p><p>しかし時間がないというかそもそもカーネルドライバとかわからんつーの。そこから勉強するのは道のりが長いなあ。Linux や OS というものの不理解が祟る。</p>

@@ -1,0 +1,6 @@
++++
+tags  = ["android","letters"]
+title = "On Device Tracing"
+date  = "2018-06-03 10:03:42"
++++
+<p>Android P では <a href="https://developer.android.com/preview/features#on-device-systrace">on-device tracing</a> すなわちデバイス上で Systrace をとる機能が追加された。これは性能バグ担当者からすると割と game changer である。</p><p>...というのを上司がファイルしてきた性能バグで学ぶ。この上司はもともと Android の中のひとだっただけあって色々よくわかっており、性能バグに <a href="https://developer.android.com/studio/debug/bug-report">bugreport ファイル</a>だけでなくデバイス上で採取した ctrace ファイル(圧縮 Systrace ダンプ) を添付してくれた。たくさんのアプリを起動しまくり、かつネットワークも怪しい環境での Systrace. 今までに見たことのない現象が色々記録されている。すごい。こりゃいいわ。まあそういう厳しい環境下で怪しい挙動をする、とかいわれても直せないのだが・・・。</p><p>ところで Systrace が出力する HTML はでかい。でかすぎると Chrome が crash するため、事実上 Systrace ダンプの大きさを制限していた。自分も今まではでかい Systrace の閲覧を諦めてきたのだが上司のバグを無視するわけにもいかず重い腰をあげて回避策を調べてみた。</p><p>結論としては  V8 の heap size を大きくするフラグをわたして Chrome を起動すればよい。--js-flags="--max-old-space-size=10000" みたいな。<a href="https://bugs.chromium.org/p/v8/issues/detail?id=847#c28">Chrome のバグ</a>参照のこと。</p><p><h3>追記</h3></p><p>500MB くらいになるとこのトリックをもってしても Chrome が死んでしまう。みんなどうしてんのこれ・・・。</p>

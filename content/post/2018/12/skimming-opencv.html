@@ -1,0 +1,6 @@
++++
+tags  = ["letters"]
+title = "Skimming OpenCV"
+date  = "2018-12-06 21:04:44"
++++
+<p><a href="https://github.com/opencv/opencv">opencv/opencv: Open Source Computer Vision Library</a></p><p>どんなコードか軽く冷やかしてみるが・・・つらい・・・。C++ で画像周りのコードをどう書くと綺麗に書けるか、という題材には向いていない。C++ は実装のための言語であって Python とか Java の binding とかが重要なのかもしれないね。</p><p>機能はいっぱいあるし特殊な CPU 命令や GPU を使った高速化とかもがんばっているぽいので、誰かが実装したアルゴリズムを呼び出すだけならさすがに良さそう。こいつをフレームワークとして自分でアルゴリズムを書くという乗り物には向いてないというだけで。</p><p>この言い分もフェアではないかな。たとえば Computational Photography のアルゴリズムを実装したコードも<a href="https://github.com/opencv/opencv/tree/master/modules/photo">入っており</a>、中を見るとまあこんなもんかな、と思えてくる。単にかっこいい C++ ではないというだけで、OpenCV の流儀を覚えればそれなりに便利なのかもしれない。</p><p>それはもはや OpenCV を参考に画像処理コードのデザインを考えるという話じゃなく　OpenCV にコミットして良きも悪き受け入れるということなわけだが、そうやってる人が多いところを見ると割には合うもんなのかもね。</p><p>まあ今回はスルーするとして、やる気になったら考えよう。OpenCV 4.0 には <a href="https://docs.opencv.org/trunk/d0/d1e/gapi.html">G-API</a> という、Halide/TF/NNAPI 的グラフでがんばるモデルもあるらしい。こういうのは学ぶ価値ありなのかもしらん。</p>

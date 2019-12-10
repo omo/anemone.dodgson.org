@@ -1,0 +1,12 @@
++++
+tags  = ["android","letters"]
+title = "Thread Priorities"
+date  = "2018-08-14 14:21:42"
++++
+<p>Android では UI thread に高いプライオリティが割り振られているという。それは Systrace を睨めばわかるが、ふと思い立って実際にどのくらいなのか調べてみた。<a href="https://stackoverflow.com/questions/21253653/individual-thread-priority-checking-using-command-line-in-linux">この SO の記事</a>を真似してよく知っているアプリすなわち仕事アプリのスレッドを眺めてみる。</p><p><ul>
+    <li>UI Thread と Render Thread は同じくらい高い pri がある: 29</li>
+    <li>HwBinder のスレッドは更に高い: 31</li>
+    <li>ランダムなワーカーの皆様は 19</li>
+    <li>Thread#setPriority で釣り上げを試みたと思しき奴らは 21. つまり Java の API をいじっている範囲では UI Thread には勝てない。<a href="http://man7.org/linux/man-pages/man2/getpriority.2.html">setpriority()</a> とか使うと変えられるのだろうか。常識的に考えるとダメそうだが。</li>
+    <li>ART の GC 用スレッドは低め: 15</li>
+</ul></p><p>最終的に UI thread をブロックする処理は下手に worker に逃がすより UI thread でやってしまったほうが良い場合があるとわかる。まあ CPU は１個だけじゃないし他プロセスとの兼ね合いもあるので一概には言えないけれど。</p><p>ps の出力には PRI の他に NICE もあるが、上下関係は PRI に準じている。違いが気になるけど調べるのはまた今度。</p><p>&nbsp;</p>

@@ -1,0 +1,8 @@
++++
+tags  = ["android","letters","post-format-quote"]
+title = "Link: Block ads in apps on Android (including video ads) - unlike kinds"
+date  = "2019-02-20 09:42:40"
++++
+<p>via <a href="https://unlikekinds.com/article/block-video-ads-android">Block ads in apps on Android (including video ads) - unlike kinds</a></p><p>フーンどうやるのかな、とおもってコードを覗こうとしたが GPL3 だったので諦め。周辺情報を総合すると VPN として振る舞うらしい。</p><p><ul>
+    <li><a href="https://developer.android.com/guide/topics/connectivity/vpn">VPN  |  Android Developers</a></li>
+</ul></p><p>これを使えば /etc/hosts の代替品となるのではなかろうか。でも VPN ってことはアプリをぜんぶのパケットが通ってくのかな。それは雑に作ると性能でなそうだが・・・。</p><p>そしてなぜか app store でなく f-droid  で配布してるけれど、Ad-blocker は Playstore の規約に触れるのかな。まあ触れてもおかしくないな。自分用なら adb install すればよさそうではある。</p><p>サンプルの <a href="https://android.googlesource.com/platform/development/+/master/samples/ToyVpn">ToyVPN</a> を見ると・・・ IP packet がストリームとしてやってくるのか。厳しい。一方で <a href="https://developer.android.com/reference/android/net/VpnService.Builder.html">VpnService.Builder</a> をみると DNS を指定できる。</p><p>なんとなくインプロセスの DNS を実装してそいつが /etc/hosts 的に twitter.com などをブロックし、IP パケットは素通しする、というような実装ができると一番簡単に思えるがどうなのだろうな。素通しは必要なシステムコールを特定すればなんとかなるとして、インプロセスの DNS は手強い・・・。なお ToyVPN は linux の tunneling の仕組みに丸投げする実装になっている。</p><p>DNS はインプロセスじゃなくてどっかに自分で立てる、という方向性もありうるか。どのみちそこまでがんばって実装する気にはならないなあ・・・。</p><p>ここまで。Android の VPN の API を眺めることができたのでよしとする。</p><p><hr /></p><p>更にスレを読み進めると、Android P はユーザが DNS サーバを上書きできるのか。(<a href="https://blog.cloudflare.com/enable-private-dns-with-1-1-1-1-on-android-9-pie/">Cloudflare の説明</a>) これでやるのが一番簡単そうだなあ。しかし DNS サーバを運用するのみならず DNS-over-TLS をサポートしたやつを使うとか大変そうすぎる・・・。誰かそういうサーバ立ててくれないかなー・・・。</p>

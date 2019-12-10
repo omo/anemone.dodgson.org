@@ -1,0 +1,6 @@
++++
+tags  = ["letters"]
+title = "WebRender"
+date  = "2019-01-25 05:23:46"
++++
+<p><a href="https://github.com/servo/webrender">servo/webrender: A GPU-based renderer for the web</a></p><p>今日は向井さんが Servo の話らしいので雑談がてらちょっと眺める。Servo のレンダラ。最近は Firefox でも使おうとしているらしい。</p><p>ブラウザのレンダラを再利用可能にするというアイデアは皆が考えるけれどまず失敗するものの典型だが、これはすくなくとも Servo と Firefox で動いているわけである種の夢を叶えている。どうなってんのかと見てみると・・・。いわゆる CSS Rendering Model を扱っているのではなく、どちらかというと Skia に近いレイヤだった。ただ Skia よりはもうちょっとブラウザに寄せてある感じはする。API が retained-mode first というか only なので, immediate ぽい API の Skia より色々できるだろうと想像はつく。</p><p>思ったより普通だったが、それはきっと正しいことなのだろうな。</p>

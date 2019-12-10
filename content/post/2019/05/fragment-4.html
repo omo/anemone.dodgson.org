@@ -1,0 +1,146 @@
++++
+tags  = ["fragments"]
+title = "Fragment #4"
+date  = "2019-05-06 09:11:26"
++++
+<p><h3>日曜日</h3></p><p><ul>
+    <li>昨晩は来客のため就寝が遅くなり、今日は母の日の備えが必要なため、なにもなし。</li>
+</ul></p><p><h3>土曜日</h3></p><p><ul>
+    <li>04:57. GitHub に CI をつなぎます。
+<ul>
+    <li><a href="https://github.com/apps/google-cloud-build">GitHub Apps - Google Cloud Build</a></li>
+    <li>これは・・・微妙だな。全てのコミットに対してデプロイが走ってしまう。しかし条件つきでビルドを促す方法はない。テストだけにしておくのが無難だが、一方で gcloud への依存こそローカルから手放したい。どうしたものか。</li>
+    <li>push をトリガーする github repo を別枠で用意し、そっちにデプロイ用の cloudbuild.yaml を置く? プロジェクト毎に git repo が２つできる。かったるい。</li>
+    <li>GitHub app を使う標準のインテグレーションは捨て, WebHooks を受け取ってビルドを開始する Cloud Function を書く？たぶん仕事ならこの路線が正解だが、仕事じゃないのである。保守がかったるい。</li>
+    <li>一方、仕事じゃないのでどのみちそんなにコミットしないのではとも思う。当面は適当に squash しつつ現状の設定を維持、Cloud Build がもうちょっとがんばってくれるのを待つとしよう。ついでに来週バグをファイルしよう。いち利用者としてフィードバックする口が見当たらないのはどうなんだと思うが・・・。</li>
+    <li>つぎ。インポータの CF も CI します。</li>
+    <li>gcloud functions deploy するには roles/iam.serviceAccountUser が必要らしい。権限まわりはいつも謎。</li>
+    <li>うごいた。ここまで。</li>
+</ul>
+</li>
+</ul></p><p><h3>金曜日</h3></p><p><ul>
+    <li>昨晩は I/O にきているひとたちの接待(?)宴会に参加したため朝起きられず。
+<ul>
+    <li>大量の肉を食べたせいか翌日の昼まったく空腹感がない。肉おそるべし。</li>
+</ul>
+</li>
+    <li>自分のチームが興味のない数字をどこか（「インフラ」）の人々が勝手に図り、勝手に数字が下がったと文句を言い P1 バグをファイルしてきて、しかし regression range は一ヶ月以上。そんな bureaucratic の季節が来た。しかし今はチームの計測インフラが強化されたのでそのどうでもいい数字の計測も CI に追加してやんよ、と心の余裕が持てて良い。しかし BS である.</li>
+    <li>わけもなく仕事のやる気が出ないときはとりあえず音楽をかけると良い。</li>
+    <li>ふと昔使っていた耳栓型イヤホンが欲しくなる: <a href="https://www.amazon.com/Etymotic-Research-ER4XR-Extended-Monitors/dp/B01GW786B4">ER4XR Extended Response Earphone</a> $300. 高い...  <a href="https://www.amazon.com/Etymotic-ER3SE-Balanced-Armature-Earphones/dp/B07665KVD1/">ER3SE Studio Edition Earphone</a> 廉価版も $150 か。また今度。</li>
+    <li>I/O のビデオを見る時間を作らないと。一日一本、仕事しながら見る？</li>
+    <li>Youtube の watchlater リストがいまいち使いにくいので, YT 専用の watch later アプリが欲しい。</li>
+    <li>Pragprog を読むうちに、自分が過去に読んだ技術書をリストアップして振り返りたい気がしてくる。しかし良いツールがないな。Amazon の wishlist でも使えば良いのか。</li>
+    <li>同僚と話していると自分はまあまあアプリのアーキテクチャに詳しいと気づく。しかしきみらそれ知らずに機能開発できてるのか。それはそれでエライ。</li>
+    <li>割と生産的な一日だった。</li>
+</ul></p><p>&nbsp;</p><p><h3>木曜日</h3></p><p><ul>
+    <li>05:15. 寝入りに Pragmatic Programmer 新版を読んでいたらイライラして眠りが浅くなってしまった・・・
+<ul>
+    <li>自分をおちつかせるために書いた: <a href="/2019/05/09/pragprog-20-first-impression/">Pragprog 20 周年版読み始め</a></li>
+    <li><a href="https://cloud.google.com/firestore/docs/security/iam#roles">Security for Server Client Libraries  |  Cloud Firestore  |  Google Cloud</a></li>
+    <li>datastore.owner というずいぶん強力な権限が必要らしい。Collection がなければつくる、という Mongo 的なつくりのせいか。いまいち。</li>
+    <li>うごいた。今日はここまで。明日は <a href="https://github.com/marketplace/google-cloud-build">GitHub 側のフック</a>を足します。</li>
+</ul>
+</li>
+    <li>GCP の bill, 高いな色々遊んでるせいか？とおもったらむかーしつくった VM のディスクが高く付いていた! 削除. $100 くらい無駄にしてしまった OMG...</li>
+    <li>今日は仕事がおおい. こういう雑用やって成果を上げた気にならない用に気をつけたいが, それはさておき片付けないといけない。</li>
+    <li>仕事の Python コード、けっこうアグレッシブに list comprehension から generator への書き換えを勧められる。そしてたしかに良くなる。まだ generator が板についていない自分。</li>
+</ul></p><p><h3>水曜日</h3></p><p><ul>
+    <li>04:46. 雑用のち CI つづき.
+<ul>
+    <li>Cloud build で GitHub repo を git clone したのち gcloud app deploy する。
+<ul>
+    <li>git clone の credential は、gcloud kms で暗号化した token の base64 を deployment.yaml にハードコードしたのち gcloud builder step で復号化し、結果のファイルを git builder から使う、という方針でがんばってみた。このくらいで許してくれ。</li>
+</ul>
+</li>
+    <li>Cloud build でテストを動かしたい。
+<ul>
+    <li>とりあえずテストのステップを足し、credential がなくてテストが失敗するところまで動かそうではないか。-&gt; 動いた。</li>
+    <li>さて GCP の credential だが...
+<ul>
+    <li>gcloud step から <a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys">IAM で service account key を発行</a>する?  cloud build がそんな強力な権限を持ってしまってはダメ。</li>
+    <li>テスト実行用に service account をつくり、その credentials を KMS で暗号化してコミット、それを を gcloud step で復号化する。</li>
+</ul>
+</li>
+</ul>
+</li>
+    <li>Firestore の IAM role がわからん！で時間切れ。</li>
+</ul>
+</li>
+    <li>ART のひとがとことこやってきて、おまえのベンチマークちゃんとネイティブコードにコンパイルされてる？というので調べてもらったらされてなかったうげー・・・。まあボトルネックはだいたい OS の中とか C++  の中なので全体像にはインパクトないと思うけど shame であることよ。お前は<a href="https://events.google.com/io/schedule/events/99770bfb-fcdb-4246-a613-5e84c04e2e58">このトーク</a>を見ろと言われる。明日じゃんか。</li>
+    <li>ふとちょろいウェブアプリを作れる JS フレームワークないかなと <a href="https://medium.com/the-vue-point">Vue の blog</a> を呼んでいたら <a href="https://medium.com/the-vue-point/plans-for-the-next-iteration-of-vue-js-777ffea6fabf">3.0 作ってるよ非互換だよ</a>的ポストが目に入ってうんざり。やっぱ Web やりたくない。</li>
+    <li>今日は割り込みの相手をしていたら終わってしまったうんざり・・・しかしいくつか重大な発見があったのでよしとする。たまには社交(?)も必要。</li>
+    <li><a href="https://pragprog.com/book/tpp20/the-pragmatic-programmer-20th-anniversary-edition">The Pragmatic Programmer, 20th Anniversary Edition: your journey to mastery by David Thomas, Andrew Hunt | The Pragmatic Bookshelf</a>
+<ul>
+    <li>義理で購入したが、Pragprog サイトの古臭さがなにかを物語っており寂しい。まえがきは 1/3 が新しい内容だと主張している。さて。</li>
+</ul>
+</li>
+</ul></p><p><h3>火曜日</h3></p><p><ul>
+    <li>04:43. CI つづき
+<ul>
+    <li>まず GAE をクラウドで gcloud app deploy してみましょう。<a href="https://cloud.google.com/cloud-build/docs/configuring-builds/build-test-deploy-artifacts">このへん参照</a>。</li>
+    <li>Github  から clone... するのに key を設定に書かないといけない？<a href="https://cloud.google.com/cloud-build/docs/access-private-github-repos">ドキュメント</a>によれば... めんどくせー。とりあえず今は前に進むために personal access tokens をハードコードして動かす。</li>
+    <li>つぎ。テストを動かすにせよ GitHub のトークンを隠すにせよ、なんらかのキーなりなんなりを取り出す手段が必要。やれやれ・・・。こういう時は専用の CI-aaS の方がちょろっと環境変数を保存できたりして便利な傾向。しかしそういう投げやりなショートカットを用意してるのが本来 AWS に対する GCP の良さではなかったか。</li>
+    <li>子が起きてきたので唐突に終了。</li>
+</ul>
+</li>
+    <li>朝飯を若干たべすぎる。Sugar の引力に弱い。</li>
+    <li>I/O
+<ul>
+    <li>Search with AR. どうでもいい...</li>
+    <li>レストランで Lens なー...</li>
+    <li>Google Go, $35 の電話で動く....のは $35 の電話の存在がすごい。</li>
+    <li>サーチに予約 Bot が付いた! 便利かもしらんがこの仕事はやりたくないなー。</li>
+    <li>Assistant が Always on になったの、デモはすごい。どうやってインテグレートするんだろうか。</li>
+    <li>プライバシーまわり、昔会社がすごい真面目だった頃に溜め込んだものが dividend を払ってるようでありがたい。今日の我々は未来のために何を積み立てているのだろうか・・・。</li>
+    <li>Android の "focus mode" はちょっといいかも。</li>
+    <li>Beta3 やるデバイスの多さは Treble の成果か。世の中はちょっとずつ進んでいる。</li>
+    <li>Pixel 3a, OnePlus でよくね...と思っていたが OnePlus より安い。頑張ったな。</li>
+    <li>おわり。特に面白いものはなかったな。午後に期待。</li>
+    <li>午後は、特に exciting ではないが Android Studio が真面目にバグをとったのはいい話。</li>
+</ul>
+</li>
+    <li><a href="https://www.nytimes.com/2019/05/07/technology/personaltech/google-pixel-3a-review.html">Google Pixel 3A Review: The $400 Smartphone You’ve Been Waiting For - The New York Times</a>
+<ul>
+    <li>メディアのレビューは概ね好意的。やはり安いのは大事。Snapdragon 670 は Big 2, Small 6 というコア構成で単に遅いのみならず割と性能特性が違うため、がんばってチューンしていきたい所存。</li>
+</ul>
+</li>
+    <li>昼飯もたべすぎた・・・。</li>
+    <li>チームの人が "onDraw() ではアロケーションを減らそうな" みたいなプレゼンをしていてウッとなる。このへんの溝はなかなか埋まらなそう。</li>
+</ul></p><p><h3></h3></p><p><h3>月曜日</h3></p><p><ul>
+    <li style="list-style-type:none;">
+<ul>
+    <li>04:56 CI つけたい。あとそろそろ wrap up の方針を固めないとな。
+<ul>
+    <li>CI はとりあえず Cloud Build を使ってみる。</li>
+    <li><a href="https://github.com/GoogleCloudPlatform/python-runtime">Python GAE 用 Docker image</a> というのがあったのでこいつでビルド（というかテスト）を動かせないか手元で評価しているが、むしろ普段の作業も pyenv でがんばるより Docker に統一した方が良い気がしてきた。あとでやる。</li>
+    <li>Credential の置き場がないという当初の懸念までたどり着いた。GCP 的な正解は <a href="https://cloud.google.com/kms/">KMS を使え</a>らしいが個人プロジェクトには大げさすぎ。Service Account の JSON をどこかから持ってきたいだけ。
+<ul>
+    <li>Git にチェックインしてしまう -&gt; 人としてどうだろう。</li>
+    <li>GCS に置いて pull する。これも微妙だが GitHub のパスワードではなく GCP の credential の裏にあるだけマシと言える。</li>
+    <li>GCloud のコマンドでなんとかできそうなものだがわかんね。</li>
+    <li>テスト動かすのはあとでやるとして、 git clone のち gcloud app deploy するところまでやろう。</li>
+</ul>
+</li>
+    <li>しかし GAE と Cloud Function のコードが同じ git repo に入ってると都合悪いので分離しなければ。Yak shaving は続く。</li>
+    <li>Git repo を分離したところで今日はおしまい。</li>
+</ul>
+</li>
+    <li><a href="https://www.youtube.com/watch?v=ZbpjLchrYgw">Microsoft Build 2019 // Vision Keynote + Imagine Cup World Championship - YouTube</a>
+<ul>
+    <li>キーノート 0830 からですか。早いな。</li>
+    <li>自分のデータを食わせた言語モデルに基いて音声認識できる！これはすごいよさそう。</li>
+    <li><a href="https://developer.microsoft.com/en-us/graph">Microsoft Graph</a> がなんなのかまったくわからないので<a href="https://developer.microsoft.com/en-us/graph/blogs/announcing-30-days-of-microsoft-graph-blog-series/">調べる</a>。Office 365 の API をかっこいいかんじに統合し、その上に色々付加的なサービスを乗っけたものらしい。いいじゃん。O365 つかってないので使いみちがないが、G Suite / G Apps の API がこういう風だったら使いたいことは色々ありそう。</li>
+    <li>Edge, IE モードにシームレスに切り替わる... これほど unsexy かつ一部の人には超実用的な機能はない。そして ad blocker. これを tracker blocking と呼ぶことにしたのは発明。</li>
+    <li>Case Study の多さに景気を感じる。そして Windows 全然でてこなくてすごい。明日以降なのかもしれないが。</li>
+    <li>良さそうという気持ちと根本的な無関心。Microsoft ecosystem と自分は距離がありすぎる。興味を持つにはもうちょっと接点が必要。どこかに Windows インストールしたい。</li>
+</ul>
+</li>
+    <li><a href="https://www.theverge.com/2019/5/6/18527550/microsoft-chromium-edge-google-history-collaboration">Inside Microsoft’s surprise decision to work with Google on its Edge browser - The Verge</a>
+<ul>
+    <li>いまいちやる気はないがユーザはいっぱいいる Windows 版を専門家が良くしてくれるのは Chromium 的に何一つ問題ない気がするが、他の会社のもってるコードベースさわるのはなんだかんだで面倒。がんばれ。</li>
+</ul>
+</li>
+    <li>仕事でも家でも Python を書いている結果、少し習熟度が上がってきて楽しい。なにかが上達するこの感覚、ふだんは中々味わえない。</li>
+</ul>
+</li>
+</ul></p>
