@@ -1,0 +1,62 @@
++++
+tags  = ["fragments"]
+title = "Fragments #34"
+date  = "2019-12-02 06:50:36"
++++
+<p><h2>2019-12-08 (Sun)</h2></p><p><ul>
+    <li>At Starbucks.</li>
+</ul></p><p><h2>2019-12-06 (Fri)</h2></p><p><ul>
+    <li>風邪、喉いがいはだいがい復調。月曜からだから、発症から回復まで 4-5 日かかるかんじ。喉の復調にはもう一週間必要。</li>
+    <li><a href="https://www.calnewport.com/blog/2019/12/06/the-advice-i-gave-my-students/">The Advice I Gave My Students - Study Hacks - Cal Newport</a> <em>"Use your smartphone only for the following activities: calls, text messages, maps, and audio (songs/podcasts/books)." </em>カメラはダメかい・・・?
+<ul>
+    <li>自分は書籍と Podcast 以外のひまつぶしアプリは NYTimes しか入れていないが、結局ブラウザがあると台無しなのだよね。一時期ブラウザを殺していたこともあったが、今度はサーチが使い物にならないため諦めた・・・が、ふたたび試してみていいかもしれないと思い直し <a href="https://support.google.com/android/answer/9346420?p=wellbeing_site&amp;visit_id=637112515274883464-1578133328&amp;rd=1">Wellbeing</a> で Chrome 予算を 20 min に設定。NYTimes はまあ、いいです。新聞読むくらい許してくれ。</li>
+    <li>Intent で受け取ったサイトだけを表示し一切のナビゲーションを許さない WebView アプリみたいのが必要に思える。普通にブラウザとして使うと相当ウザそうだが普通にブラウザ使いたくない人むけの道具だと思うとまあいいのでは？ムダ？</li>
+</ul>
+</li>
+    <li>「コンパイラのバグ」で写真が壊れるレアな事例を目的する。コンパイラ、アプリにくらべたらバグないけれど、トランクについていくとさすがにぼちぼち壊れる模様。問題の変更は upstream ではすぐに修正され、新しい trunk を pull して事なきを得たっぽい。Pull する仕事の人は大変だね。</li>
+    <li>給与改定。インフレ分くらいはあがったぞ！家賃の上昇カーブよりは緩いがそれは俺のせいじゃねー案件。引っ越してきたあたりから増え続けて恐ろしかった株の割合、グラフを眺めた感じここ 1-2 年で落ち着いた模様。偉くなるとまた違うらしいが。</li>
+    <li>Jupyter に %%javascript という magic があるのを知ったので早速 Colab で alert("hello") してみたところ、おまいの環境は sandboxed ですとエラー。なるほど・・・。
+<ul>
+    <li>なお自分が知りたかったのは magic ではなく special variable だった。すなわち <a href="https://ipython.org/ipython-doc/stable/interactive/reference.html#output-caching-system">"_" で一つ前の cell の結果</a>。_&lt;n&gt; もすばらしい。読んでよかったマニュアル。</li>
+</ul>
+</li>
+    <li><a href="https://www.youtube.com/playlist?list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh">React Conf 2019 - YouTube</a> 楽しくやってんなー.</li>
+    <li><a href="https://arxiv.org/abs/1912.01703">[1912.01703] PyTorch: An Imperative Style, High-Performance Deep Learning Library</a> 特に目新しい話はなさそうだが、どうやって trace とれるのかは気になる。</li>
+    <li><a href="https://www.youtube.com/playlist?list=PLlmOKTb2JQLPhbWRZ4-hTdItUXzUkhOpv">o11ycon2018 - YouTube</a> Honeycomb の blog は読まねばと思っていたが、こんなカンファレンスもしたのか。読もうとしていたブログシリーズリンク: <a href="https://www.honeycomb.io/blog/instrumentation-a-series/">Instrumentation: A Series - Honeycomb</a></li>
+</ul></p><p><h2>2019-12-05 (Thu)</h2></p><p><ul>
+    <li>風邪、ピークは過ぎて喉以外はだいじょうぶっぽいので出勤。しかしこんどは子の風邪が悪化・・・。季節が来てしまった。</li>
+    <li><a href="https://preferred.jp/ja/news/pr20191205/">Preferred Networks、深層学習の研究開発基盤をPyTorchに移行 | 株式会社Preferred Networks</a> Chainer が終了し PyTorch 移行と伝え聞く。この切替のはやさが今時の企業であることよ。自社製品とともに滅びるのは平成でおわり。しかし勤務先は平成の会社なので心配。</li>
+    <li>夜、腹が痛いと子が泣くので念のため病院へ。Stomach flu とのこと。やはり・・・ウイルス性胃腸炎、だいたい親に感染して cascading hell になりがちなので気をつけたい・・・があまり気をつけられることもない。
+<ul>
+    <li>Urgent Care にかかるとき数百ドル(推定)を躊躇せずにすむのは払いのいい仕事のおかげなので、やはり収入を削って新しい仕事に挑戦とか親としてナシだな・・・という気分。cf. <a href="https://www.nytimes.com/2019/12/02/podcasts/the-daily/medicare.html">Why So Many Hospitals Are Suing Their Patients</a></li>
+    <li>医者の問診を躊躇するほど医療費が高いのはどうかと思う一方、でその financial bar が wait-time free を支えているのも事実に思え、社会の善と自分の都合はしばしば両立しない。まあ医療費さがって病院混んでもいいですよ社会が平和になるならね・・・。</li>
+    <li>ところで保険があっても医療費高いとおもうんだけど、Medicare For All ってその問題は全然解決しないよね？ほんとに private insurance の問題なの？なぞ。</li>
+</ul>
+</li>
+</ul></p><p><h2>2019-12-04 (Wed)</h2></p><p><ul>
+    <li>引き続き風邪で欠勤。喉を覗いてみるが、扁桃腺が腫れているのかはよくわらない。写真をとっておき、健康なときの snapshot と比べよう。</li>
+    <li><a href="/2019/12/04/book-competing-with-unicorns/">Book: Competing with Unicorns</a></li>
+</ul></p><p><h2>9-12-03 (Tue)</h2></p><p><ul>
+    <li><a href="https://www.technologyreview.com/s/614762/crispr-baby-twins-lulu-and-nana-what-happened/">Opinion: We need to know what happened to CRISPR twins Lulu and Nana - MIT Technology Review</a> 長期的 (1000 年とか) にみると人類が gene editing をやらずに我慢できる気はまったくしないが、序盤はこの論文にあるように impossibly unenthical なので unpublished でどっかの dictatorship regime なり billionare foundation なりがこっそりすすめるのだろうね。</li>
+    <li>風邪で欠勤。ここで悩まず休めるシーズンオフであることよ。</li>
+    <li><a href="https://rawdatapodcast.com/">Raw Data</a> という podcast を少し前にみつけて気に入っていたのだが・・・終わってしまった！かなしい。やはりがんばって作っている番組は永遠に続けるのが難しいのだろうなあ。In a meantime, <a href="https://www.nytimes.com/2019/11/27/podcasts/the-daily/jungle-prince-royal-family-oudh.html">Special Episode: The Jungle Prince - The New York Times</a> が面白い。ちまちま聴いている。</li>
+    <li><a href="https://blog.google/inside-google/alphabet/letter-from-larry-and-sergey">A letter from Larry and Sergey</a> 姿をみなくなってしばらくたつ。もう事実上の引退なのだろうなとおもっていたが、正式に引退となった。TGIF もなくなって創業者も引退して、物悲しい会社員の年の瀬なり。
+<ul>
+    <li>L 氏は社長としてはだいぶ残念なかんじだったので、実務家の S 氏が引き取ったのも無理はない感じはしていた。だから創業者ががんばっていれば会社が今のようにぱっとしなくなることもなかった、とは思わない。一方でいまの「雇われ社長」体制が機能しているのかというと、どうかね。会社が傾いて社長交代になったのではないだけに、前の社長はここがダメだったら俺はこうするぞ、みたいなことを言えない難しさはあるのではないか。それは Cuppertino の T 社長も同じかもしれないが・・・。</li>
+    <li>そろそろ何かが大きく変わらないといけない気がするが、そうした気配はない。どうなんのかね。</li>
+    <li><a href="https://www.qualcomm.com/news/releases/2019/12/03/annual-snapdragon-tech-summit-qualcomm-unveils-roadmap-bringing-5g">At Annual Snapdragon Tech Summit Qualcomm Unveils Roadmap for Bringing 5G Mainstream in 2020 | Qualcomm</a> なにひとつわからない・・・。</li>
+</ul>
+</li>
+</ul></p><p><h2>2019-12-02 (Mon)</h2></p><p><ul>
+    <li>休暇の脂肪を落とすため、年内は勤務中断食とす。（社交はのぞく。）</li>
+    <li>来年のプレスクール学期 (9 月開始) の申し込みが始まる、というのでゆこっぷ（奥様）に申し込んでもらう。その学校は学費が高いのをさておくと良いところなので、うっかりあぶれないようにしたい。</li>
+    <li>Coursera の宣伝メール。ふと気が向いたので最近のコース事情を眺めていたら UPenn の <a href="https://www.coursera.org/specializations/positivepsychology">Foundations of Positive Psychology</a> というクラスがあった。Upenn といえば・・・と記述を眺めると "Grit" の Angela Duckworth と "Leaned Optimism" の Martin E.P. Seligman がいる！すごい！Upenn, 気づいてなかったけどモダン根性論のメッカだったのか。そして自分が「モダン根性論」と読んでいた自己啓発の系譜は "Positive Psychology" だったのか・・・。(<a href="https://ppc.sas.upenn.edu">大学のサイト</a>)</li>
+    <li><a href="https://arstechnica.com/gadgets/2019/11/google-is-killing-google-cloud-print/">Google is killing Google Cloud Print | Ars Technica</a> なんかの誤読でしょ、とおもってスルーしていたがプリンタがほしいので読み直すと・・・。ほんとに？どうしたらいいかわからないのだが・・・。もうプリンタの設定とかできないよ・・・。たとえば<a href="https://www.amazon.com/HP-LaserJet-Wireless-Printer-W2G51A/dp/B079QRKWLX/">この HP のプリンタ</a>を買ったとする。どうしたらプリンタ使えるようになるの？ドライバとかないでしょ・・・。そしてエンタープライズ向けの機能なら殺されまい、という期待も失われた・・・ありえん・・・。Google Fi もないわという気になるのではなかろうか人々。</li>
+    <li><a href="https://ai.googleblog.com/2019/11/astrophotography-with-night-sight-on.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+blogspot%2FgJZg+%28Google+AI+Blog%29">Google AI Blog: Astrophotography with Night Sight on Pixel Phones</a> Night sight paper! HDR+ となんか違うんだろうか・・・とみると、けっこうちがうっぽいな。こういうクール機能の UI とかを手伝って謝辞に名前を滑り込ませたいものである。なお論文は印刷しようとしたらでかすぎるのかプリンタが根を上げた。
+<ul>
+    <li><a href="https://arxiv.org/abs/1905.03277">[1905.03277] Handheld Multi-Frame Super-Resolution</a> Super-res あたらしいやつの paper もあったのか。しかも SIGGRAPH. あとでよむ。</li>
+</ul>
+</li>
+    <li>電話機、新しい OS の (major) version すなわち master 的なやつ、が dogfood に降ってきた。案の定色々壊れている。やはり二台体制が正解だな・・・。</li>
+    <li>風邪っぽい。寝る。</li>
+</ul></p>

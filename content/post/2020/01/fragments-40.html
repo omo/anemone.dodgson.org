@@ -1,0 +1,68 @@
++++
+tags  = ["fragments"]
+title = "Fragments #40"
+date  = "2020-01-13 05:26:45"
++++
+<p><h2>2020-01-19 (Sun)</h2></p><p><ul>
+    <li>金曜夜に子が乱調対応で就寝が遅れ土曜の朝が失われ、今日は子の birthday party のため何もできず。</li>
+    <li>というわけで子の誕生日会。プリスクールの同級生20人、あるいはプレスクールで同じ「グループ」の 6 人全員を呼ぶ親も多い中、子と中の良い友達二人とその両親という小さな招待のうえ自宅でひっそり開催。自分たちにはこのくらいの規模が適切という感想。</li>
+    <li>朝に運動をし、かつ8時間睡眠を目指すという組み合わせの結果、夜にがんばって早寝せず21時までに寝れば良いというリズムが出来てきた。早起きしてもまとまった時間が増えるわけではないから早寝の動機ががない。結果として日によっては多少夜に余裕がある。しかし気合の入れた作業はできない時間帯なので、日記を書くなり家のことを考えるなりしたい。まあ家事雑用で消える方が多いが。</li>
+    <li>Holidays を挟んだ結果非公開 fragments が失われ、どうでもいいことを書き散らしがち。来週から再開したい所存。</li>
+</ul></p><p><h2>2020-01-17 (Fri)</h2></p><p><ul>
+    <li>4 時に目が覚めてしまい、寝付けず。今日は寝不足確定・・・。</li>
+    <li><a href="https://www.nytimes.com/2020/01/16/technology/google-trillion-dollar-market-cap.html">Trillion-Dollar Company: Google Reaches Milestone in Market Value - The New York Times</a> 株価上がってるのか。なんでだろうね。なお他に A, A, M も trillion らしい。
+<ul>
+    <li>なお founder 完全引退のニュースを見た時は寂しい気持ちになったが、内省するにどちらかというとせいせいした、という晴れ晴れしさがあるので自分はそんなにファウンダの皆様が好きではなかったのだろうな。嫌いじゃないけどね。</li>
+</ul>
+</li>
+    <li>社内の hg 拡張がすごい勢いで開発されていて便利なのはいいがこいつらちゃんと upstream してるのかな・・・と <a href="https://www.mercurial-scm.org/repo/hg">Mercurial の repo</a> を眺めるとそれなりに勤務先の人いるね。しかしそんなのはより大きな発見の前に忘れ去られた。こいつら・・・Rust で書き直してるぞ！！！まじで！！！(<a href="https://www.mercurial-scm.org/repo/hg/file/tip/rust">コード</a>、<a href="https://www.mercurial-scm.org/wiki/OxidationPlan">説明</a>）なんだよ！何楽しいことやってんだよ！！！熱い話じゃないですか。先は長そうだが。とりあえず<a href="https://gregoryszorc.com/blog/">このメンテナの人</a>は色々ロックなオーラを出してるのでブログを購読しとこう。</li>
+    <li>デッドロックの疑いからスレッドダンプを眺めていたらまたスレッド増やしてるやつがいるな（適当な罵詈雑言を挿入してください）。スレッド警察やるの他人の尻拭いな割にメンタル消費していやなんだけど、そろそろ真面目に統制すべきかもしれない・・・。</li>
+    <li>全体的に HAL いじりに没入しすぎて duty を果たせてないので今日はトリアージしたり計画立てたりします。はい・・・。</li>
+    <li>なんか世の中を賑わせてるっぽい DX (digital transformation) というのが何なのか全くわからないのだが、なんなの・・・。Buzzword なのはわかっているが、それにしてもわからない。Anthos くらいわからない。なんとなく Anthos と DX は同じ地平に属している気がするのだが・・・
+<ul>
+    <li><a href="https://www.google.com/search?q=digital+transfomation">検索</a>して気づいたこととして、検索結果ページの Ad の区別がまた一段と subtle になったね。どうなのこれは・・・。</li>
+    <li><a href="https://www.amazon.com/Leading-Digital-Technology-Business-Transformation/dp/1625272472">Leading Digital</a> という本を読めばわかるらしいが、まあ社長サンに頑張っていただこう（気が向いたら聴く)</li>
+</ul>
+</li>
+    <li><a href="https://news.ycombinator.com/item?id=22078141">Goodbye, New York, California and Illinois – Hello where? | Hacker News</a> Sigh.</li>
+</ul></p><p><h2>2020-01-16 (Thu)</h2></p><p><ul>
+    <li>HAL 日記
+<ul>
+    <li>コードを読んでいるうち無駄に HwBinder に詳しくなってしまった・・・。基本的には Binder のコピペっぽく、そのへんのコードはすごい昔に読んだことがある気がするが、目的意識(直したいバグ)を持って読むと理解が捗るというものである。HAL だけじゃなくフレームワーク側もいじれればすごい正しく直せるきがするが、それもどうか・・・。電話機ベンダーがフレームワークいじるのは（アプリ開発者的には）クソ迷惑と思っていたが、気持ちはわかるね。</li>
+    <li><a href="https://android.googlesource.com/kernel/common/+/refs/heads/android-5.4/drivers/android/binder.c">Binder のカーネルモジュール</a>をみるとかなり丁寧に trace が入っており、この情報 Systrace で見れないのだろうか・・・とおもいたちふと Systrace  出力のダンプを grep したらふつうに ftrace のデータとして埋め込まれていた。便利。しかし HTMLを grep する必要があるのどうなの・・・。</li>
+    <li>はー久しぶりに仕事すすまねーモードだなー。</li>
+</ul>
+</li>
+    <li>丁寧にお願いを書いたレビューに blunt な質問がきたのでつい blunt に回答してしまい反省。あらゆるテキストフィールドには real-time sentiment analysis が必要。</li>
+    <li>性能関係成果アピールのニュースレターを書くから9月以降やったことをおしえてちょ、と言われたのでコミットを眺めたが、大したことはなにもしてなかった・・・。電話機出た後はリファクタリングだけやってたため。</li>
+</ul></p><p><h2>2020-01-15 (Wed)</h2></p><p><ul>
+    <li>HAL 日記
+<ul>
+    <li>色々と無理ゲー感・・・。何事もトレードオフだが・・・。</li>
+    <li>この変更は微妙でまたダメだしされそうだがやるだけやる、というコードを書いている。</li>
+    <li>上司と 1:1. この HAL 日記バグどのくらい時間かけたもんですかね、という話をする。まあ意義があれると思うならいいんじゃないの、というような返事。価値判断丸投げができる身分ではなかった。はい。</li>
+</ul>
+</li>
+    <li>Google Fi には <a href="https://support.google.com/fi/answer/6330195?hl=en">Data SIM</a> なるものがあり、データのみの SIM を無料で追加できると教わる。二台持ちの煩わしさと戦うにはもってこいに思える。そろそろ諦めて Fi にする潮時かなあ。</li>
+    <li><a href="https://twitter.com/BrendanEich/status/1217512049716035584">BrendanEich on Twitter: "@SiskoBaseball @HeimishCon Your tweet reeks of bad conscience. In 2014-15, I could not get funding or a job, went outside valley to found Brave, took big pay cut &amp; still-substantial long-term risk. (Compare to chart for top job at Mozilla vs. "performance".) I'm not complaining, but you are spinning. Why? https://t.co/XRNyDvuZfO" / Twitter</a> Mozilla のレイオフに元 CTO が物申しているが、そのせいで "cancel culture" という言葉の存在に気がついてしまった・・・
+<ul>
+    <li>Link: <a href="https://www.urbandictionary.com/define.php?term=Cancel%20Culture">Urban Dictionary: Cancel Culture</a></li>
+</ul>
+</li>
+    <li><a href="https://news.ycombinator.com/item?id=22057737">Mozilla lays off 70 | Hacker News</a> 求職スレで求人している人をみていて<a href="https://news.ycombinator.com/item?id=22060867">気づいた</a>こととして、元 Mozilla CTO で JIT とか FxOS やってたのち起業した <a href="https://www.linkedin.com/in/andreasgal/">Andreas Gal</a> は Apple にいるらしい。なぜなら<a href="https://www.crunchbase.com/organization/silk-labs">買収されたから</a>である！こういうガチ勢が組織の上の方にいる Apple はかっこいい会社であることよ。どのくらい上なのかわからんけど VP くらいなのかな？ いくら元勤務先のリストラとはいえ、VP が HN でヘッドハントしてるの面白いね。それにしてもプログラマをクビにするとはなかなか重症。</li>
+    <li>会社のとある偉い人が圧倒的に正しいが完全に羨ましいことを始めるという話を聞き、完全に羨ましい一方で偉い人が圧倒的に正しいことをしているのにほっこりする。そういうやんちゃがどこかでは許されている、というのはいい話であることよ。</li>
+    <li>というわけで思い切って Fi に切り替えたぞ！T-mo は明示的な解約は電話が必要っぽいが、そもそも prepaid なので autopay を切ってほっとけばそのうちなくなるでしょう、ということで autopay を切る。Data SIM も注文。無料。</li>
+</ul></p><p><h2>2020-01-14 (Tue)</h2></p><p><ul>
+    <li>おうちの用事で一回休み。</li>
+    <li>母親の iPhone および iPad が寿命らしい。買ってあげたいのはやまやまだがセットアップの面倒を見てあげられないという無力感。<a href="https://www.apple.com/jp/shop/help/gifting">オンラインでギフトとして購入</a>し<a href="https://www.apple.com/jp/shop/help/shipping_delivery_faq">店頭受け取り</a>にしてもらえばいいのだろうか。</li>
+</ul></p><p><h2>2020-01-13 (Mon)</h2></p><p><ul>
+    <li>Fitbit の睡眠スコアが 80 を超え、朝ジムも行き、完璧な朝。しかし仕事のやるきはふつう。</li>
+    <li><a href="https://note.com/psychs/n/n6dfa2319114b">ソフトウェアエンジニアとして心がけていること｜Satoshi Nakagawa｜note</a> 自分はなるべくライブラリやインフラはやらないようにしている。それはそれで理由がないではないけれど、やはり活躍して偉くなる人は違うなと思うなど。まあ何事も身の丈であるよ。</li>
+    <li>HAL 日記
+<ul>
+    <li>アプリのレイヤで小細工できないかな・・・と一歩下がって考え直すが、できないという結論に。Sigh.</li>
+    <li>どんなコードベースに踏み込んでも最初にやるのは pthread_setname_np() してまわることである。まったくおまえらときたら・・・。std::thread が引数にスレッド名を取らないのが全て悪い。</li>
+    <li>色々と悪口をいいたくなってしまうがここに書くべきではない。</li>
+</ul>
+</li>
+</ul></p>

@@ -1,0 +1,21 @@
++++
+tags  = ["letters"]
+title = "GPUs On The Cloud"
+date  = "2019-10-09 05:58:08"
++++
+<p>クラウドに抱いていた素朴な疑問を素人的に読み解いていくシリーズ。</p><p>ぎもん: クラウドの GPU って自由に数を選べるけど、どうやってハードウェアをラックにぶらさげてるの？ロボットアームみたいのがガチャンと GPU を抜き差しするの？それはなさそうだが、実はロボットがやってますと言われても驚かない程度には無知。</p><p>秘密主義のクラウド業者に対する嫌がらせ勢である OCP が何かやってないかと探してみると、まず Facebook が Big Basin (および v2) という GPU ノードみたいのを発表していた。</p><p><ul>
+    <li><a href="https://engineering.fb.com/data-center-engineering/introducing-big-basin-our-next-generation-ai-hardware/">Introducing Big Basin: Our next-generation AI hardware - Facebook Engineering</a></li>
+    <li><a href="https://engineering.fb.com/ml-applications/the-next-step-in-facebook-s-ai-hardware-infrastructure/">The next step in Facebook's AI hardware infrastructure - Facebook Engineering</a></li>
+</ul></p><p>同時期に Microsoft と NVIDIA が HGX-1 および HGX-2 という似たようなラック刺し GPU クラスタを発表している。</p><p><ul>
+    <li><a href="https://azure.microsoft.com/en-us/blog/ecosystem-momentum-positions-microsoft-s-project-olympus-as-de-facto-open-compute-standard/">Ecosystem momentum positions Microsoft’s Project Olympus as de facto open compute standard | Blog | Microsoft Azure</a>
+<ul>
+    <li><a href="https://www.opencompute.org/documents/microsoft-project-olympus-hgx-1-hyperscale-accelerator">Project Olympus Hyperscale GPU Accelerator</a></li>
+    <li><a href="https://azure.microsoft.com/en-us/resources/ms-project-olympus-hgx-1/">Microsoft Project Olympus Hyperscale GPU Accelerator (HGX-1) | Microsoft Azure</a></li>
+</ul>
+</li>
+    <li><a href="https://devblogs.nvidia.com/hgx-2-fuses-ai-computing/">HGX-2 Fuses HPC and AI Computing Architectures | NVIDIA Developer Blog</a></li>
+</ul></p><p>どちらも GPU 同士は "NVLink" というオンボードのバスで繋がっている。CPU はない。CPU を持つ "head node" すなわちふつうのサーバーノードに PCIe のケーブルでつなぐらしい。PCIe, ケーブルとかあるのか。</p><p>つまり、少なくともラックの中で GPU はサーバと別のシャーシには入っている。ではこいつを複数の "head node" から共有できるのか？ HGX-1 はできると書いてある。PCIe のポートが外側に 4 つあって、それぞれ別の箱をつなぐことができる。CPU のある head node と繋いでもいいし、もう一つ HGX-1 とつないで倍の GPU を一つの head node に見せてもいい。柔軟。(文中にはでてこないけれど、世間では Multi-Root IO Virtualization というらしい。)</p><p>なお HGX-2 は Open Compute ではないらしく NVIDIA のハッタリドキュメントしか見当たらない。こいつらは一個の head node にどれだけ大量の GPU をぶら下げるかにしか興味がなさそうで自分の疑問には答えてくれない。</p><p><hr /></p><p>当初の疑問にもどり、GPU はどうやってラックや他のサーバにぶらさがっているのか:</p><p><ul>
+    <li>GPU だけを 8 個なり 16 個なり詰めこんだシャーシを作り、ラックに刺す。</li>
+    <li>そのシャーシからは 1-4 個の PCIe ポート(!)が出ている。このポートを介して CPU のはいったふつうのサーバ "head node" にぶら下げる。</li>
+    <li>複数のサーバにぶらさげるケースは強調されていないので、現実には需要ないのかもしれない。それよりはいかに大量の GPU を詰め込めるかを各社とも強調している。</li>
+</ul></p><p>彼らは CPU と GPU を disaggregate できたぞというけれど、仮想化して切り売りする段階ではすくなくとも head node の CPU とは抱き合わせて売る必要があるため bin-packing の制限はあるはず。そこは allocation algorithm のがんばりで足りるのだろうか。</p><p><hr /></p><p>Resource allocation どうすんのかなと K8N を覗いてみると... <a href="https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/">limits というセクションに GPU の数を指定</a>するらしい。Limits というセクションはたとえば CPU の速度やネットワークカードの帯域などを細かく指定するのに使う。それとおなじように GPU の種別などを指定し、クラスタマネージャはそれに従ってハードウェアを切り売れば良い。</p><p>なんとなく CPU を売り切ってしまい GPU が余って困ったりしないのか疑問だったけれど、それは GPU に限らずリソース全般に入れることなので GPU 固有の難しさというのは (自分が理解できるような範囲では) ないのかもしれない。</p><p>といったところでだいたい謎はとけたので満足した。ウンチクとして以外に一ミリも価値のない知識だけれど、雑学というのはそういうもんです。</p><p>&nbsp;</p>

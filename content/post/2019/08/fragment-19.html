@@ -1,0 +1,157 @@
++++
+tags  = ["fragments"]
+title = "Fragment #19"
+date  = "2019-08-19 04:43:02"
++++
+<p><h3>日曜日</h3></p><p><ul>
+    <li>05:30 @ Starbucks.
+<ul>
+    <li>お手紙発送業。</li>
+    <li>仕事日記
+<ul>
+    <li>一週間の仕事のなかで一番生産的な 15 分くらいな気がする。これもうちょっと仕事時間でできないかなほんと・・・。</li>
+</ul>
+</li>
+    <li><a href="/2019/08/23/latency-diary-4/">高速化日記(4)</a></li>
+    <li>Career talk ついて多少なんか準備せんとあかん・・・。</li>
+</ul>
+</li>
+    <li>LinkedIn からおすすめされた仕事をながめる現実逃避
+<ul>
+    <li><a href="https://www.linkedin.com/jobs/view/1446696433/">Software Development Engineer | Amazon Lab126 | LinkedIn</a>
+Kindle いいけどもう盛り上がってはなさそうな書きぶり。しかし AI スピーカーとか Fire とかは割とどうでもいいな・・・。</li>
+    <li><a href="https://www.linkedin.com/jobs/view/1411582091/">Lyft hiring C++ Software Engineer (Visualization) in San Francisco Bay Area | LinkedIn</a>
+C++ で可視化とかおまえは何を言っているんだとおもったが Qt と GL の仕事なのか。まじで？よくみると自動自動車部門の仕事。たしかにそれなら意味あるかも。</li>
+    <li>そして Lyft の方が Amazon より高い給料という推定になっているがほんまかいな。Lyft 赤字じゃん?</li>
+</ul>
+</li>
+</ul></p><p><h3>土曜日</h3></p><p><ul>
+    <li>05:55. やれやれ...
+<ul>
+    <li>Paper reading.</li>
+    <li>娘氏, 昨日なかなか寝なかった割に早起きであるな. 06:38.</li>
+</ul>
+</li>
+    <li><a href="https://tech.nikkeibp.co.jp/atcl/nxt/column/18/00692/">中田敦のGAFA深読み | 日経 xTECH（クロステック）</a>
+<ul>
+    <li>名前を冠した連載を持っているとか偉いというか地位が高いなあ中田氏・・・。</li>
+</ul>
+</li>
+</ul></p><p><h3>金曜日</h3></p><p><ul>
+    <li>5:00. Paper reading.
+<ul>
+    <li><a href="https://arxiv.org/abs/1506.01497">[1506.01497] Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks</a></li>
+    <li>結局この Region Proposal Network というのが一番おもしろいところかなということで。</li>
+    <li>しかし 3x3 の feature map でなんでその外側まで含めた bounding box が判定できるのか割と謎。convolution layers によってそういうマスク外の情報が織り込まれるからなのだろうけれど。</li>
+    <li>Bounding box の regression というのが survey 読んでるとまったくわからなかったが、アンカーからのズレ具合を調整していくということか。やはり YOLO も読んで見る必要がある気がする・・・。</li>
+    <li>そして Fast R-CNN も読まないといかんのか・・・。めんどい・・・。</li>
+    <li>そして Faster R-CNN は convnet の重みはシェアするが joint ではないのか！なんだよー。しかしこれ(と後継の Mask RCNN?) が joint のモデルに勝っている、というのは面白いような面白くないようなかんじ。joint のモデルが全てをやっつける、という展開にはなってないの?</li>
+    <li>RCNN が Berkeley, Fast と Faster が MSR, Mask が FB. しかし中の人はみなおなじ. AI 人材のやりたい放題ぶりが伺える. そしてシアトルに住んでいる。MS から人を引き抜くにはシアトルオフィスが必要。</li>
+    <li><a href="https://scholar.google.com/citations?hl=en&amp;user=W8VIEZgAAAAJ&amp;pagesize=1000&amp;sortby=pubdate">Ross Girshick - Google Scholar Citations</a> 一方 Mask 以降は comparable なヒット作はナシ。これはこれでアーティスト的なプレッシャーありそう。</li>
+    <li>スターといえば <a href="https://scholar.google.com/citations?hl=en&amp;user=iYN86KEAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Goodfellow 先生</a> Apple で元気にやってるかな・・が論文的には今のところ音信不通。しかしすごいヒット作をひっさけげて帰ってくると信じている自分がいるのだった。<a href="https://www.linkedin.com/in/ian-goodfellow-b7187213/">LinkedIn</a> によれば "special project group". どう見ても秘密プロジェクトやってるとしか思えない。</li>
+    <li>うっかり LinkedIn を眺めてヒマをつぶしてしまった・・・。</li>
+    <li>Fast RCNN は k classes の bbox regression をするの？大変だね。Faster は Fast のネットワークを使っていると書いてあるけど、この部分はないんだよね？こういう時にコードを見て確認できる TF/PyTorch 技能がない悲しさ。</li>
+    <li>Fast RCNN の RoI pooling, SPPNet を見ろと済まされている・・・もうやだ・・・。</li>
+    <li>Grid にわけてそれを max pool するつまり max() でマージするの？ほんとに？</li>
+    <li>読むか・・・ <a href="https://arxiv.org/abs/1406.4729">[1406.4729] Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition</a> てか MSR かよ・・・身内かよ・・・ただし China なのか。隣の部屋とかではなかった。</li>
+    <li>夜。ちょっとだけつづき。</li>
+    <li>SPPNet 真面目に読む気がおきないが  max pooling は要するにスケールダウンだというのを思い出したので・・・画像サイズを (feature map 上で) 調整のうえ classifier および regresser の fc layer につっこむ、ということですね。はい。</li>
+</ul>
+</li>
+    <li>上司から "career chat" という calendar の invitation がきておりすわこんだけ頑張って働いてるのに PIP かよ学費どうするよ・・・とおもったがどうもそうではなくある種の management practice らしい。Phew.</li>
+    <li><a href="https://www.bloomberg.com/news/articles/2019-08-23/google-doesn-t-want-employees-debating-politics-at-work-anymore">Google Doesn’t Want Staff Debating Politics at Work Anymore - Bloomberg</a>
+<ul>
+    <li>自分が前にいたチームは買収で入ってきた人が中心で、買収した会社の土地柄、割と Republican な人がいた。同時に自分のような外国人もおり、更には oppressed authoritarian/dictatorship の国から来ている人もいた。にもかかわらず、ランチとかでもぼちぼち政治の話をすることもあった。このひとたち飯くいながら政治の話とかするんだ・・・と感心した記憶がある。しかしそうした議論が uncivil になることはなかった。</li>
+    <li>なぜなら、たぶん face to face だからだよね。もちろん radicalized activists とランチでもしようものならケンカになるだろうけれど、そういう f2f の険悪さはスケールしない。しかしオンラインのケンカはどこまでも延焼してしまう。</li>
+    <li>やはりオンライン、しかも一定以上の audience がいる場所で nuanced な話題について生産的な議論をするのはダメなんじゃないか。これに disappoint する人もいるかもしれないけれど、むしろオンラインで生産的な議論をするための platform について真面目に考える良い機会なのではないかなあ。</li>
+    <li>会社員という意味だと、我々が自治に失敗した結果として上の方から介入されてしまったということで、まあ残念でしたとは思う。ただ治安が悪いのは確かだったので個人としてトータルでの働きやすさは増すと予想。</li>
+</ul>
+</li>
+    <li><a href="https://rockset.com/">Home | Rockset</a>
+<ul>
+    <li>DynamoDB に SQL を書かせてくれる会社。こういうの夢があってよいねー AWS に買収される以外生きる術が無いもするが・・・。</li>
+</ul>
+</li>
+    <li><a href="https://guzey.com/productivity/?utm_source=hackernewsletter&amp;utm_medium=email&amp;utm_term=fav">Every productivity thought I've ever had, as concisely as possible - Alexey Guzey</a>
+<ul>
+    <li>参考になる、というよりはこう、励みになるというか、お互い頑張ろうなみたいなきもち。</li>
+</ul>
+</li>
+    <li>トイレの水が流れない（タンクに水が溜まらない）、なぜか plumber を呼んだのに治らない。はー・・・とおもいつつ適当にタンクの中の管をつつくと一時的に直るのでほっといたが、明日客人がくるのを思い出し適当に対症療法で対処。こういうのをエンジョイできた方がベイエリア生活楽しいんだろうけど、個人的に maker 精神ゼロなのでかったるいだけ。持ち家でなくてよかったと思う瞬間ではある。</li>
+    <li>NYT うんざり路線にはいってきたので WSJ でも購読するか・・・と思いかけていたが unsub が NYT と同じく電話必須でかったるいと知り保留。なお NYT Parenting は気に入ってる。もうちょっとアプリでの扱いをよくしてほしいもんです・・・Parneting だけはウェブの方がマシ。
+<ul>
+    <li>というか、ニュースとかどうせ記事は WebView なんだしアプリは捨ててウェブをオフラインできるまで本気で真面目にやってほしいなあ。ニュースサイトとか、アプリいらないものの筆頭じゃん。しかしそこで頑張ってもらえないのがウェブの現在なのだった。誰が悪いかというと個人的には JS プログラマが夢見すぎなのがよくない、という意見。叶わない夢をみせてるプラットホーム業者もあれではある。</li>
+</ul>
+</li>
+    <li>夜ふかししてしまった・・・。</li>
+</ul></p><p><h3>木曜日</h3></p><p><ul>
+    <li>04:40.
+<ul>
+    <li>今週は podcast 無理と早々に諦め。おまけノートでも書くか・・・。</li>
+    <li>おまけノートでおわってしまった・・・</li>
+</ul>
+</li>
+    <li>「こどもチャレンジ」購読。なんとなく好みでなくて渋っていたが、そういう無駄なアンチメインストリーム脊髄反射を子に押し付けてはいけないと思い直した。送料がちょう高い。</li>
+    <li>娘, preschool 初日。なんとなく心配で drop-off についていったが、名残を惜しむ様子もなく砂場に駆けていった。事前の見学日にエンジョイさせておいた甲斐があったか。問題なければ今後数年は通うわけで、気にいると良いなあ。英語わからんのに英語の学校に入れるとか容赦ない気もするが、いつかは超えなければ行けない壁なのであった。（お前は超えてねーだろという点はさておき。）</li>
+    <li><a href="https://news.ycombinator.com/item?id=20762614">Why so many Chinese students can’t understand the Hong Kong protests | Hacker News</a>
+<ul>
+    <li>このスレは「俺はバングラディシュから来たが・・・」「エジプトでは・・・」とか色々いて面白い。しかし「俺の彼女も・・・」とかいってる人は苦労しててお疲れ様です。</li>
+</ul>
+</li>
+    <li><a href="https://techcrunch.com/2019/08/22/vmware-acquires-carbon-black-for-2-1b-and-pivotal-for-2-7-billion/">VMware acquires Carbon Black for $2.1B and Pivotal for $2.7 billion | TechCrunch</a>
+<ul>
+    <li>Pivotal もともと子会社だったのでは？とおもったが EMC との合弁会社だったのを買い取ったということなのかな？とおもったがそういえば去年くらいに上場したんだっけ。そして Kubernetes company という位置づけなのか。</li>
+    <li>Kubernetes, 技術的には面白そうで興味あるけど界隈としてはどんどん近づきたくないかんじになってんなー・・・Serverless がこのへん皆殺しにしてくれるのを待つばかりであるよ。</li>
+</ul>
+</li>
+    <li>娘、プレスクール（面倒なので「学校」と呼ぶことにした）は楽しかったらしい。頼もしきことよ。週二回よりたくさん行かせてあげたいが、現段階では週二と週五以外のオプションはないのだった。</li>
+</ul></p><p><h3>水曜日</h3></p><p><ul>
+    <li>夫婦会談が深夜まで及んだため早起きは無し。</li>
+    <li>一日休み、かつその休みが他のことで忙しかった場合は完全に仕事記憶およびやる気が page out するな・・・。</li>
+    <li>三ヶ月くらい見過ごしていた dogfooder のバグを発見してしまった・・・すまねえ・・・。</li>
+    <li>Deterministic GC が恋しいときもあるけれど私は元気です (adb shell dumpsys meminfo を眺めながら)</li>
+    <li>バグというのはやがてなくなる（マシになる）という希望があれば triage する気にもなるがそれがないとほんと苦痛。リリースされてないプロジェクトとかだとこういう苦痛はないが、それはそれで雇用が不安だし美味しい話はないもんだぜ。</li>
+    <li><a href="https://cloud.google.com/blog/products/serverless/introducing-cloud-run-button-click-to-deploy-your-git-repos-to-google-cloud">Introducing Cloud Run Button: Click-to-deploy your git repos to Google Cloud | Google Cloud Blog</a>
+<ul>
+    <li>あんまし嬉しくない... Heroku は PostgreSQL とかも標準でついてるし add-on  もあるからいいが、cloud run じゃ stateless なもんしかつくれなくね？なんか実用的なことできるんだろうか・・・。</li>
+</ul>
+</li>
+    <li>うおーすごい遅いやつの原因に気づいてしまった！しかし帰る時間。</li>
+</ul></p><p><h3>火曜日</h3></p><p><ul>
+    <li>04:50. 論文印刷したのにおいてきてしまった...
+<ul>
+    <li>RCNN を読む・・・が結局 region proposal がなんなのかわからん (既存の方法をつかっている)...</li>
+    <li></li>
+</ul>
+</li>
+    <li><a href="https://lwn.net/SubscriberLink/796687/a7a91ffcc9b7d52a/">On-disk format robustness requirements for new filesystems [LWN.net]</a>
+<ul>
+    <li>Read-only でマウントする (Android の system partition のような) にはその前提を活かした fs をつくる、という HUAWEI 発のファイルシステム。やるな。</li>
+    <li>コメント欄にトロルがいるね・・・。</li>
+</ul>
+</li>
+    <li>向井さんのエピソードからのリンクで久しぶりに chromium-dev を<a href="https://groups.google.com/a/chromium.org/forum/#!msg/chromium-dev/DP9TQszzQLI/pZ7aC8GbDAAJ">見たが</a>・・・。めんどくさそうで近づきたくない気分が高まった。もうオープンソースとかできない気がする。Linux の次くらいにめんどくさいのでは、というのは言い過ぎか。必ずしも殺伐してはいないのだが。</li>
+    <li>プレスクール準備等のため一日休み。</li>
+</ul></p><p><h3>月曜日</h3></p><p><ul>
+    <li>04:34. 昨日は宴会に呼ばれた都合で風呂に入りそびれた...
+<ul>
+    <li>何読むかな。決めてたのがあるがいまいち気が乗らない。</li>
+    <li>Mask-RCNN を読むがまったくわからない。</li>
+</ul>
+</li>
+    <li>お手紙配信にあわせて<a href="/2019/07/29/casey/">これ</a>を読み直していたが、自分のやってる podcast の personality という点で寄与しているのは自分自身ではなく向井さんだな。自分は根が俗悪的なのを向井さんの niceness がキャンセルしてくれている。</li>
+    <li>去年の日記を読んでいるとバグや組織圧に苦しめられている様子が生々しい。今年も相変わらず苦しめられているが、あしらいに習熟はしてきている感じがある。これはプログラマとしての汎用的スキルには一切寄与していないが今のチームで税金を払う訳には立っており、それがトータルでの負担減に繋がってはいるので全く無駄でもない気がしてきた。こうやって小さな余裕を少しずつ買い戻し、それを他のことに使っていきたいもんです。</li>
+    <li>前回の <a href="https://misreading.chat/2019/08/12/73-understanding-real-world-concurrency-bugs-in-go/">Go の話の人気</a>をうけ Podcast 視聴者数を Apple のサイトで見てみる。だいたい月に 900-1000 デバイスで安定しており、これは一年前から変わっていない。 特に時間とともに増えるというものではない模様。
+<ul>
+    <li>リンクが回覧されて聞く人が増えるとそのうちの何パーセントかは定着して総体としてはじりじり数が増えるのかなと思っていたが、そういうものではなかった。あるいはそうやって聴き始める人と飽きるなどで聴かなくなる人の拮抗しているのか。そもそもリンクが回覧されてないのでは、という話はある。</li>
+    <li>微分がゼロなのは盛り上がらない気がする一方、1000 人も聴いてくれてるなら十分なのではとはとも思う。</li>
+</ul>
+</li>
+    <li>Bug tracker の TODO 用 label を一旦 bankrupt して start from scratch する。ぼんやりしているうちに崩壊していた。チームでこれやると一時大事だけど個人レベルだと適当な頻度で scrap and plan した方が良い気がするな。</li>
+    <li><a href="https://news.ycombinator.com/item?id=20741442">Encarta was part of my first job out of university. I worked in Microsoft's Mult... | Hacker News</a>
+<ul>
+    <li>いい HN コメントコレクションに追加。</li>
+</ul>
+</li>
+    <li>TPM 前に輪をかけて優秀だが burn すべき問題が多すぎ、対処できる能力がありそうなだけに burnout しないか心配。ちょっと鈍感なくらいが健康の秘訣のような。</li>
+</ul></p>

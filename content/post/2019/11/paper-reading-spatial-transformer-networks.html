@@ -1,0 +1,6 @@
++++
+tags  = ["letters"]
+title = "\u7d19\u8aad\u307f\u65e5\u8a18: Spatial Transformer Networks"
+date  = "2019-11-26 21:24:32"
++++
+<p><h2><a href="https://arxiv.org/abs/1506.02025">[1506.02025] Spatial Transformer Networks</a></h2></p><p><a href="https://pytorch.org/tutorials/intermediate/spatial_transformer_tutorial.html">チュートリアル</a>に出てきたので読む。2015 年, 2100 citation くらい。画像の affine transformation のパラメタを learn できるという話。Differentiable Image Sampling というのがなんとも不思議。</p><p>grid sampler みたいのはどうやって PyTorch で実装するのだろうとおもったら、めちゃ C++ だった。しかも CPU と CUDA と CUDNN の実装がある。まあ grid generation 自体は事実上 range の生成で、sampler は texture の sampling みたいなものなので GPU で頑張る余地があるのはわかる（論文にもそう書いてある）が、こんな頑張るほどよく使うものなのか。</p><p><h2><a href="https://arxiv.org/abs/1905.03813">[1905.03813] When Deep Learning Met Code Search</a> / <a href="https://ai.facebook.com/blog/neural-code-search-ml-based-code-search-using-natural-language-queries/">Neural Code Search: ML-based code search using natural language queries</a></h2></p><p>コードの構造をどう活かすのか気になって読んだが、基本的には雑に tokenize したのち NLP 的に扱うらしい。「メソッド」くらいの粒度は利用する模様。まあそうしないと特定の関数をみつけだす、といった検索ができないからあたりまえか。1 ソースファイル = 1 ドキュメントではないという意味でコードの構造は活かしていると言えるのかもしれない。なんとなくもうちょとミクロな構造を想像していたけれど。</p><p>なぜ Facebook がそんなにコードサーチをがんばっているのか謎。PL の研究者がいっぱいいるのでそういう demography の余波なのかもしれない。</p>

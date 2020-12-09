@@ -1,0 +1,82 @@
++++
+tags  = ["fragments"]
+title = "Fragment #43"
+date  = "2020-02-03 12:48:59"
++++
+<p><h2>2020-02-09 (Sun)</h2></p><p><ul>
+    <li>At Starbucks.</li>
+    <li>たまには public な、というのは publish immediately な、ブログを書いても良いかな・・・と思うが、Medium が begger になってしまった昨今もはや書く場所がない。<a href="https://www.gatsbyjs.org/">GatsbyJS</a> とかちょっと使ってみたいが確実に保守できなくなりそう。何も考えず WP とかするとまた出費が増える。Hugo でいいのかもしれないけど、どうかねえ。なやまし。そして悩むヒマがないのでまた今度。</li>
+    <li><a href="/2020/01/26/latency-diary-9/">トレーシングの話</a>にフィードバックをもらい、自分は <a href="https://github.com/torvalds/linux/tree/master/tools/perf">perf</a> をちゃんと理解した方がよい気がしてくる。昔素朴にプロファイラとして使ったことはあるが、多分もっと色々できるはず。</li>
+</ul></p><p><h2>2020-02-15 (Sat)</h2></p><p><ul>
+    <li>猫の annual health check. 特に問題なし。以前は捕獲に苦労したが、去年くらいから枕カバーで捕獲するライフハックを発明して以来速やかになった。捕まる側は災難だが、おまえらの健康のためよ。</li>
+</ul></p><p><h2>2020-02-07 (Fri)</h2></p><p><ul>
+    <li>喘息薬を使うと眠りが深い。自分が目を覚ましがちだったのは shallow breath のせいだったのだろうか・・・。
+<ul>
+    <li>肺機能のテストのため病院を予約。やれやれ。</li>
+</ul>
+</li>
+    <li>GNOME Shell の高速化をがんばってる人の記録
+<ul>
+    <li><a href="https://discourse.ubuntu.com/t/boosting-the-real-time-performance-of-gnome-shell-3-34-in-ubuntu-19-10/13095">Boosting the Real Time Performance of Gnome Shell 3.34 in Ubuntu 19.10 - Desktop - Ubuntu Community Hub</a></li>
+    <li><a href="https://discourse.ubuntu.com/t/gnome-3-32-performance-ubuntu-19-04/10208">GNOME 3.32 performance (Ubuntu 19.04) - Desktop - Ubuntu Community Hub</a></li>
+    <li>特に大きな学びはないが、人々がんばってるなとある種の励みは得られた。</li>
+</ul>
+</li>
+    <li><a href="https://paperpile.com/">Paperpile: Modern reference and PDF management</a> Podcast をやっていたときに使おうと思った PDF 論文管理ツール。そのうち使ってみたいというか、これを使う意義のある暮らしをしたいもんです。</li>
+    <li>android.util.Log でログ書いてもすぐ消えちゃうからファイルに書くようにしましょう！的な提案を書いたら色々フィードバックが集まる。常識的に考えて現状の logging practice が腐ってるのをなんとかした方が良いのではないかという気がしてくる。すぐ消されてしまうのは半分くらいログの出し方が悪いからなので・・・。しかしそのためには色々と代替手段を用意する必要があり、それはそれでめんどくさい。
+<ul>
+    <li>根本的には自分たちのチームが社内ベータテスターからのバグレポートに強く依存しており、しかし社内ベータテスターからアプリ毎の情報を吸い上げる良い方法が社内に存在しない（気がする）のが厳しさに繋がっている。リリースした先から集める方法のほうが充実してるんじゃね？みたいな。しかしリリースした先のアプリでは OS 側の情報が見えない（あたりまえ）ので、それは我々的には困るのだよ・・・。もうちょっと OS の一部として色々特別扱いしてもらえればいいのだが、そういう裏口はないのだった。はーこんてぃにゅあすでりばりーであくせられーとしたいわー（なげやりなきぶん）。</li>
+</ul>
+</li>
+    <li>若気の至り税 <a href="https://wkb.ug/">wkb.ug</a> メンテナンス。
+<ul>
+    <li>まずドメイン代を払う。これは Apple の人が引き取ってくれると言ってくれたのだが、移管の方法がよくわかんないため諦めて払っている。まあこれはカネの力で解決できるからいいです。</li>
+    <li><a href="https://github.com/omo/wkbug-gae/commit/ace71359e62ef1364f1fb162eaf57e73405d6460">GAE に置いてあるリダイレクタの Go バージョン更新</a>。これやらないと止まっちゃうよと脅しのメールが来たため。どこかでバージョンの指定書き換えりゃいいんでしょ・・・と思いきや API が deprecate されていた！まじかよ。このリダイレクタはほぼ helloworld なので<a href="https://github.com/GoogleCloudPlatform/golang-samples/tree/master/appengine/go11x/helloworld">最新版のハローワールド</a>を見ながら適当にやってことなきを得たが、これデカ目のコードだったら厳しかったな・・・。Python よりは Go の方がほっといても稼働できるという目論見で Go を選んだが、GCP を侮ってたぜ。</li>
+    <li>なお彼らの名誉のためにいっておくとエラーメッセージはぜんぶ的確で、API deprecation の方向性も正しい (plain な go server が動くようになる) 。がしかし、この互換性という語が辞書にないかんじがなんとも・・・。</li>
+    <li>あと Cloud Build がデプロイのバックエンドになったらしく billing を要求された。まあこれもまともではあるがしかし。</li>
+</ul>
+</li>
+    <li>これらの重い腰を挙げるに当たって Todoist が機能しております。これ謎の意識高い背景画像とかメッセージを全部殺せると文句ないのだが・・・。このオーガニックでエコみたいな押し付けにイラッとくるわ。我ながら保守化が進んでいる。</li>
+    <li><a href="https://www.alphabetworkers.org/resignation-letter/">On Resigning from Google | Alphabet Workers Alliance</a> "Google Cloud sales to the oil and gas industry" これだめなんすか・・・ML で石油採掘効率が上がったら困るからとかいわれてもな・・・とかおもってしまうのもまた保守化なのだろうか。</li>
+    <li><a href="https://lwn.net/Articles/810414/">The rapid growth of io_uring [LWN.net]</a> こんな奇妙な syscall を生やさせてくれるのか。<a href="https://news.ycombinator.com/item?id=22262964">HN</a> みるとデータベースとかでそれなりに期待されている模様。</li>
+    <li><a href="https://hey.com/">HEY - Email at its best, new from Basecamp, coming soon.</a> フーン、と思いいちおう invitation request を送っておくゼロ年代なわたくし。</li>
+</ul></p><p><h2>2020-02-06 (Thu)</h2></p><p><ul>
+    <li><a href="/2020/02/06/shopping-list/">Shopping List を探す旅</a>
+<ul>
+    <li><a href="https://www.rememberthemilk.com/">RTM</a> に昔つくった TODO をみていたら 2011 年に喘息薬を使っていた。しばらく発症していない気がしていたが、すくなくとも 9 年前はしていたらしい。というか、引っ越してきた後の数年 (2014-2017) が妙に健康だったのだよな。たぶん気候と、あとは緊張感のおかげで。</li>
+</ul>
+</li>
+    <li>メモリプレッシャー再現、ただヒープをとるだけだと <a href="https://source.android.com/devices/tech/perf/low-ram#zram">zram</a> (<a href="https://www.kernel.org/doc/Documentation/blockdev/zram.txt">kernel doc</a>) に swap されてしかも圧縮されちゃうよ、というので乱数で埋めた上で mlock(). あら全然挙動違うじゃない (アプリクラッシュしちゃうじゃない...) なお zram の有無は adb shell cat /proc/swaps で確認できる。あるいは free コマンド。</li>
+    <li>出張できていた東京のひとと晩飯。</li>
+</ul></p><p><h2>2020-02-05 (Wed)</h2></p><p><ul>
+    <li><a href="https://www.combivent.com/">喘息薬</a>、効果劇的。だいたい治った気がしていたが薬で症状を消してみると気のせいだったと気づく。次回からは億劫がらずさっさと病院いきます。めんどくせーがやむなし。</li>
+    <li>子の咳がなかなかとれない。心配。しかし<a href="https://www.mayoclinic.org/diseases-conditions/childhood-asthma/in-depth/asthma-in-children/art-20044376">小児喘息は診断がむずかしい</a>上に喘息というほどの症状ではない感じもある (exhale noise がない) ので <a href="https://www.mayoclinic.org/diseases-conditions/bronchiolitis/symptoms-causes/syc-20351565">Bronchiolitis</a> な気はする。咳がとれるまでに 2-3 weeks というから、まあ想定の範囲内か・・・。</li>
+    <li><a href="https://www.bloomberg.com/news/articles/2020-02-04/instagram-generates-more-than-a-quarter-of-facebook-s-sales">Instagram Brings In More Than a Quarter of Facebook Sales - Bloomberg</a> すごいねえ。</li>
+</ul></p><p><h2>2020-02-04 (Tue)</h2></p><p><ul>
+    <li><a href="https://www.nytimes.com/2020/01/31/podcasts/the-daily/2020-election.html">The Lessons of 2016 - The New York Times</a> NYT 編集長、2020 選挙を前に 2016 の反省会をするの巻。アメリカのインテリ、こういうかんじか・・・とそれなりに感心する。
+<ul>
+    <li><a href="https://www.nytimes.com/2020/02/04/us/politics/what-happened-iowa-caucuses.html">‘A Systemwide Disaster’: How the Iowa Caucuses Melted Down - The New York Times</a> しかしアメリカのインテリが頼らざるをえない Democrats のグダグダダメっぷりは一貫しててすごい。Impeachment が disaster のみならず身内の選挙すらこのありさま。もう 2020 だめぽ・・・。</li>
+</ul>
+</li>
+    <li>風邪ひいたり病院行ったりしてたら役に立つレポートを書くのがミーティングに間に合わずがっくし.</li>
+    <li>どこかのチームから Blog という名前の GDoc が share されてきた・・・このきもち・・・。</li>
+    <li><a href="https://ww.9to5google.com/2020/02/03/google-hardware-business-2019/#">Made by Google is a 'multibillion-dollar revenue business' - 9to5Google</a> - but "but Q4 2019 hardware sales see decline". 大丈夫か電話機部門・・・。</li>
+</ul></p><p><h2>2020-02-03 (Mon)</h2></p><p><ul>
+    <li>喘息は軟調。ぼんやりしてる分にはいいが頭を使うとすぐ fatigue が出る。運動をしてないせいで脳内麻薬不足の可能性もあるが、下手に運動すると症状が悪化するので今週はおとなしくしておこう。</li>
+    <li><a href="https://www.eecs.yorku.ca/~mbrown/ICCV2019_Brown.html">ICCV 2019 Tutorial: Understanding Color and the In-Camera Image Processing Pipeline for Computer Vision</a> このスライドの情報、本にしてくれないかなあ。</li>
+    <li>他人のバグを triage して日が暮れる。問題を特定できてしまうので経験というのはおそろしいが、こういうことばっかりやってるとまた君か・・・となり怨嗟で勤労意欲が損なわれるので適当にちょろまかしていきたい。しかし隣のチームはまじで C++ 力が低くて萎えるわ・・・。</li>
+    <li>近所の町にある唯一のファンシーじゃない日本ラーメン屋が潰れると<a href="https://mv-voice.com/blogs/p/2020/01/29/facing-rising-competition-and-costs-ramen-house-ryowa-to-close-after-two-decades-in-mountain-view">地元紙</a>を読んで知る。特段うまくはないが混雑もないため、自分が唯一行く気になるラーメン屋だったのだが・・・。Minimum wage の釣り上げを理由にあげており、そういう理由で潰れるんじゃ仕方ない感。安さの裏返しに安い人件費があったということだから。こうしてファンシーなラーメン屋だけが生き残っていくのだろう。
+<ul>
+    <li>MV の最低賃金は約 $16. 東京の最低賃金は約 1000JPY すなわち $9.1 くらいらしいから、1.7 倍? 物価のプロキシだと思うと思ったより差が小さい気もするが、こんなものなのかもしれない。家賃とか倍以上する気がするけど、一方で家族で都市部に住もうと思ったら東京でもそれなりの家賃を払わなければいけない気もする。妻子ありで東京に暮らすコスト感覚がまったくわからない。</li>
+</ul>
+</li>
+    <li>なんか病院いくほど体調悪くないので明日の予約をキャンセルしたいが、あまり頻繁にキャンセルしてるとアカウントがロックされるからね、とアプリに釘を刺されたのでいちおう行くだけ行って発作どめ出してもらおうかな・・・。
+<ul>
+    <li>近所の病院、大きい所はみな primary care doctor が新患をとっていない。家族つながりとかで入り込むしかないのでよそ者には厳しい。自分は二年前その現実に気づき、仕方なく新しめの病院で doctor をみつけたが、この人もだいぶいまいち。まず本人が出てこず門下の nurse practitioner が診察に出てくるし。NP でいいならでかい病院いくわ・・・みたいな気分。</li>
+    <li>この病院は診察の予約日が二日先になるが、実はこれはまだマシで、でかい病院だと三日かそれ以上待たされる。Flu とかで primary care doctor の世話になるのは難しいことがわかる。実際は電話で訴えると列を飛ばせたりすることもあるが、そういうのやめてちょ・・・。Urgent care に行くのが正解ではあるが、ではなんのための primary care というシステムなのか・・・。</li>
+    <li>というわけで、でかい病院は予約まで待たされ、小さい病院は色々いまいちで、つらい。しかし裏返しとして予約していけば長く待たされることはまずない。というと語弊があってダメな医者もいる（自分の thyroid hyperactive でかかった医者は常に一時間待たされる）が、基本はだいたい待たされないし、空いている。何時間も待たされたりする東京の病院とどっちがマシかはよくわからない。</li>
+    <li>例外は小児科。最初に小児科医がイマイチだったので途中で鞍替えしたのだが、かわりはすぐみつかった。そして予約も割とすぐとれる（といっても二日くらいは待つが。）まあ小児科がマシなら大人は我慢するか・・・という気分。まあせいぜい健康に気をつけて生きていきます。</li>
+    <li>なんとなく人口急増なサウスベイ固有の問題で、アメリカ平均はもっとマシなのではないかという気もしている。</li>
+</ul>
+</li>
+</ul></p>

@@ -1,0 +1,80 @@
++++
+tags  = ["fragments"]
+title = "Fragments #42"
+date  = "2020-01-27 05:04:10"
++++
+<p><h2>2020-01-27 (Mon)</h2></p><p><ul>
+    <li><a href="https://bradfitz.com/2020/01/27/leaving-google">bradfitz - Leaving Google</a> "3,064 Android CLs" ってすげーな。</li>
+    <li><a href="https://www.sifive.com/blog/with-sifive-we-can-change-the-world">With SiFive, We Can Change the World - SiFive</a> - <a href="https://www.blog.google/technology/ai/mlir-accelerating-ai-open-source-infrastructure/">MLIR</a> も <a href="https://www.tensorflow.org/swift/api_docs/">TF Swift</a> もどこにも行かずか・・・。RISC-V が盛り上がるのはいい話だが。</li>
+    <li>仕事。Field data のモニタリングは他人にすっかりおまかせだったが、なんかちょっと数字ヘンなので調べてといわれ久々に SQL を書く。SQL の文法は以外と忘れていない（というかもともとほとんど知らない）が該当ログの schema を忘れている。そしてコピペしようと覗いた dashboard 用の SQL は、データサイエンティスト氏によってマクロ使いまくりバージョンと化しておりコピペできん・・・。マクロをコピペしつつ、COUNT(*) バージョンから徐々に欲しいクエリに近づけていく作業。気がつくと日が暮れている。はー・・・。
+<ul>
+    <li>ダッシュボードでは 50p と 99p にアグリゲートしている値を雑にサンプルして histogram を書く、というありがちな分析でだいたい仕事終了。レイテンシはは分布がめちゃ right-skewed なので mode と 50p が一致せず、そのせいで色々誤解がありますよね、というような話だった。mode って histgram では一目瞭然だけどどうやって SQL するんだろうな・・・。</li>
+    <li>この field data はさわるたびに不備がみつかり直さなければと思いつつほっとく、ということを繰り返している気がする・・・。</li>
+</ul>
+</li>
+    <li>忙しくて放置してるけど budgeting をちゃんとやった方が良いのではないか、と奥様。手間がかかるだけでなくカネの話をするのはほんとにストレスなので（ほらこれが出費でしょ、という話をしては嫌な顔をされる、という展開になりがちなため）個人的には乗り気でないが、配偶者が finance aware になっている機を逃したくない気もして、悩ましい。
+<ul>
+    <li>出費はでかいやつ（家賃、学校、旅行）が支配的で、日頃の子供のおもちゃとか衣類とか home improvement とか食費は相対的にはどうということはない。（派手な外食とかしないため。）そして家賃、学校、旅行のうちコントロールできるのは旅行である。端的にいえば日本に帰る頻度を毎年から隔年にすれば日頃の出費のザルさはすべて赦される。逆に旅行一回分を日常を通じて節約するのは大変。しかしそうしたポイントを budgeting を通じ commuicate するのは関係性の地雷がありすぎてまったく気が乗らない。</li>
+    <li>自分のガジェット浪費が渋くなるのを心のどこかで嫌がっているのではないか、といわれるとそれはゼロではないけれど。</li>
+    <li>前回は給料が半分になる（ベースのみになる）ことがあっても生きていけるようにするという目標でやっていたが、それは割と厳しいことが判明している。その厳しさゆえに発生するストレス（たとえば旅行頻度の低下を説得するプロセス、外食の上限に達したしんどい日の夜など）はしょうじき割にあわない。一歩で budgeting とは本質的に goal setting なので、なにか意味のあるゴールを設定しないといけない。ランダムに線を引いてもあまり意味がない。家を買うとか？別にしたくないしな・・・。</li>
+    <li>なので（家を買うとかアーリーリタイアとかスタートアップで働くとかを諦めた結果）現状とくにカネに困っていないという事実をありがたく享受する方が我々のトータルの幸福には寄与するのではないか、とおもうのだけれど。どうしてまた budgeting したくなったのだろな。ナゾ。</li>
+    <li>といった点をインタビューするのが必要なのでしょう・・・。</li>
+</ul>
+</li>
+</ul></p><p><h2>2020-01-28 (Tue)</h2></p><p><ul>
+    <li>Coronavirus outbreak のお知らせが仕事や学校に来ているこの頃ですが娘氏風邪を引いてて心配だわ。しかし今は coronavirus 以前にふつうに flu season なのわかってんのかおまえら。と誰となく。</li>
+    <li>会社の年次サーベイに答え、愛社精神の継続的喪失を実感する。割とあると思いがちだが、そうでもない。しかしまだ底ではない気配がサーベイの質問項目からは読み取れる。</li>
+    <li>引き続き SQL 業務。苦情を濡れ衣だと証明する、というと語弊があるが、そんなかんじの仕事。
+<ul>
+    <li>勤務先はログの保存日数に上限があり、集約していないログは割とすぐ消えてしまう。しかし集約したログがブレイクダウンに必要な dimension を持っているとは限らず、というかもっていなかったので、決定的な結論を導くことはできませんね・・・となった。この dimension を足してほしいけど、そういうスキーマ変更は longitutional な分析を難しくしたりしがちで、どうすりゃいいの。まあどうにかするのは自分の仕事じゃないからいいっちゃいいんだけど。</li>
+    <li>手元にあるデータの範囲では、申したれられた問題は濡れ衣ですね、と言えそう。しかし実際にブレイクダウンしてみると色々と発見があって面白い。時間があればもうちょっとデータ仕事をやりたいが、なかなか・・・。</li>
+    <li>データすなわちレイテンシの分布の変動幅が厳しい。人々は週末に写真をよくとるわけだが（実体験とも一致する）、アプリというのは頻繁につかわれるとキャッシュにのる確率があがるなどの理由で起動は速くなりがち。しかし自分が知りたいのはアプリの instrincic なレイテンシであって、そういう外部要因は排したいのだよ。どうすりゃいいの、というかそれを廃するための dimension がその集約ログにねーんだよ！もー。</li>
+</ul>
+</li>
+    <li> 家計簿復活プロジェクトつづき。
+<ul>
+    <li>インタビューの結果、予算策定をしたいという計画指向ではなく月にいくらくらいカネがかかってるのかくらいは把握したいというトラッキングが要望だとわかる。それなら Mint でわからなくもない（というか現状は Mint でみている)が、一方で 説明しがたい使いにくさがある。(<a href="https://thewirecutter.com/money/best-budgeting-apps-and-tools/">この Wirecutter の記事</a>がまあまあ的をいている。) YNAB ほどは頑張れないが Mint よりは柔軟な何かがほしい。自分もそのくらいは頑張って良い気がしてきた。</li>
+    <li>ということでツールを探すと <a href="https://www.tillerhq.com/">Tiller</a><span style="color:var(--color-text);"> が一番近そう。もうちょっと調べてから試してみよう。</span>個人的には旅行にいくらかかるのか、交通費と宿代だけでなく E2E で集計したいと常々思っていた。Tiller はそういう用途には向いていそうではある。収入や総資産のトラッキングは Mint にまかせておけばよい。</li>
+</ul>
+</li>
+    <li>Google Sheet ってなにができるのだろうか・・・Excel と比べたらずっとしょぼいとはいえ、Excel というのは Microsoft の一時代を築いた超巨大製品なわけで、それと戦おうとするならそれなりにだいぶ複雑であることが予想される。そしてガイドブックとかが書かれる時代は終わってしまった気がする。
+<ul>
+    <li><a href="https://support.google.com/a/users/answer/9282959?visit_id=637158294622972962-2798545759&amp;hl=en&amp;rd=1">Google Sheets training and help - G Suite Learning Center</a> これ眺めるかな。</li>
+</ul>
+</li>
+    <li>子に風邪をうつされたらしく、喉が痛い。</li>
+</ul></p><p><h2>2020-01-30 (Thu)</h2></p><p><ul>
+    <li><a href="https://android-developers.googleblog.com/2020/01/flashing-android-open-source-project-builds.html">Android Developers Blog: Flashing Builds from the Android Open Source Project</a> AOSP の userdebug が誰でもサクっと焼けるようになった。めでたい。AOSP っていまどのくらい（開発用途で）使い物になるのかね。Google Android アプリは Play Services がないと一ミリも動かない気がするけど、世間のアプリは割と動くのかな？でも Notification があるとダメそうで悩ましい。あと Pixel とか大量にオープンじゃない HAL があるとおもうが、そういうのは prebuilt binary があるのだろうか。
+<ul>
+    <li><a href="https://android.stackexchange.com/questions/27808/how-can-i-install-the-google-apps-package-play-store-on-my-android-device">gmail - How can I install the Google Apps Package (Play Store, ...) on my Android device? - Android Enthusiasts Stack Exchange</a> カスタム ROM 勢はこういうツールをつかってるのか・・・。厳密には違法だろうけど、それでいいのかもしんないな。</li>
+</ul>
+</li>
+</ul></p><p><h2>2020-01-29 (Wed)</h2></p><p><ul>
+    <li>SQL 仕事、は今日でおしまいかな。せっかくなので Colab でレポートを書いてみる。なんか社内バージョンはちょっと機能が多く、レポート書くとかも微妙にやりやすい。しかしこれパブリックにしない理由はないと思うのだが、相変わらずの内外断絶・・・。</li>
+    <li><a href="https://engineering.linkedin.com/blog/2020/how-we-retired-python-2-and-improved-developer-happiness">How we retired Python 2 and improved developer happiness | LinkedIn Engineering</a> みな苦労してる・・・。自分も新しいコードは Python3 で書くようにしてるけど、古いコード結構あるよだよな・・・。</li>
+    <li>San Diego から出張中の同僚が PS4 と書かれたジャージを着ていた。昔仕事でやっていたという。San Diego にはたしかにソニーがあるらしい。San Diego が大都市なのか、Sony が大企業なのか。両方か。</li>
+    <li><a href="https://pandas.pydata.org/pandas-docs/version/1.0.0/whatsnew/v1.0.0.html">What’s new in 1.0.0 (January 29, 2020) — pandas 1.0.0 documentation</a> 検索していて気づいたが、もうすぐ 1.0 になるのか。そして deprecated API が removed とかいってる・・・。
+<ul>
+    <li><a href="https://news.ycombinator.com/item?id=22187121">Pandas 1.0 | Hacker News</a> なんか HN でも盛り上がってるな。今日リリースだったの？なんか RC ってかいてあるけど。</li>
+</ul>
+</li>
+</ul></p><p><h2>2020-01-31 (Fri)</h2></p><p><ul>
+    <li>風邪悪化にともない一回休み。なんか気管支の方にきていてやなかんじ・・・。
+<ul>
+    <li><a href="https://www.mayoclinic.org/diseases-conditions/bronchitis/symptoms-causes/syc-20355566">Bronchitis - Symptoms and causes - Mayo Clinic</a> を読み直すなど。Asthma 出ちゃってる気もするが・・・。</li>
+    <li>久しぶりすぎて病院の予約に出遅れてしまった・・・。最短で火曜日。Sigh.</li>
+</ul>
+</li>
+    <li><a href="https://www.nytimes.com/2020/01/29/opinion/clay-christensen.html">Opinion | Tech Loses a Prophet. Just When It Needs One. - The New York Times</a>
+<ul>
+    <li>Clay Christensen が亡くなった。Exponent podcast も今週は James がこの話をしていた。James は最後の著書を co-author しただけあり、愛があってよかった: <a href="https://exponent.fm/episode-180-its-been-a-week/">Episode 180 — It’s Been a Week | Exponent</a></li>
+    <li>自分も "<a href="https://www.amazon.com/How-Will-Measure-Your-Life/dp/0062102419/">How Will You Measure Your Life?</a>" はそこそこ好きな本。</li>
+</ul>
+</li>
+    <li><a href="https://mtlynch.io/solo-developer-year-2/">My Second Year as a Solo Developer · mtlynch.io</a> Solo Developer というよりは funemployment ってかんじ。</li>
+</ul></p><p><h2>2020-02-01 (Sat)</h2></p><p><ul>
+    <li>妻子めずらしく週末プレイデートに外出中のため留守番。<a href="https://www.tillerhq.com/">Tiller</a> をセットアップする。よしよし。しかし風邪のため脳が働かずセットアップだけで終了。</li>
+</ul></p><p><h2>2020-02-02 (Sun)</h2></p><p><ul>
+    <li>凧揚げ。強風のためすごい勢いであがり、紐で指を切る。</li>
+    <li>喘息は軟調。</li>
+</ul></p><p><h2></h2></p>

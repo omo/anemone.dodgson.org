@@ -1,0 +1,54 @@
++++
+tags  = ["fragments"]
+title = "Fragments #32"
+date  = "2019-11-18 06:00:00"
++++
+<p><h2>2019-11-24 (Sun)</h2></p><p><ul>
+    <li>At Starbucks. <a href="https://stories.starbucks.com/stories/2019/starbucks-offers-complimentary-digital-access-to-news-for-a-limited-time/">期間限定でオンライン新聞が読める</a>という広告が出たので WSJ.com にアクセスしてみたが、普通に paywall された。なんなの・・・。</li>
+    <li><a href="https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/">The Structure of Scientific Revolutions: 50th Anniversary Edition</a> を気紛れで聴いていたが、スクーター通勤で間が開いたうちに飽きてしまった。しかもこの 50 周年 edition は前書きの解説がすごいよくかけていて本文聴く気が失せてしまうのだった。学生の頃に読んだはずだけど内容まったくおぼえてなかったことがわかったのはよかった。
+<ul>
+    <li>これを聴く気になったのは <a href="/2019/10/20/antisocial/">Antisocial</a> を読んだのがきっかけだった。Kuhn の paradign shift というアイデア自体はそんなに悪くないと思うけれども、聴いているうちに後続の「科学哲学」みたいなもののろくでもなさが記憶に蘇ってしまい聴く気が失せた面もある。現在の social divide にソーシャルメディアをはじめとするテクノロジが手を貸したのは事実だとおもうけれども、それを哲学者や社会学者がなんとかできるとは、自分はまったく思っていないのだろうな。まだ経済学者の話の方が聴く気になる・・・と書いて <a href="https://www.amazon.co.jp/Capital-Twenty-First-Century-Thomas-Piketty/dp/0674979850/">Capital</a> が積読なのを思い出した。そのうち聴こう。</li>
+    <li>それにしても「<a href="https://www.amazon.co.jp/dp/4622016672">科学革命の構造</a>」って圧倒的にかっこいいタイトルだよね。みすず書房の表紙も単色オレンジで渋いし。</li>
+</ul>
+</li>
+</ul></p><p><h2>2019-11-22 (Fri)</h2></p><p><ul>
+    <li>Microsoft, Colab みたいな managed notebook つくって vscode にくっつけないかなー・・・もうブラウザでコード書くのいやぽ・・・。せめて Colab が Python の type annotation を理解してくれればいいのだが。</li>
+    <li><a href="https://www.buzzfeednews.com/article/nicolenguyen/her-amazon-purchases-are-real-the-reviews-are-fake">This Amazon Customer Has Received Hundreds Of Free Products In Exchange For 5-Star Reviews</a> ウェブ検索もオンラインレビューもやられてしまった悲しさ。どちらも完全にやられてしまったわけではないからビジネスが成り立っているわけだが・・・。</li>
+</ul></p><p><h2>2019-11-21 (Thu)</h2></p><p><ul>
+    <li>このところ朝まったく起きられていない。</li>
+    <li><a href="https://briangrinstead.com/blog/firefox-webcomponents/">The Firefox UI is now built with Web Components - Brian Grinstead</a> XBL をもとねたとしてつくられた Web Components が本家 XBL を置き換えた。感慨深い。<a href="https://www.w3.org/TR/xbl/">XBL の仕様</a>とか何度読んだか知らん。まったく覚えていないが。なお初代 XBL は Safari をはじめたプログラマのひとり David Hyatt 作なのだった。今なにやってんだろうね。WebKit には <a href="https://trac.webkit.org/search?q=hyatt&amp;noquickjump=1&amp;changeset=on">2018 年を最後にコミットがない</a>けれど。</li>
+</ul></p><p><h2>2019-11-20 (Wed)</h2></p><p><ul>
+    <li><a href="https://www.thoughtworks.com/insights/blog/macro-trends-tech-industry-nov-2019">Macro trends in the tech industry | Nov 2019 | ThoughtWorks</a> "Trunk-based development seems to be losing the fight" なぜなら PR みたいな short lived branch が幅を利かせているから、と書いてあるが、いまいち違いがわからないなと不思議におもいつつ trunkbaseddevelopment.com に<a href="https://trunkbaseddevelopment.com/short-lived-feature-branches/">節が増えた</a>というので見てみると、PR のブランチがけっこう長い想定。みんなそんなことやってんのね。そして <a href="https://trunkbaseddevelopment.com/alternative-branching-models/">Alternative branching models</a> というセクションに cascading という名前で Android の狂ったブランチモデルがのっていた。あいつらだけじゃなかったのか・・・。"Cascade is incompatible with Trunk-Based Development - do not do this."</li>
+    <li><a href="https://linuxplumbersconf.org/event/4/">Linux Plumbers Conference 2019 (9-11 September 2019): LPC 2019 - Overview · Indico</a>  <a href="https://linuxplumbersconf.org/event/4/sessions/62/#20190911">BPF MC</a>, <a href="https://linuxplumbersconf.org/event/4/sessions/49/#20190909">Tracing MC</a>, <a href="https://linuxplumbersconf.org/event/4/sessions/49/#20190909">Android MC</a> ぜんぶスライドが興味深い。
+<ul>
+    <li><a href="https://linuxplumbersconf.org/event/4/contributions/404/attachments/326/550/Handling_memory_pressure_on_Android.pdf">Handling memory pressure on Android</a> PSI インテグレーションと compaction は聞いていたが process_madvice() は知らなかった。そもそも PSI 自体ドキュメントが少なすぎてさっぱりわからない。いつの間にか upstream されているし。</li>
+</ul>
+</li>
+    <li><a href="https://www.libcamera.org/">libcamera — libcamera</a> 上の Android MC より。Android 互換の Linux カメラスタックをオープンソースで実装するぞと意気込んでいる。しかし期待薄だな。サーバ落ちてるし・・・。</li>
+    <li><a href="https://slack.engineering/introducing-nebula-the-open-source-global-overlay-network-from-slack-884110a5579">Introducing Nebula, the open source global overlay network from Slack</a> Slack, Overlay network の上でサーバー動かしている・・・の？ほんとに？もうちょっと周辺ツールなどが揃ってきたら自宅 - クラウドで VPN とかできそう。なかなか夢がある。<a href="https://cloud.google.com/beyondcorp/">BeyondCorp</a> も悪くないけど、Nebula のほうがかっこいいな。</li>
+</ul></p><p><h2>2019-11-19 (Tue)</h2></p><p><ul>
+    <li><a href="https://www.wired.com/story/google-shakes-up-its-tgif-and-ends-its-culture-of-openness/">Google Shakes Up Its 'TGIF'—and Ends Its Culture of Openness | WIRED</a>
+&lt;Facebook held its meeting from the start; Zuckerberg would end by shouting “Domination!”&gt; 自分はさいきん微妙に Zack 氏の反社会的な振る舞いが好きになっているのだけれど、一方で Facebook 自体はどうでもいいのだった。</li>
+    <li><a href="https://arxiv.org/abs/1910.06663">[1910.06663] AI Benchmark: All About Deep Learning on Smartphones in 2019</a> いろんなスマホで NN のベンチマークをしつつ業界の現状を俯瞰する。興味深い内容だった。そして Qcom だけが NN チップを作らず Hexagon だけでがんばっている。おもったより健闘しているが、さすがに辛いのでは。MediaTek ですら専用ハードウェア(APU)を持っているというのに。
+<ul>
+    <li>あと Samsung だけがハードウェアのアーキテクチャをざっくり紹介していて偉いと思いました。こうした NN 回路たちはどのくらい収束できるのだろうか。Vulkan が<a href="https://www.khronos.org/machine-learning/">標準化をはじめた</a>という話が載っているが、どうなるのかね。</li>
+    <li>TF Lite と NNAPI が辛い、という話がつらつらと書いてあり興味深い。<a href="https://www.tensorflow.org/lite/performance/delegates">Delegate</a> という仕組みで NNAPI がバイパスできるようになったと書いてある。なんともいえない messy さがある。こないだたまたま覗いていた C++ のコードに tf delegate というのがでてきてなんだこれ・・・と思っていのだが、思わぬ形で謎が解けた。</li>
+    <li>Ops の acceleration がリサーチの発展に追いつかず苦労している様子が伺える。どんな Ops が追加されて続けているのかまったく理解していないので、ちょっと調べてみたい気はする。</li>
+</ul>
+</li>
+    <li><a href="https://source.android.com/devices/tech/debug/eval_perf">Evaluating Performance  |  Android Open Source Project</a> Android の性能分析に関する公式ガイド。デバイスの中の人向け。社内で "confidential" というラベルつきの PDF として配布されており、なんでこれ秘密なの・・・とおもって検索したら公開されていた。ちょうよく書けていて感心。Android のなかにもちゃんとした人がいるもんだねえと著者を探したところ、我々のダメコードをいつもチクチクしてくるあのひとだった。ごめんねいつも苦労かけて・・・。</li>
+    <li><a href="https://securityaffairs.co/wordpress/94089/hacking/cve-2019-2234-android-camera-apps-flaws.html">CVE-2019-2234 flaws in Android Camera Apps exposed millions of users surveillanceSecurity Affairs</a> しばらく前に隣の人が直していた。
+<ul>
+    <li>報道が大げさでげんなり。もし storage permission のある悪意のあるアプリをインストールしてしまったらカメラアプリを起動できるバグがなくても既にとった写真は盗めるわけで、悪意のある人にはいろいろ筒抜けですよ？</li>
+</ul>
+</li>
+</ul></p><p><h2>2019-11-18 (Mon)</h2></p><p><ul>
+    <li><a href="/2019/11/18/picture-taking-practice/">Picture Taking Practice</a></li>
+    <li>FB リクルータより、Android 拡充してるので TL 的な仕事あるよ、というメール。やだよ・・・。</li>
+    <li>Links:
+<ul>
+    <li><a href="https://stratechery.com/2019/integration-and-monopoly/">Integration and Monopoly – Stratechery by Ben Thompson</a> 自分は Macbook がいまいちすぎて XPS13 にうつり, Butterfly keyboard と Touchbar が許容できず今の Precision ナントカに乗り換えたので、ラップトップにおいて Apple が competition に面していないという説は信じていない。おまえら Windows を買えばいいのにばーかばーかという気分。Ben Thompson,  ときどき Apple ファンボーイすぎるときがあって興味深い。ここまで人々の心を虜にできている企業はなかなかないが、それは monopoly とは違うよな。</li>
+    <li><a href="https://www.wired.com/review/microsoft-surface-pro-x/">Microsoft Surface Pro X Review: Expensive, Unreliable, Untenable | WIRED</a> Laptop といえば Snapdragon Laptop 期待の新星 Surface Pro X, これに限らずおしなべてレビューがわるくて残念。iPhone にせよ Android にせよ別に遅くないので、こいつらは ARM に最適化されてるのだなと思う。可搬性の幻想。</li>
+</ul>
+</li>
+</ul></p>

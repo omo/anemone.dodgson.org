@@ -1,0 +1,57 @@
++++
+tags  = ["fragments"]
+title = "Fragments #35"
+date  = "2019-12-09 05:55:44"
++++
+<p><h2>2019-12-15 (Sun)</h2></p><p><ul>
+    <li>今朝見た夢: 夫婦の仲が良かった時期を再現しようとする年老いた自分は Middle-earth で Google I/O を開催すべく地下世界への洞窟に潜る。たどり着いた約束の地で monorepo の打ち棄てられたディレクトリを辿りながら資料を探していると、遠くの方でみたこともないほど巨大なドラゴンの歩く姿見えて戦慄する。</li>
+    <li>クリスマスパーティを二軒はしご。会社のともだちが開催したほうは、参加者たちから羽振りのよさが伝わってきてため息。</li>
+</ul></p><p><h2>2019-12-14 (Sat)</h2></p><p><ul>
+    <li>年内は PT 中断して考え事に費やしたい気分。</li>
+    <li>健康が回復しているので扁桃腺写真を比べてみると・・・腫れてない・・・きがする。口蓋垂は腫れている気がするが。</li>
+</ul></p><p><h2>2019-12-13 (Fri)</h2></p><p><ul>
+    <li>写真習慣化プロジェクト、平日はマジ banal で撮るものねーとおもっていたが、どうでもいい日常も <a href="https://support.google.com/pixelphone/thread/7791170?hl=en">timelapse</a> にすると割と楽しいのに気づいた。しかしビデオをとってもミラーレスを買う練習にはなってない感。写真はともかくビデオはスマホじゃないと無理。あとから加工とかしない。</li>
+    <li><a href="https://www.theverge.com/2019/12/12/21016575/microsoft-xbox-series-x-next-xbox-console">Xbox Series X: Microsoft’s next Xbox console for 2020 - The Verge</a> 無闇にかっこいい！</li>
+</ul></p><p><h2>2019-12-12 (Thu)</h2></p><p><ul>
+    <li>奥様風邪のため半日休んでプレスクールイベント代行、のはずだったが諸事情から夫婦で参加となった。イベント後に色々 mess up してしまい結局 WFH に移行。疲弊。自宅の WFH 環境を整えないと厳しい。バグのトリアージくらいはできるようにしたい。要大画面。
+<ul>
+    <li>仕事も使用も会社支給の一台の laptop で済ませられると色々ラクで、10 年くらい前はそれも実際まあまあ可能だったのだが、仮想化技術の発展とセキュリティの厳格化という相反する進歩によって可能性は引き裂かれたのだった。まあおまえ家でやることなんて blog と colab なんだからできるじゃん、といわれるとそうだけど、Docker つついたり AndroidStudio つかったりしたいじゃん。あと会社一番人気 Macbook Pro をあんまし使いたくないせいで良いラップトップがないせいでもある。</li>
+</ul>
+</li>
+    <li><a href="/2019/12/12/a-long-reflection-2019-0-looking-back/">A Long Reflection 2019 (0) – Looking Back</a></li>
+</ul></p><p><h2>2019-12-11 (Wed)</h2></p><p><ul>
+    <li>今朝見た夢: コンピュータが人体表面の微細電流を読み取れる事実を悪用し、ウェブサイトが個人を fingerprint できるという脆弱性がみつかる。Intel の研究者が書いた mitigation の論文が電車の窓から見えるビルの壁面に広告として貼られている。自分は向かいの席にすわる高校生カップルにそれを読んで説明してやる必要があるのだが、そんな生物学みたいな話ぜんぜんわかんねーよ、と途方にくれている。</li>
+    <li>ソーシャルメディアをドメイン名で検索したところ誰一人ブログの更新に気づいた様子はなく、完全な dark launch (誤用) に成功した模様。インターネットから消えた自分に寂しさはあるが、友人以外誰も読んでない（お手紙は正しい相手に届いている）事実を再確認できたのはよかった。</li>
+    <li>玄米と雑穀米に適応した結果、たまに白米を食べると味がない・・・というといいすぎるけど、なんか風味が退屈に感じる。</li>
+    <li><a href="https://android-developers.googleblog.com/2019/12/code-search-with-cross-references-for-aosp.html">Android Developers Blog: Code Search with Cross References for the Android Open Source Project</a> 出たよと教わる。Blame layer があるのがよい。自分はしょっちゅう社内のコードサーチで Android のコードを読んでいるけれど、こっちの方が出来がよさそう。</li>
+    <li><a href="https://thewirecutter.com/reviews/best-bidet-toilet-seat-washlet/">The Best Bidet Toilet Seat or Washlet for 2019: Reviews by Wirecutter</a> 記事の存在に笑いをこらえきれない。</li>
+</ul></p><p><h2>2019-12-10 (Tue)</h2></p><p><ul>
+    <li>準備ができたので<a href="https://anemone.dodgson.org">ブログの差分を push</a>. 年明けまでほっとこうかとおもったけれど、手元においておいてトラブルがあってもやだし push したら continuously に deliver されてしまうし、そもそもいつだしても大差ない内容だし。
+<ul>
+    <li>Travis を使った push, 盲点は CloudFront のキャッシュを invalidate しないといけないことだった。(HTTPS 化に伴い CloudFront を挟むようになっていた。) TTL によれば一日待つとどのみち更新されそうだけれど、ちゃんと動いてるのを確認したいからね。</li>
+    <li><a href="https://docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html">create-invalidation — AWS CLI 1.16.299 Command Reference</a> で自動化できそうではある。あとでやろう。</li>
+    <li>JS いじりの成果はどうかとスマホから見てみると、満足いく速さになっていた。よしよし。テキストだけのサイトはこのくらい軽くあるべし。といっても 500ms とかなのでもうちょっとなんとかならんのか感は否めない。</li>
+</ul>
+</li>
+    <li>どこからともなく現れた性能おたすけ団のパッチをレビューしているのだがこのコードはちょっと・・・いったい君は誰なんだと社内名簿を見るとわりかし入ったばかりの人だった。無茶ぶりマネージャにあたってしまって可哀想・・・。心を改め優しめのフィードバックをする。しかし人を突っ込めばいいってもんじゃねえんだぞ。人月の神話読んだの？</li>
+    <li>超えてはいけないと考える人もいる一線すなわち Amazon Essential で衣類を買う（パジャマ。）割と良い。
+<ul>
+    <li>Amazon Essential のページを見て思うことととして、コモディティ Amazon 製品には圧倒的な強みがある。すなわちレビューがチートしてないという安心感。有名ブランドとかはまあチートしないだろうという期待がある。しかし価格で戦ってる連中の中でそう信じられる売り手は少なく、結果として Amazon Essential の credential が際立つのだった。肉を切らせて骨を断つとでもいおうか・・・。</li>
+</ul>
+</li>
+    <li>Wunderlist, ついに shutdown の<a href="https://6wunderkinder.desk.com/customer/en/portal/articles/2790249-what-s-next-for-wunderlist-">日取りが決まった</a>らしい。なお一足先に Hangout したはずの Hangout は FB Messenger に移行した。いっそ TODO アプリも Facebook が作ってくれないかなー。MS TODO 悪くないんだけど、MS アカウントというのが色々と取り回しが不自由すぎるのだよ・・・。<a href="https://todo.uservoice.com/forums/597175-feature-suggestions/suggestions/18985306-gmail-accounts">Google アカウントでのログインを求める声</a>があるが・・・ほんとにそれやったら MS 評価はまた 10 段階くらい上がることでしょう。</li>
+    <li>ウイルス性胃腸炎、子の流れ弾が奥様に被弾。自分も時間の問題だなこれ・・・。</li>
+</ul></p><p><h2>2019-12-09 (Mon)</h2></p><p><ul>
+    <li>昨日と今日で anemone.dodgson.org 公開の準備おおむね完了。今年6月まで。
+<ul>
+    <li>やったことは、WP からのインポートスクリプトの更新。Letters/Fragments 制度の導入にあわせてフィルタを直す。あと zip を展開した XML からインポートするつくりだったが、コンテンツが増えて XML が複数生成されるようになったのにあわせ zip から直接読むようにするなど。日付のフィルタは WP 側でできるので自分が書く必要はなかった。</li>
+    <li>コンテンツの直し。主に URL に日本語が入ってる記事にアルファベットのみの slug を与える作業。眺めていると細かい誤字脱字がぼちぼちあるが、どうするかなー・・・うかつ発言の検閲作業も兼ねて一通り眺め、気がついた範囲で直そうかね。けっこう量があるのが難。</li>
+    <li>Theme もちょっとなおす。Git submodule になっているのがかったるい・・・。</li>
+    <li>JS 遅いのをなんとかしたいと思ってプロファイル結果を睨んだところ、一番のガンは password manager が inject する JS だった。こいつはほんとに隅から隅まで出来が悪くてウンザリ。もうちょっと出来が良いと評判なやつに乗り換えたいと思っているが腰が重くてやってない。ただ JS の inject が必要なのは Chrome に API がないせいな気もするので、あいつらはちゃんと API を生やすべき。Android を見習え！Android Chrome のパスワードマネージャ機能はしょっちゅう壊れているが・・・。</li>
+    <li>プロファイルを睨んで学んだことそのにとしては、最近（じゃない気もするが）は<a href="https://developers.google.com/web/fundamentals/performance/rail">First Meaningful Paint</a> という指標があるらしい。プロファイラはこの指標のタイミングを表示してくるのだが・・・何を根拠にそこが meaningful だと主張しているのかナゾ。Android には <a href="https://developer.android.com/reference/android/app/Activity.html#reportFullyDrawn()">reportFullyDrawn()</a> という同等メトリクスを報告する仕組みがある一方、ログに一行時間が表示されるだけというカスのような機能しかなく有り難み 0.01 くらいなのだった。といいつつ最近はこの指標をベンチマークに使っているのだが・・・。</li>
+    <li>まあとにかく、検閲作業をしたあと公開といたしましょう。</li>
+</ul>
+</li>
+    <li>雨があがったので一週間ぶりにスクータ。ストップウォッチしつつチンタラ漕いだつもりが記録更新で、道路の混雑具合が全てと学ぶ。</li>
+    <li>今日から一週間 hackathon, なのだが、よそのチームからのレビューは容赦なくやってくるのだった。</li>
+</ul></p>

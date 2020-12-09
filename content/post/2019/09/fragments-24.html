@@ -1,0 +1,58 @@
++++
+tags  = ["fragments"]
+title = "Fragments #24"
+date  = "2019-09-23 21:40:25"
++++
+<p><h2>2019-09-29 (Sun)</h2></p><p><ul>
+    <li>夜、ふたたび便器の水栓が壊れ、またピタコラスイッチ初級みたいな付け焼き刃修理をして疲れ、だらだらインターネットをしていたら夜の時間が失われた。Sigh.</li>
+    <li>二週間ここに日記をつけてわかったのは、土日は忙しいということであった。</li>
+    <li><a href="/2019/09/29/loud-toys/">音の鳴るおもちゃとはてなくん</a></li>
+</ul></p><p><h2>2019-09-27 (Fri)</h2></p><p><ul>
+    <li>Jank をとった勢いで周辺コードをリファクタリング。ベタっと書きすぎて肥大化しているクラスを整理する、ムダなキャッシュのせいで stateful になってるところで cache を消すなど。Animator とか cache しないでほしいわ・・・。一方、リファクタリングは大変はかどる。まったく factor out されていないので単に適切に factor すればよい。前のチームだとリファクタリングしたいが色々 entangled すぎて不可能たすけて・・・みたいな場面が多かったので、この簡単さはある意味意外。ベタさが素直だったと言える。過剰な抽象を持ち込んで tangle させないよう気をつけたい。</li>
+    <li>翌日の BBQ 買い出しで夜が終わった・・・。意外と売ってないもの: コーン。</li>
+</ul></p><p><h2>2019-09-26 (Thu)</h2></p><p><ul>
+    <li>現実逃避に書いた Python スクリプトが peer bonus になった。めでたい。自動化いろいろやりたいなあ。</li>
+    <li>今日はコードレビューでイラッとして余計なことを書いた結果、不毛なやりとりをする羽目になってしまった。余計なことを書いているな、明日にしたほうがいいなと思いつつイテレートして進めたい誘惑にまけ、かえってこじらせてしまった。好戦的な相手なのがわわかっていながらつい苛立ちを表に出してしまった我が人格的未熟さに反省。</li>
+    <li>などと消耗して帰宅したら奥様が体調不良で不機嫌。きびしい。これがポワソン分布か。</li>
+    <li>すこしまえに購読したしまじろう教材の第一弾とどく。こういうかんじか・・・と夫婦で顔を見合わせるが、子は気に入っている。そうかいそうかい。ちゃれんじ accepted というやつだな・・・。</li>
+    <li>寝床でへねぱた 6 章をひやかす。<a href="https://www.morganclaypool.com/doi/abs/10.2200/S00516ED2V01Y201306CAC024">The Datacenter as a Computer</a> と <a href="https://perspectives.mvdirona.com">Perspectives</a> がもとねたです、と明記してあり、唸る。GPU の話もだいたい NVIDIA の paper そのまんまだったし、WSC とか GPU とかは専門外なのだろうなあ。クラウドでも big data でもなく WSC についてズバっと何か読みたい気がするが、Google 色に染まってない、というか AWS の話でなんか無いかなあ。自分も James Hamilton のブログを全部よむくらいの勢いが必要だろうか。</li>
+    <li>といいつつ参照されていた <a href="https://m-cacm.acm.org/magazines/2017/4/215032-attack-of-the-killer-microseconds/fulltext?mobile=true">Attack of the Killer Microseconds</a> を読む。CPU は nanoseconds を隠してくれるし OS は milliseconds を隠してくれるが最近の RDMA とか NVM の遅延は microseconds オーダーなので誰も隠してくれなくて辛い、OS 研究者なんとかしろ、というような話。面白かった。Google バイアスを受け入れるなら <a href="https://scholar.google.com/citations?hl=en&amp;user=7stTzUMAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Barroso papers</a> を読んでいくのもありかもしれない。</li>
+    <li>とおもって眺めていたら去年 <a href="https://www.morganclaypool.com/doi/abs/10.2200/S00874ED3V01Y201809CAC046">The Datacenter as a Computer</a> の third edition が出ているの気づいた。最近の Google System papers は GCP の宣伝臭が強くてあまり好きじゃないんだけど、これはどうかな。<a href="https://www.amazon.com/Datacenter-Computer-Designing-Warehouse-Scale-Architecture/dp/1681734338/">紙</a>で買ってみようかと思ったが高すぎ。</li>
+    <li>Link:
+<ul>
+    <li><a href="https://www.rei.com/blog/news/outdoor-preschool-trends">Outdoor Preschool - A Trend or a Lasting Model? | REI Co-op Journal</a> Forest School の話は <a href="https://parenting.nytimes.com/preschooler/forest-school">NYT Parenting にもあった</a>。近所にない、のはさておき、人種的な偏りがあるのは盲点だね。</li>
+    <li><a href="https://www.oneplus.com/7t">OnePlus 7T - OnePlus (United States)</a> 毎度よさそう。Pro との関係性がなぞ。</li>
+    <li><a href="https://www.amazon.com/dp/B07JPK4XJ6/">Amazon.com: Introducing Echo Loop</a> かっこいい気もする。しかし高いね。</li>
+</ul>
+</li>
+</ul></p><p><h2>2019-09-25 (Wed)</h2></p><p><ul>
+    <li>気が散っている。Podcast 停止中になにをやるか、このあとどの本を聞くかなどが決まっていないためか。あと来月なんか忙しいっぽく、そのせいもある。とりあえず育児系書籍のキューを文書化するべし（した）。</li>
+    <li>厳しいバグを引き取ってしまい、ストレスから砂糖の魔力に屈した・・・。</li>
+    <li><a href="/2019/09/25/how-to-raise-an-adult/">過保護の本</a></li>
+    <li>Link:
+<ul>
+    <li><a href="https://news.ycombinator.com/item?id=21071020">Early on in Cloudflare’s history when we were asked who our competition was we s... | Hacker News</a> - CEO 降臨してかっこいいこというの、PR として最強すぎでは。</li>
+    <li><a href="https://blog.kyanny.me/entry/2019/09/26/010043">Pixel 3aを130日使ってみて - @kyanny's blog</a> - こういうのを読んでちょっとムカっとする程度には Android 開発者になってきたなと思う。「飽きた」と「高い」以外の理由で iPhone から Android にスイッチする人をみたことがないので、じっさいよくできてるんだろうね。</li>
+    <li><a href="https://www.nytimes.com/2019/09/25/us/politics/ukraine-transcript-trump.html?action=click&amp;module=Spotlight&amp;pgtype=Homepage">Trump Asks Ukraine’s Leader to ‘Do Us a Favor’ and Also Urges Inquiry of Biden - The New York Times</a> -またハズレ弾か・・・とため息。もう Democrats だめぽ。</li>
+</ul>
+</li>
+</ul></p><p><h2>2019-09-24 (Tue)</h2></p><p><ul>
+    <li>Audible で購入したコンテンツの音質が悪すぎて聞き続けることができない、という前代未聞の事態（<a href="https://www.amazon.com/Raising-Independent-Self-Confident-Children-Essential/dp/B07WRMPBD2/">この育児書</a>）。なぜか購入ページからは返品できなかったがチャットしたら一瞬だった。さすが Amazon company である。どのくらいひどい音質かというと我々の Podcast より悪く、電話ですか？みたいな音。びっくりした。妙に安いのでおかしいとは思ったよ。しかし音質下げて安くとれるのだろうか？なぞ。売れてない本を買うときは気をつけないとなあ。</li>
+    <li>育児書ブラウジング。「片付けられない子供をなんとかする」というサブジャンルがあることに気づいてしまった。(例: "<a href="https://www.amazon.com/Smart-but-Scattered-Revolutionary-Executive/dp/1593854455">Smart but Scattered"</a>) アメリカ人、片付けできなそうだよなー。一方で ADHD 産業の陰謀なのではという気もしてしまう・・・。自分はアメリカにおける子供の ADHD 診断を信じられていないが、一方でこういう懐疑は <a href="https://www.nytimes.com/2019/03/05/health/measles-vaccine-autism.html">Anti Vaccine カルト</a>と何が違うのか、というと答えられない。しいていえば ADHD は感染しない。</li>
+    <li>締め切り前、自分のノルマ（バグ修正）は余裕があることだしリファクタリング・・・とおもっていたら競合の新製品を触っていた近くの席の PM が「アニメーションがスムーズだなァ」などとつぶやくのを聞き、そういえばちょっと前に報告した animation jank どうなったろうと覗く。すると直ってないどころか次のリリースに先送りされていた。おいおいこれちょう目立つやつだよ出したらヤバイよ・・・ということで引き取って修正。毎フレームレイアウトをしていた。やめてくれ。これだけ雑なことをしても最新機種ではわからない。CPU 速いっていいね。しかし去年でた廉価版はそんな速くないのだよ。</li>
+    <li>本来の担当は隣の人なので、ほらどう？とオフラインで実機を渡して見せたところ、なんでわかったの？テックトークしてよという。いやそういうレベルじゃねえだろ見た目コマ落ちてるし Systrace みりゃ遅いところも一目瞭然だろ・・・とおもったものの、なんとなくウェブを検索するとアニメーション中にレイアウトしている stackoverflow が多くこの世界に絶望。でもさがせば I/O の説教トークがありそうな気もする。</li>
+    <li>Link:
+<ul>
+    <li><a href="https://www.nytimes.com/2019/09/22/business/dealbook/wework-ceo.html">WeWork C.E.O.’s Ouster Is Weighed in Bid to Salvage I.P.O. - The New York Times</a> Uber とこれでテック業界の founder CEO 神話は崩壊した感がある。現役 tech founder CEO で神話に live up to the expection なのは Bezos 神くらい？</li>
+    <li><a href="https://news.ycombinator.com/item?id=21062373">I'm so glad I read hacker news. I almost took a job at WeWork just 2 months ago ... | Hacker News</a> 一方このコメントは made my day であった。</li>
+    <li><a href="https://www.redhat.com/en/blog/transforming-development-experience-within-centos">Transforming the development experience within CentOS</a> 既存の CentOS とか Fedora がどうなるのかよくわからないが、冷静に考えると現在どうなのかすらよく知らないのだった。</li>
+    <li><a href="https://about.pinterest.com/en/lens">Get a new Lens on life | About Pinterest</a> Pinterest にも Lens アプリがあったのか。インターネットの写真発生源が SNS の walled garden に移ってしまった危機感からリアルワールドを capture しようとおもっただろうか。しかし手のかかったいわゆる「コンテンツ」は写真を含め Web に残ってくれた気がする。もちろんインスタはそれなりの割合を持っていったから Pinterest の市場独占はなくなったろうけれど、残されたパイも小さくはないし縮小もしてない印象。「ウェブアプリ」の時代が（ある線より先までは）来なかったように「コンテンツプラットフォームとしてのソーシャルメディア」の時代も（完全には）来なかった。流通は独占しているが the canonical sources はウェブのまま。</li>
+    <li><a href="http://tomasp.net/academic/">Tomas Petricek - New ways of thinking in programming &amp; working with data</a> このひと全部おもしろいのでは・・・。</li>
+</ul>
+</li>
+</ul></p><p><h2>2019-09-23 (Mon)</h2></p><p><ul>
+    <li>去年は年末までずっと忙しかった気がするが、今年は割と仕事おちついてきたのでリファクタリングするぞ！というかそれはさっさと済ますぞ！ところで新製品のレビューとかでたまに「これはまだリリースされていない評価版なので製品版は違うかもしれない」とかいうコメントで欠点を擁護する様子を目にするが、ソフトウェアだと評価版からリリースまでの間にふつうに細かいとこ直したりするね・・・。</li>
+    <li>こどもに何かを教えるのが難しいという話を夫婦でする。たとえばフォークの使い方、とかそういう日常的なちょっと訓練のいるタスク。こういうのはいわゆる「躾 / Dscipline」や「育児」の方法論ではなぜか議論されない。では教育なのか？しかし幼児教育の本って親向けは「読み方を教える」みたいなピンポイントなやつはあるけどもうちょっと原理原則みたいのが知りたいのだよ。あまりない。あっても幼稚園関係者向け教科書みたいのばかり。教科書よまないとだめなの？ほんとに？なんとなく子供向けコーチングとかあるのでは、というひらめきを得たのであとで Amazon ながめよう（なんとなく時間のムダな予感ではある。）</li>
+    <li>育児、対象子供年齢が小学校とかティーンになると色々興味深い思想的な話になっているが、toddler - preschooler 向けだと躾っぽいやつばっかり・・・。対象子供年齢を見抜くのが面倒、むずかしい。書いといてくれ！（書いてあるのもあるが。）</li>
+    <li><a href="/2019/09/23/time-budgeting-14/">時間予算日記 (14)</a></li>
+</ul></p>

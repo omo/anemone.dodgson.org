@@ -1,0 +1,61 @@
++++
+tags  = ["fragments"]
+title = "Fragments #36"
+date  = "2019-12-16 12:17:13"
++++
+<p><h2>2019-12-21 (Sat)</h2></p><p><ul>
+    <li>少し寝坊したあとスタバに行こうとしたら子が起きてきてそのまま朝食準備へ。なにもできず。</li>
+</ul></p><p><h2>2019-12-20 (Fri)</h2></p><p><ul>
+    <li>Impeachment のニュースは読んでるだけで暗澹たる気分になる。今の大統領はアメリカ民主主義の <a href="https://wa.aws.amazon.com/wat.concept.gameday.en.html">Game Day</a> だと思っていたらシステムにバグがありすぎて disaster になっちゃいました、みたいな。しかも治らなそうだし。</li>
+    <li>Feed 更新後もエゴサーチ結果に変化なし。ふたたび勝利(敗北?)宣言。</li>
+</ul></p><p><h2>2019-12-19 (Thu)</h2></p><p><ul>
+    <li><a href="https://www.businessinsider.com/anyscale-berkeley-databricks-206-million-a16z-2019-12">Berkeley researchers launched Anyscale with $20.6 million from a16z - Business Insider</a> <a href="https://github.com/ray-project/ray">Ray</a> というプロジェクト、まえ論文読んだたら Java RMI みたいのを Python で実装し (ただしデータまわりは <a href="https://arrow.apache.org/">Arrow</a> とかでそれなりに高速化されている) それを "Reinforcement Learning のフレームワーク" と銘打つ代物で、こうやって異業種の人も AI にいっちょかみしようとするのか必死だな・・・と思った記憶がある。が<a href="https://anyscale.io/">会社</a>になったの！すごいね。</li>
+    <li>壊れたブログの feed URL を<a href="https://github.com/omo/s2p-gae/commit/be015e06836a0ddd023ce47887d16dca9fd5456a">直して</a> push しなおしているが・・・こいつも cloud build にしておくべきだった、と反省。しかし今それをやる気力なし・・・というか cloudbuild.yaml に繊細な情報が書き込まれているので public git repo には push できませんな。GCP 側におかせてくれ。
+<ul>
+    <li>HTTPS に移行したときにはこの際フィード読者は置き去りでいいかな、と思った記憶もあるようなないような。まあいいです。このくらいのエゴはあるのです。エゴなのか読んでくれてた人への義理みたいなのか。もはや判別できない。</li>
+</ul>
+</li>
+    <li><a href="https://www.nytimes.com/2019/12/19/podcasts/the-daily/impeachment-trump-democrats.html">The Impeachment of President Donald J. Trump - The New York Times</a> Trump のろくでもなさはおいておくとして, Biden がダメすぎる事実についてはもうちょっと議論されるべきだが「証拠はない」みたいな扱いになっており、そのへん NYTimes には若干がっかりしている。たまたま Congress  も House も Democrats が抑えてるから pass したけれど、若干無理矢理感は否めない。2020 に backlash するという Trump の脅しも、あながちハズレではない気がしてしまう。</li>
+    <li><a href="https://techcrunch.com/2019/12/19/facebook-operating-system/">Facebook is building an operating system so it can ditch Android | TechCrunch</a> VR は latency とかシビアだしどうせアプリはぜんぶネイティブだろうから Android じゃない方がよい面はおおそうだけど、Linux はどうするのかな？ Vulkan とか minor OS にのっけてもらうの大変だよね。</li>
+    <li>Pointless な作業をして完全に一日を無駄にしてしまった・・・ Sigh.</li>
+</ul></p><p><h2>2019-12-18 (Wed)</h2></p><p><ul>
+    <li>子のデイケア、本日で「卒業」。お世話になりました・・・。奥様負担増で心配だがやむなし。</li>
+    <li>奥様の夜なべにつきあって寝不足。健康や生産性だけが人生ではないからまあいいんだけど、ねむい。</li>
+    <li>高速化パッチを送ってくる謎の助っ人団二人目、いまいちコンテクストを共有できてない気がしたので会って話すことにする。というのも２つ上のフロアにいたので。もうちょっと早く会っておくべきだった・・・。なお予期していたとおりできる子であった。モバイル部門、hiring は機能している。そのできる子を最初のプロジェクトで他所のチームのランダムな高速化につっこむ management が機能しているといえるのかはやや疑問だが・・・。
+<ul>
+    <li>助っ人団のコードを見ていて思うこととしては、まあできる高速化はだいたいやってしまったよな（自分が）、ということ。その事実が高速化人材によって検証されるのは有り難いことだが、どっちかつうと OS の側に手を入れて助けてほしいなあ。</li>
+</ul>
+</li>
+    <li>今年は誰にも気づかれずにブログを更新したぜ！と向井さんに話したら「そういえば自分も購読してるはずだけど見てませんね」とのコメント。あ・・・と<a href="https://github.com/omo/s2p-gae/blob/master/main.py">コード</a>を確認したら RSS をリダイレクトしてなかったわ・・・。逆にいうと anemone.dodgson.org 移行後から購読を始めた人はいないということだが、これは予想の範囲内というか、 feed reader とかおっさんしか使ってないですからね。</li>
+    <li>組織のツリーが深くなったなどの事情からやたらと "all hands" ミーティングがあってやや辟易。まあ参加はせず録画をビデオでみるだけなので、大した負担はないんだけど。</li>
+    <li>今週で仕事納め。独り身だったらどうせ誰もいないし会社にきてダラダラ趣味のコード書いたりインターネットしたりしつつちょっと仕事をつつきながら過ごせば良い年末も、家族がいるときちんと休暇申請しておでかけ、となるのだった。といった事実にきづける程度には家族持ちとしての心の余裕がでてきたぜ。
+<ul>
+    <li>自分は年間 25 日バケーションがあるらしいが、子供の夏休みで二週間 (=10日), 冬にちまちま一週間くらい(=5日) とるともう 10 日しかのこらない。夏休みは実際は二週間より長いこともあるので、雑用などで消える日も考えるとわりとギリギリ。</li>
+    <li>個人的には二週間続けて休んでも疲れるだけなので細かく散らして休みたい。しかし休みというのは休みではなく、家族のためになんかする日に過ぎないのだった。まえは月に１回なにもせず休んで夫婦で過ごす日などをつくりたいと考えていたけど、それだけで 12 日。残り 13 日じゃ夏休みと冬休みを賄えない。世知辛い。四半期毎に一日くらいならなんとかなるかな。</li>
+    <li>とか考えだすと働きたくないでござる病が悪化するのでここまで。</li>
+</ul>
+</li>
+    <li><a href="https://news.ycombinator.com/item?id=21823413">Google claims copyright on employee side projects | Hacker News</a> 社員同士が言い争っていて醜い・・・。「あまり嬉しい制度でなくて残念」という主観的な感想を「業界標準だから」と退けるのは社畜的すぎはしないか。しかも Linux カーネルハッカー社員が「俺は割とたのしくやってるぜ」とか、そうでしょうとしかいいようがない。オープンソースでコードを書くのはむしろ簡単な方で、副業しようとおもってもほぼ不可能。副業というとしょぼいけど、スタートアップ始める準備プロジェクトみたいのは厳密に適用するとできないね。大企業勤めの税金みたいなものだと思っているが、悲しさはあるでしょ。それに「趣味がランダムなパッチ書き」みたいな人には向かないよね。
+<ul>
+    <li>昔は見ないふりをしていた自分も会社員力が高まった結果としてオープンソースコードを書かないという形に落ち着いた。いまでも細かいゴミは面倒なので public に置いている。たとえばブログのリダイレクトをする app engine のコードとか誰にとっても確実になんの価値もない設定ファイルみたいなもんだからそっと public にしている。勤務先がその著作権を要求してきたらどうぞというだろうけれど、いってくるはずのないゴミの確信があるおかげで public に置ける。</li>
+    <li>会社がやってる、あるいは参加しているオープンソースプロジェクト相手なら許可はいらない/すごい簡単なはずなので、無駄なリスクを侵さずオープンソースしたいならそういうのから探すのが良いのだろう。まえ仕事で <a href="https://github.com/typekit/webfontloader">WFL</a> にパッチ書いたときどうしたんだっけ。<a href="https://opensource.google/docs/patching/">許可いらない枠</a>の範疇だったのかな。</li>
+    <li>それとは別に、会社の著作権のままオープンソースにすると github.com/google/ に公開されるのだが、しょぼいゴミをちゃんとした仕事コードと同列のプロジェクトにするってどうなの・・・とは思っている。書いたコードはゴミでもなんでもデフォルトでオープンソースというマインドセットとは互換性がない。</li>
+</ul>
+</li>
+</ul></p><p><h2>2019-12-17 (Tue)</h2></p><p><ul>
+    <li>朝、遅刻を強いられるフラストレーションの消耗度合いについて。
+<ul>
+    <li>自分がコントロールできない要素であること。自分がいくらできることをやったところで、他人の起床や身支度や食事が早くなるわけではない。クリティカルパスは他人に踏み固められている。</li>
+    <li>インクリメンタルかつ不規則であること。遅れることは想定できるが、どれくらい遅れるかは想定できない。30 分遅れが確定しました、と一回でわかるならストレスはその瞬間に発生するだけだが、細かい遅れを次々と突きつけられるのはイライラする度合いが高い。</li>
+    <li>代替が難しいこと。自分の時間を削るなり睡眠を削るなりして補填するのがむずかしい。なぜなら退社の時間も決まっているからである。</li>
+    <li>The stake is high であること。労働、しないと給料もらえないんですけどね。わかってますかね、みたいな苛立ち。</li>
+    <li>辛い。</li>
+</ul>
+</li>
+    <li>ふと思いつきで Pocket Cast を uninstall してみる。しばらくは audiobooks を聴こう。</li>
+    <li>会社で筋トレをして思ったこと: ヨガマットが必要。テラスじゃなくて会議室でやろうかなあ。</li>
+    <li><a href="https://www.nytimes.com/interactive/2019/12/17/us/oakland-california-homeless-camp.html?action=click&amp;module=Top%20Stories&amp;pgtype=Homepage">Among the World’s Most Dire Places: This California Homeless Camp - The New York Times</a> Oakland の slum は Mexico よりひどいぞ、という話。ホームレス、一時期は自分もホームレスになるかもしらぬと恐れその手の本をよく読んでたけど、思わぬ形で身近になってしまった。</li>
+</ul></p><p><h2>2019-12-16 (Mon)</h2></p><p><ul>
+    <li>自分のマインドシェアにおける仕事/会社のどうでもよさと、月曜の朝に出社したとき一息ついて感じる安堵の矛盾。</li>
+    <li><a href="https://ai.googleblog.com/2019/12/improvements-to-portrait-mode-on-google.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+blogspot%2FgJZg+%28Google+AI+Blog%29">Google AI Blog: Improvements to Portrait Mode on the Google Pixel 4 and Pixel 4 XL</a> Pixel4 は bokeh のバグが減った気がしていたが、なんかやってたのか。残念ながら paper はなし。Tone map の前に bokeh やる、というのは当たり前な気もするが、意外とやってなかったのだね。</li>
+</ul></p>

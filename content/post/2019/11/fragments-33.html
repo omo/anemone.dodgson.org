@@ -1,0 +1,30 @@
++++
+tags  = ["fragments"]
+title = "Fragments #33"
+date  = "2019-11-25 09:43:32"
++++
+<p><h2>2019-12-01 (Sun)</h2></p><p><ul>
+    <li>At Starbucks. ここ数日雨続きで、ようやく雨季が来た感じ。スクーター通勤には不便だが、夏に向けどうぞ水を貯めてくださいませ。</li>
+    <li>そろそろこの blog の publish 方法を考えないといけない。当初は dynamic に serve しようとおもってたけどめんどくさいな。引き続き anemone.dodgson.org でいいか...
+<ul>
+    <li>そして anemone.dodgson.org は軽量で素晴らしいサイトだよな我ながら・・・と思いつつふと DevTools で  timeline をみると割と無駄に遅い。ファイルサイズは小さいがなぜか一部のファイルのロード開始まで間がある・・・と profiler でつつくと JS の評価に 200ms も費やされている。Intel の速い CPU なのに！こりゃねーわ・・・。コードをみると HTML の末尾で code highlither をロードしている。このテンプレートを書いたやつは何もわかっていない（たぶん自分ですが）。どう考えても遅延すべき。Font-awsome (ってなんだっけ？）の CSS も微妙にいらなげな雰囲気をかもしている。こいつもなんとかしたい。<a href="https://web.dev/defer-non-critical-css/">やりかたリンク</a>。</li>
+    <li>ブラウザは簡単にプロファイルとれていいね。まあ Android も Java のプロファイラはともかく (USB ケーブルと SDK があれば) Systrace も似たようなものか。</li>
+    <li>それにしても JS ってほんとに今でもページロードのたびにパースしてコンパイルとかしてるの？大変だね・・・。DEX の class loading も割と遅いけど、もうちょっとマシな気がする。たぶん lazy だからだろうな。</li>
+</ul>
+</li>
+    <li>雨の日はどの家の子供もヒマらしく、外交的な隣人の子が家の前まで遊びに来て英語でなにかまくしたてる。子、案外ひるまない。英語でまくしたてられるのに慣れてきたのは学校の成果と言えよう。前はびびってたからね。</li>
+</ul></p><p><h2>2019-11-30 (Sat)</h2></p><p><ul>
+    <li>二泊三日の休暇より帰宅。子の playdate 仲間ファミリーと田舎のAirBnB に泊まって食っちゃ寝するという企画。子の相性はよく、相手の父親は圧倒的な子供ホスト力を発揮し、子にとっては非常に楽しい休暇となった。親もそれなりにくつろげて、よい休暇でした。
+<ul>
+    <li>宿の貸主はぶとうおよびレーズンの農家で裏庭がぶどう畑。<a href="https://photos.google.com/photo/AF1QipNecQPYVCpexO-Wmn37Q2hPis2sQ5akx3TlIwxO">近づいてみる</a>とブドウが乾いてミイラになっていた？え？レーズンってこうやってつくるの？と調べると、そういう<a href="https://calraisins.org/about/the-raisin-industry/">バリエーションもある</a>らしい(<a href="https://vimeo.com/292993960">ビデオ</a>)。ほんと undocumented immigrant なしにはなりたたなそうな産業だよなあ。<a href="https://www.ppic.org/publication/undocumented-immigrants-in-california/">California の immigration policy のナゾさ</a>もわかるわ。しかしいちばん labor dependency の多い firming などを platform とする保守派が legal status の付与に反対してるのはナゾ。彼らが返ってい待ったら一番困るのきみたちなのでは・・・そのミイラブドウどうすんの。(※貸主の政治傾向は未確認)</li>
+</ul>
+</li>
+    <li><a href="https://parenting.nytimes.com/preschooler/kids-active-holidays">Keep Your Kids From Going Feral During the Holidays - NYT Parenting</a> しかしアメリカは冬休みと夏休みが長すぎるね。もうちょっと一年通して細々と休もうや・・・。</li>
+</ul></p><p><h2>2019-11-26 (Tue)</h2></p><p><ul>
+    <li>Thanksgiving  も近いので今週は月曜だけ会社いって今日から休暇。</li>
+    <li>ひさびさの雨。そして窓から雨漏り。去年も雨漏りで色々水浸しになり、窓の外にあった亀裂にテープを貼ってしのいだのだが、さっきみたら亀裂が広がっていた。ボロ屋であることよ・・・。ついでにアパートへ修理を依頼。去年も修理を頼んだはずなのに・・・とおもってログを見直したら依頼を出し忘れていたっぽい。うかず税に Sigh.</li>
+    <li>Kindle Paperwhite が Black Friday で安い。しかしどうせなら 7 inch で night light もある Oasis が欲しい。しかしこいつはだいぶ高い。そしてどうせなら PDF がよめるやつがいいなあ・・・とかインターネットで時間をとかし夜が更けていく。まあ電書は最近はもうスマホで読めばいいとはおもっている。自分のライフサイクル的に屋外で読める機会も少ないし、屋外では論文とか本以外に読むものもあるし。ただ Kindle のストイックさには今でも憧れがあるのだった。</li>
+</ul></p><p><h2>2019-11-25 (Mon)</h2></p><p><ul>
+    <li><a href="https://www.bloomberg.com/news/articles/2019-11-25/google-fires-four-employees-citing-data-security-violations">Google Fires Four Workers, Including Staffer Tied to Protest - Bloomberg</a> 社内のエライ人のカレンダーをチラ見したりする社内ストーキングはある種の悪い冗談としてやる人が一定数いた。もはやそういうことやるとクビになりそう。それと同じノリで、かつて社内 GDocs はデフォルトの共有設定が「社内全体」だったという事実を信じる人がどれだけいるだろうか。会社の肩を持つ気もアクティビストに肩入れする気もなく、ただただ悲しい。皮肉なことに GSuite の検索機能の品質自体は昔よりずっと良くなっている。</li>
+    <li>雨がふるらしいので近隣の子供向け屋内遊戯施設などを探す。Google Maps, 類似施設レコメンデーションの品質は割といいと思うのだが、リンクを別のタブで開くという基本的なデスクトップウェブ操作が機能せず、その一点で Yelp の方がマシにおもえてしまう・・・。ウェブの会社がウェブを殺す、これがモバイルファースト。（名誉のために指摘しておくならば、ウェブ検索とメールはそういうウェブの作法がそこそこちゃんと動く。一方で Maps はそのへんが極端にひどい。）</li>
+</ul></p>
